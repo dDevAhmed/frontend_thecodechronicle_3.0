@@ -5,6 +5,6 @@ const Card = ({ children }) => {
             <div className="px-4 py-5 sm:p-6">{children}</div>
         </div>
     );
-  };
-  
-  export default Card;
+};
+
+export default Card;
