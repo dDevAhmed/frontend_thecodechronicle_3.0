@@ -366,7 +366,7 @@ export default function Layout() {
                         </div>
                     </div>
 
-                    <main className="py-5 bg-[#F5F6FA] h-screen">
+                    <main className="py-5 bg-[#F5F6FA]">
                         <div className="px-4 sm:px-6 lg:px-8"><Outlet /></div>
                     </main>
                 </div>

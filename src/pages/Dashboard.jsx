@@ -1,10 +1,12 @@
-import Card from "../ui/Card"
 import { IoIosTrendingUp, IoIosTrendingDown } from "react-icons/io";
 import { HiMiniUsers, HiMiniCube } from "react-icons/hi2";
 import { BiLineChart } from "react-icons/bi";
 import { PiClockCounterClockwiseFill } from "react-icons/pi";
 // eslint-disable-next-line no-unused-vars
 import { ResponsiveContainer, AreaChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Area } from "recharts"
+import Card from "../ui/Card"
+import Dropdown from "../ui/Dropdown";
+import BasicTable from "../components/BasicTable";
 
 const dashboardData = [
   {
@@ -127,7 +129,7 @@ const Dashboard = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-[#202224] font-normal">{stat.title}</p>
-                <h3 className="text-[#202224] font-semibold text-[1.875rem] mt-3">{stat.value}</h3>
+                <h3 className="text-[#202224] font-semibold text-[1.875rem] mt-3">{stat.title == 'Total Sales' && '$'}{stat.value.toLocaleString()}</h3>
               </div>
               <span
                 className={`text-[2rem] rounded-2xl p-2`}
@@ -154,7 +156,11 @@ const Dashboard = () => {
       <div className="mt-5">
         <ResponsiveContainer width="100%">
           <Card>
-            <h3 className="text-[#202224] text-[1.125rem] font-semibold mb-5">Sales Details</h3>
+            <span className="flex items-center justify-between  mb-5">
+              <h3 className="text-[#202224] text-[1.125rem] font-semibold">Sales Details</h3>
+              <Dropdown />
+            </span>
+
             {/* //fixme - mobile responsiveness */}
             <AreaChart width={900} height={250} data={dashboardData[1].sales}
               margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
@@ -173,6 +179,16 @@ const Dashboard = () => {
             </AreaChart>
           </Card>
         </ResponsiveContainer>
+      </div>
+      <div className="mt-5">
+        <Card>
+          <span className="flex items-center justify-between  mb-5">
+            <h3 className="text-[#202224] text-[1.125rem] font-semibold">Deals Details</h3>
+            <Dropdown />
+          </span>
+          {/* //note - table */}
+          <BasicTable />
+        </Card>
       </div>
     </>
   )
