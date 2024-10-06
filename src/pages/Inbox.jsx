@@ -1,112 +1,150 @@
-import { Link } from "react-router-dom";  
-import BasicTable from "../components/BasicTable"  
-import Button from "../ui/Button"  
-import Card from "../ui/Card"  
+import { Link } from "react-router-dom";
+import BasicTable from "../components/BasicTable"
+import Button from "../ui/Button"
+import Card from "../ui/Card"
 import { TiWarningOutline } from "react-icons/ti";
-import { MdMailOutline } from "react-icons/md";
+import { MdMailOutline,MdImportantDevices,  MdInfo, MdArchive} from "react-icons/md";
 import { FaRegStar } from "react-icons/fa";
-import { FiSend } from "react-icons/fi";  
+import { FiSend } from "react-icons/fi";
 import { LuPencil } from "react-icons/lu";
-import { MdImportantDevices } from "react-icons/md";  
-import { BiTrash } from "react-icons/bi";  
+import { BiTrash } from "react-icons/bi";
+import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
+import { IoMdTrash } from "react-icons/io";
 
-const inboxNavigation = [  
-    { id: 1, name: 'Inbox', href: '#', icon: MdMailOutline, count: 1253, current: true },  
-    { id: 2, name: 'Starred', href: '#', icon: FaRegStar, count: 245, current: false },  
-    { id: 3, name: 'Sent', href: '#', icon: FiSend, count: 24532, current: false },  
-    { id: 4, name: 'Draft', href: '#', icon: LuPencil, count: 9, current: false },  
-    { id: 5, name: 'Spam', href: '#', icon: TiWarningOutline, count: 14, current: false },  
-    { id: 6, name: 'Important', href: '#', icon: MdImportantDevices, count: 18, current: false },  
-    { id: 7, name: 'Bin', href: '#', icon: BiTrash, count: 9, current: false },  
-];  
+const inboxNavigation = [
+    { id: 1, name: 'Inbox', href: '#', icon: MdMailOutline, count: 1253, current: true },
+    { id: 2, name: 'Starred', href: '#', icon: FaRegStar, count: 245, current: false },
+    { id: 3, name: 'Sent', href: '#', icon: FiSend, count: 24532, current: false },
+    { id: 4, name: 'Draft', href: '#', icon: LuPencil, count: 9, current: false },
+    { id: 5, name: 'Spam', href: '#', icon: TiWarningOutline, count: 14, current: false },
+    { id: 6, name: 'Important', href: '#', icon: MdImportantDevices, count: 18, current: false },
+    { id: 7, name: 'Bin', href: '#', icon: BiTrash, count: 9, current: false },
+];
 
-const labels = [  
-    { id: 1, name: 'Primary', href: '#', border: '#00B69B', checked: false },  
-    { id: 2, name: 'Social', href: '#', border: '#5A8CFF', checked: false },  
-    { id: 3, name: 'Work', href: '#', border: '#FD9A56', checked: false },  
-    { id: 4, name: 'Friends', href: '#', border: '#D456FD', checked: false },  
-];  
+const labels = [
+    { id: 1, name: 'Primary', href: '#', border: '#00B69B', checked: false },
+    { id: 2, name: 'Social', href: '#', border: '#5A8CFF', checked: false },
+    { id: 3, name: 'Work', href: '#', border: '#FD9A56', checked: false },
+    { id: 4, name: 'Friends', href: '#', border: '#D456FD', checked: false },
+];
 
-function classNames(...classes) {  
-    return classes.filter(Boolean).join(' ');  
-}  
+function classNames(...classes) {
+    return classes.filter(Boolean).join(' ');
+}
 
-const Inbox = () => {  
-    return (  
-        <>  
-            <h3 className="text-[1.5rem] font-semibold text-[#202224]">Inbox</h3>  
-            <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5">  
-                <div className="col-span-1">  
-                    <Card style={{ backgroundColor: '#fff' }}>  
-                        <Button style={{ backgroundColor: '#4880FF', color: 'white', display: 'block', width: '100%', padding: '10px' }}>+ Compose</Button>  
-                        <h3 className="text-[1rem] text-[#202224] mt-5 font-semibold">My Email</h3>  
-                        <ul role="list" className="mt-2 ml-3 space-y-1">  
-                            {inboxNavigation.map((navItem) => {  
+const Inbox = () => {
+    return (
+        <>
+            <h3 className="text-[1.5rem] font-semibold text-[#202224]">Inbox</h3>
+            <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div className="col-span-1">
+                    <Card style={{ backgroundColor: '#fff' }}>
+                        <Button style={{ backgroundColor: '#4880FF', color: 'white', display: 'block', width: '100%', padding: '10px' }}>+ Compose</Button>
+                        <h3 className="text-[1rem] text-[#202224] mt-5 font-semibold">My Email</h3>
+                        <ul role="list" className="mt-2 space-y-1">
+                            {inboxNavigation.map((navItem) => {
                                 const IconComponent = navItem.icon; // Get the icon component  
-                                
-                                return (  
-                                    <li key={navItem.id}>  
-                                        <Link  
-                                            to={navItem.href}  
-                                            className={classNames(  
-                                                navItem.current  
-                                                    ? 'bg-gray-50 text-[#4880FF]'  
-                                                    : 'text-[#202224] hover:bg-gray-50 hover:text-[#4880FF]',  
-                                                'group flex justify-between rounded-md p-2 text-sm font-normal leading-6',  
-                                            )}  
-                                        >  
-                                            <span className="flex items-center">  
-                                                <IconComponent  
-                                                    aria-hidden="true"  
-                                                    className={classNames(  
-                                                        navItem.current ? 'text-[#4880FF]' : 'text-gray-400 group-hover:text-[#4880FF]',  
+
+                                return (
+                                    <li key={navItem.id}>
+                                        <Link
+                                            to={navItem.href}
+                                            className={classNames(
+                                                navItem.current
+                                                    ? 'bg-gray-50 text-[#4880FF]'
+                                                    : 'text-[#202224] hover:bg-gray-50 hover:text-[#4880FF]',
+                                                'group flex justify-between rounded-md p-2 text-sm font-normal leading-6',
+                                            )}
+                                        >
+                                            <span className="flex items-center">
+                                                <IconComponent
+                                                    aria-hidden="true"
+                                                    className={classNames(
+                                                        navItem.current ? 'text-[#4880FF]' : 'text-gray-400 group-hover:text-[#4880FF]',
                                                         'h-6 w-6 mr-2' // Added margin for spacing  
-                                                    )}  
-                                                />  
-                                                {navItem.name}  
-                                            </span>  
-                                            <span>{navItem.count}</span>  
-                                        </Link>  
-                                    </li>  
-                                )  
-                            })}  
-                        </ul>  
-                        <h3 className="text-[1rem] text-[#202224] mt-5 mb-3 font-semibold">Label</h3>  
-                        {  
-                            labels.map((label, index) => (  
-                                <div className="relative flex items-start ml-3 mb-3 cursor-pointer" key={index}>  
-                                    <div className="flex h-6 items-center">  
-                                        <input  
-                                            id={label.name}  
-                                            name="comments"  
-                                            type="checkbox"  
-                                            aria-describedby="comments-description"  
-                                            className="h-4 w-4 rounded border"  
-                                            style={{  
-                                                borderColor: label.border,  
+                                                    )}
+                                                />
+                                                {navItem.name}
+                                            </span>
+                                            <span>{navItem.count}</span>
+                                        </Link>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                        <h3 className="text-[1rem] text-[#202224] mt-5 mb-3 font-semibold">Label</h3>
+                        {
+                            labels.map((label, index) => (
+                                <div className="relative flex items-start ml-3 mb-3" key={index}>
+                                    <div className="flex h-6 items-center">
+                                        <input
+                                            id={label.name}
+                                            name="comments"
+                                            type="checkbox"
+                                            aria-describedby="comments-description"
+                                            className="h-4 w-4 rounded border"
+                                            style={{
+                                                borderColor: label.border,
                                                 accentColor: label.checked ? label.border : 'transparent', // For checked color  
-                                            }}  
-                                        />  
-                                    </div>  
-                                    <div className="ml-3 text-sm leading-6">  
-                                        <label htmlFor={label.name} className="font-normal text-[#202224]">  
-                                            {label.name}  
-                                        </label>  
-                                    </div>  
-                                </div>  
-                            ))  
-                        }  
-                    </Card>  
-                </div>  
-                <div className="col-span-2">  
-                    <Card style={{ backgroundColor: '#fff' }}>  
-                        <h3 className="text-[1rem] text-[#202224] font-semibold">My Email</h3>  
-                        <BasicTable></BasicTable>  
-                    </Card>  
-                </div>  
-            </div>  
-        </>  
-    )  
-}  
+                                            }}
+                                        />
+                                    </div>
+                                    <div className="ml-3 text-sm leading-6">
+                                        <label htmlFor={label.name} className="font-normal text-[#202224]">
+                                            {label.name}
+                                        </label>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </Card>
+                </div>
+                <div className="col-span-2">
+                    <Card style={{ backgroundColor: '#fff' }}>
+                        <div className="flex items-center justify-between mb-5">
+                            <div className="relative bg-[#F5F6FA] rounded-full">
+                                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                                    <MagnifyingGlassIcon aria-hidden="true" className="h-5 w-5 text-gray-400" />
+                                </div>
+                                <input
+                                    id="search"
+                                    name="search"
+                                    type="search"
+                                    placeholder="Search mail"
+                                    className="block w-full rounded-full border-0 bg-transparent py-1.5 pl-10 pr-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                />
+                            </div>
+                            <span className="isolate inline-flex rounded-md shadow-sm">
+                                <button
+                                    type="button"
+                                    className="relative inline-flex items-center rounded-l-md bg-white px-2 py-2 text-[#202224] ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
+                                >
+                                    <span className="sr-only">download</span>
+                                    <MdArchive aria-hidden="true" className="h-5 w-5" />
+                                </button>
+                                <button
+                                    type="button"
+                                    className="relative -ml-px inline-flex items-center bg-white px-2 py-2 text-[#202224] ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
+                                >
+                                    <span className="sr-only">information</span>
+                                    <MdInfo aria-hidden="true" className="h-5 w-5" />
+                                </button>
+                                <button
+                                    type="button"
+                                    className="relative -ml-px inline-flex items-center rounded-r-md bg-white px-2 py-2 text-[#202224] ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
+                                >
+                                    <span className="sr-only">delete</span>
+                                    <IoMdTrash aria-hidden="true" className="h-5 w-5" />
+                                </button>
+                            </span>
+                        </div>
+                        <h3 className="text-[1rem] text-[#202224] font-semibold">My Email</h3>
+                        <BasicTable></BasicTable>
+                    </Card>
+                </div>
+            </div>
+        </>
+    )
+}
 
 export default Inbox;
