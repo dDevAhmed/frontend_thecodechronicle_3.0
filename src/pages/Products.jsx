@@ -52,8 +52,9 @@ const Products = () => {
       <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5">
         {
           products.map((product, index) => (
-            <Card key={index} style={{ backgroundColor: '#fff' }}>
+            <Card key={index} style={{ backgroundColor: '#fff', display: 'relative' }}>
               <span className="relative">
+                <IoMdHeartEmpty className="absolute right-0 cursor-pointer" />
                 <img src={product.image} alt="Product Image" className="m-auto h-40" />
                 <span className="absolute top-1/2 left-0 right-0 flex items-center justify-between transform -translate-y-1/2">
                   <IoChevronBackOutline className="bg-[rgba(226,234,248,0.8)] text-[#626262] rounded-full p-2 h-8 w-8 flex items-center justify-center cursor-pointer" />
@@ -61,7 +62,7 @@ const Products = () => {
                 </span>
               </span>
               {/* //fixme - flex out as in col */}
-              <span className="">
+              <span className="flex flex-col justify-between">
                 <p className="text-[#202224] text-[1.125rem] font-medium">{product.name}</p>
                 <span>
                   <p className="text-[#4880FF] text-[.75rem] mt-2">${product.price}</p>
