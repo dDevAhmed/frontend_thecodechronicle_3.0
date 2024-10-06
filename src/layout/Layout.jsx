@@ -15,7 +15,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import {
     Dialog,
     DialogBackdrop,
@@ -48,12 +48,12 @@ import { FaRegMoneyBillAlt } from "react-icons/fa";
 import { PiSquareSplitVerticalLight } from "react-icons/pi";
 
 const navigation = [
-    { name: 'Dashboard', href: '#', icon: AiOutlineDashboard, current: true },
-    { name: 'Products', href: '#', icon: PiGridFour, current: false },
-    { name: 'Favorites', href: '#', icon: LiaHeart, current: false },
-    { name: 'Inbox', href: '#', icon: HiOutlineChatAlt2, current: false },
-    { name: 'Order Lists', href: '#', icon: LiaListAlt, current: false },
-    { name: 'Products Stock', href: '#', icon: PiSquareSplitVerticalLight, current: false },
+    { name: 'Dashboard', href: '/', icon: AiOutlineDashboard, current: true },
+    { name: 'Products', href: '/products', icon: PiGridFour, current: false },
+    { name: 'Favorites', href: '/favorites', icon: LiaHeart, current: false },
+    { name: 'Inbox', href: '/inbox', icon: HiOutlineChatAlt2, current: false },
+    { name: 'Order Lists', href: '/order-list', icon: LiaListAlt, current: false },
+    { name: 'Products Stock', href: 'product-stock', icon: PiSquareSplitVerticalLight, current: false },
 ]
 const pages = [
     { id: 1, name: 'Pricing', href: '#', icon: LiaGiftSolid, current: false },
@@ -201,12 +201,13 @@ export default function Layout() {
                 <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
                     {/* Sidebar component, swap this element with another sidebar if you like */}
                     <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6 pb-4">
-                        <div className="flex h-16 shrink-0 items-center">
+                        <div className="flex h-16 shrink-0 items-center gap-3">
                             <img
                                 alt="Your Company"
-                                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                                src="/src/assets/images/dash_stack_logo.png"
                                 className="h-8 w-auto"
                             />
+                            <h3 className='text-[#202224] font-semibold'><span className='text-[#2CABE0]'>Dash</span>Stack</h3>
                         </div>
                         <nav className="flex flex-1 flex-col">
                             <ul role="list" className="flex flex-1 flex-col gap-y-7">
@@ -241,8 +242,9 @@ export default function Layout() {
                                     <ul role="list" className="-mx-2 mt-2 space-y-1">
                                         {pages.map((item) => (
                                             <li key={item.name}>
-                                                <a
-                                                    href={item.href}
+                                                {/* //fixme - check refresh state */}
+                                                <Link
+                                                    to={item.href}
                                                     className={classNames(
                                                         item.current
                                                             ? 'bg-gray-50 text-indigo-600'
@@ -258,7 +260,7 @@ export default function Layout() {
                                                         )}
                                                     />
                                                     {item.name}
-                                                </a>
+                                                </Link>
                                             </li>
                                         ))}
                                     </ul>
@@ -267,8 +269,8 @@ export default function Layout() {
                                     <ul role="list" className="-mx-2 space-y-1">
                                         {bottomNavigation.map((item) => (
                                             <li key={item.name}>
-                                                <a
-                                                    href={item.href}
+                                                <Link
+                                                    to={item.href}
                                                     className={classNames(
                                                         item.current
                                                             ? 'bg-gray-50 text-indigo-600'
@@ -284,7 +286,7 @@ export default function Layout() {
                                                         )}
                                                     />
                                                     {item.name}
-                                                </a>
+                                                </Link>
                                             </li>
                                         ))}
                                     </ul>
@@ -366,7 +368,7 @@ export default function Layout() {
                         </div>
                     </div>
 
-                    <main className="py-5 bg-[#F5F6FA]">
+                    <main className="py-5 bg-[#F5F6FA] min-h-screen">
                         <div className="px-4 sm:px-6 lg:px-8"><Outlet /></div>
                     </main>
                 </div>
