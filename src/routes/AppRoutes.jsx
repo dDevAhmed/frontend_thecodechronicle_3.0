@@ -6,6 +6,7 @@ import Login from '../pages/Login'
 import SignUp from '../pages/SignUp'
 import Dashboard from '../pages/Dashboard'
 import Products from '../pages/Products'
+import Favorites from '../pages/Favorites'
 // import Student from '../features/students/Student';  
 // import Teacher from '../features/staffs/Teacher';  
 
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
                     {
                         path: 'products',
                         element: <Products />
+                    },
+                    {
+                        path: 'favorites',
+                        element: <Favorites />
                     },
                 ]
             },

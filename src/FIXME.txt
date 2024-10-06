@@ -6,8 +6,10 @@
 1. fix charts - and their responsiveness
 2. fix deal details table header style
 
-
 ---Products
 1. product card flex the bottom section justify between
 2. resize hero h3
 3. product card heart icon
+
+---Favorites
+1. product card flex the bottom section justify between
