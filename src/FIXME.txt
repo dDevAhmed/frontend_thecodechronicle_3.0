@@ -13,3 +13,6 @@
 
 ---Favorites
 1. product card flex the bottom section justify between
+
+---inbox
+1. set the cursor pointer for the label checkboxes
