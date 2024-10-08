@@ -1,15 +1,16 @@
 import { Link } from "react-router-dom";
-import BasicTable from "../components/BasicTable"
-import Button from "../ui/Button"
-import Card from "../ui/Card"
 import { TiWarningOutline } from "react-icons/ti";
-import { MdMailOutline,MdImportantDevices,  MdInfo, MdArchive} from "react-icons/md";
+import { MdMailOutline, MdImportantDevices, MdInfo, MdArchive } from "react-icons/md";
 import { FaRegStar } from "react-icons/fa";
 import { FiSend } from "react-icons/fi";
 import { LuPencil } from "react-icons/lu";
 import { BiTrash } from "react-icons/bi";
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import { IoMdTrash } from "react-icons/io";
+import Button from "../ui/Button"
+import Card from "../ui/Card"
+import EmailList from "../components/EmailList";
+import TablePagination from "../components/TablePagination";
 
 const inboxNavigation = [
     { id: 1, name: 'Inbox', href: '#', icon: MdMailOutline, count: 1253, current: true },
@@ -38,7 +39,8 @@ const Inbox = () => {
             <h3 className="text-[1.5rem] font-semibold text-[#202224]">Inbox</h3>
             <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5">
                 <div className="col-span-1">
-                    <Card style={{ backgroundColor: '#fff' }}>
+                    {/* <EmailSidebar /> */}
+                    {/* <Card style={{ backgroundColor: '#fff' }}>
                         <Button style={{ backgroundColor: '#4880FF', color: 'white', display: 'block', width: '100%', padding: '10px' }}>+ Compose</Button>
                         <h3 className="text-[1rem] text-[#202224] mt-5 font-semibold">My Email</h3>
                         <ul role="list" className="mt-2 space-y-1">
@@ -97,11 +99,13 @@ const Inbox = () => {
                                 </div>
                             ))
                         }
-                    </Card>
+                    </Card> */}
                 </div>
-                <div className="col-span-2">
+                {/* //fixme - change back to 2 */}
+                <div className="col-span-3">
                     <Card style={{ backgroundColor: '#fff' }}>
-                        <div className="flex items-center justify-between mb-5">
+                        <div className="flex items-center justify-between mb-10">
+                            {/* //fixme - make component */}
                             <div className="relative bg-[#F5F6FA] rounded-full">
                                 <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                                     <MagnifyingGlassIcon aria-hidden="true" className="h-5 w-5 text-gray-400" />
@@ -138,9 +142,34 @@ const Inbox = () => {
                                 </button>
                             </span>
                         </div>
-                        <h3 className="text-[1rem] text-[#202224] font-semibold">My Email</h3>
-                        <BasicTable></BasicTable>
+                        {/* <div className="relative flex items-start border-b py-3">
+                            <div className="flex h-6 items-center">
+                                <input
+                                    id="comments"
+                                    name="comments"
+                                    type="checkbox"
+                                    aria-describedby="comments-description"
+                                    className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                                />
+                            </div>
+                            <div className="flex h-6 items-center ml-3">
+                                <CiStar
+                                    aria-describedby="comments-description"
+                                    className="h-6 w-6 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                                />
+                            </div>
+
+                            <div className="ml-3 text-sm leading-6">
+                                <label htmlFor="comments" className="font-medium text-gray-900">
+                                </label>
+                                <span id="comments-description" className="text-gray-500">
+                                    <span className="sr-only">New comments </span>so you always know what's happening.
+                                </span>
+                            </div>
+                        </div> */}
+                        <EmailList/>
                     </Card>
+                    <TablePagination />
                 </div>
             </div>
         </>

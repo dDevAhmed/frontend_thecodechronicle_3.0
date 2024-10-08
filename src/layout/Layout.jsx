@@ -15,7 +15,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import {
     Dialog,
     DialogBackdrop,
@@ -48,7 +48,7 @@ import { FaRegMoneyBillAlt } from "react-icons/fa";
 import { PiSquareSplitVerticalLight } from "react-icons/pi";
 
 const navigation = [
-    { name: 'Dashboard', href: '/', icon: AiOutlineDashboard, current: true },
+    { name: 'Dashboard', href: '/', icon: AiOutlineDashboard, current: false },
     { name: 'Products', href: '/products', icon: PiGridFour, current: false },
     { name: 'Favorites', href: '/favorites', icon: LiaHeart, current: false },
     { name: 'Inbox', href: '/inbox', icon: HiOutlineChatAlt2, current: false },
@@ -80,6 +80,7 @@ function classNames(...classes) {
 
 export default function Layout() {
     const [sidebarOpen, setSidebarOpen] = useState(false)
+    const location = useLocation()
 
     return (
         <>
@@ -200,7 +201,7 @@ export default function Layout() {
                 {/* Static sidebar for desktop */}
                 <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
                     {/* Sidebar component, swap this element with another sidebar if you like */}
-                    <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6 pb-4">
+                    <div className="flex grow flex-col gap-y-5 overflow-y-  border-r border-gray-200 bg-white px-6 pb-4">
                         <div className="flex h-16 shrink-0 items-center gap-3">
                             <img
                                 alt="Your Company"
@@ -215,24 +216,27 @@ export default function Layout() {
                                     <ul role="list" className="-mx-2 space-y-1">
                                         {navigation.map((item) => (
                                             <li key={item.name}>
-                                                <a
-                                                    href={item.href}
+                                                <Link
+                                                    to={item.href}
                                                     className={classNames(
-                                                        item.current
+                                                        location.pathname === item.href
                                                             ? 'bg-[#4880FF] text-[#fff]'
-                                                            : 'text-[#202224] hover:bg-gray-50 hover:text-[#4880FF]',
+                                                            : 'text-[#202224] hover:bg-gray-100 hover:text-[#4880FF]',
                                                         'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6',
                                                     )}
                                                 >
+                                                    {/* {
+                                                        location.pathname === item.href
+                                                    } */}
                                                     <item.icon
                                                         aria-hidden="true"
                                                         className={classNames(
-                                                            item.current ? 'text-[#fff]' : 'text-[#202224] group-hover:text-[#4880FF]',
+                                                            location.pathname === item.href ? 'text-[#fff]' : 'text-[#202224] group-hover:text-[#4880FF]',
                                                             'h-6 w-6 shrink-0',
                                                         )}
                                                     />
                                                     {item.name}
-                                                </a>
+                                                </Link>
                                             </li>
                                         ))}
                                     </ul>

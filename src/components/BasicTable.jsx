@@ -1,7 +1,7 @@
 import Pill from "../ui/Pill"
 
 const products = [
-    { productname: 'Lindsay Walton', location: '6096 Marjolaine Landing', datetime: '12.09.2019 - 12.53 PM', piece: 423, amount: 34295, status: 'delivered' },
+    { productName: 'Lindsay Walton', location: '6096 Marjolaine Landing', datetime: '12.09.2019 - 12.53 PM', piece: 423, amount: 34295, status: 'delivered' },
     // More people...
 ]
 
@@ -39,7 +39,7 @@ export default function BasicTable() {
                                 {products.map((product) => (
                                     <tr key={product.email}>
                                         <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm text-[#202224] sm:pl-0">
-                                            {product.productname}
+                                            {product.productName}
                                         </td>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{product.location}</td>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{product.datetime}</td>
