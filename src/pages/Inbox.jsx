@@ -37,76 +37,82 @@ const Inbox = () => {
     return (
         <>
             <h3 className="text-[1.5rem] font-semibold text-[#202224]">Inbox</h3>
-            <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5">
-                <div className="col-span-1">
+            <div className="mt-5 grid grid-cols-1 md:grid-cols-4 gap-5">
+                <div className="col-span-1 md:col-span-1">
                     {/* <EmailSidebar /> */}
-                    {/* <Card style={{ backgroundColor: '#fff' }}>
-                        <Button style={{ backgroundColor: '#4880FF', color: 'white', display: 'block', width: '100%', padding: '10px' }}>+ Compose</Button>
-                        <h3 className="text-[1rem] text-[#202224] mt-5 font-semibold">My Email</h3>
-                        <ul role="list" className="mt-2 space-y-1">
-                            {inboxNavigation.map((navItem) => {
-                                const IconComponent = navItem.icon; // Get the icon component  
-
-                                return (
-                                    <li key={navItem.id}>
-                                        <Link
-                                            to={navItem.href}
-                                            className={classNames(
-                                                navItem.current
-                                                    ? 'bg-gray-50 text-[#4880FF]'
-                                                    : 'text-[#202224] hover:bg-gray-50 hover:text-[#4880FF]',
-                                                'group flex justify-between rounded-md p-2 text-sm font-normal leading-6',
-                                            )}
-                                        >
-                                            <span className="flex items-center">
-                                                <IconComponent
-                                                    aria-hidden="true"
-                                                    className={classNames(
-                                                        navItem.current ? 'text-[#4880FF]' : 'text-gray-400 group-hover:text-[#4880FF]',
-                                                        'h-6 w-6 mr-2' // Added margin for spacing  
-                                                    )}
-                                                />
-                                                {navItem.name}
-                                            </span>
-                                            <span>{navItem.count}</span>
-                                        </Link>
-                                    </li>
-                                )
-                            })}
-                        </ul>
-                        <h3 className="text-[1rem] text-[#202224] mt-5 mb-3 font-semibold">Label</h3>
-                        {
-                            labels.map((label, index) => (
-                                <div className="relative flex items-start ml-3 mb-3" key={index}>
-                                    <div className="flex h-6 items-center">
-                                        <input
-                                            id={label.name}
-                                            name="comments"
-                                            type="checkbox"
-                                            aria-describedby="comments-description"
-                                            className="h-4 w-4 rounded border"
-                                            style={{
-                                                borderColor: label.border,
-                                                accentColor: label.checked ? label.border : 'transparent', // For checked color  
-                                            }}
-                                        />
+                    <div className="sticky top-28">
+                        <Card style={{ backgroundColor: '#fff' }}>
+                            <Button style={{ backgroundColor: '#4880FF', color: 'white', display: 'block', width: '100%', padding: '10px' }}>+ Compose</Button>
+                            <h3 className="text-[1rem] text-[#202224] mt-5 font-semibold">My Email</h3>
+                            <ul role="list" className="mt-2 space-y-1">
+                                {inboxNavigation.map((navItem) => {
+                                    const IconComponent = navItem.icon; // Get the icon component  
+    
+                                    return (
+                                        <li key={navItem.id}>
+                                            <Link
+                                                to={navItem.href}
+                                                className={classNames(
+                                                    navItem.current
+                                                        ? 'bg-gray-50 text-[#4880FF]'
+                                                        : 'text-[#202224] hover:bg-gray-50 hover:text-[#4880FF]',
+                                                    'group flex justify-between rounded-md p-2 text-sm font-normal leading-6',
+                                                )}
+                                            >
+                                                <span className="flex items-center">
+                                                    <IconComponent
+                                                        aria-hidden="true"
+                                                        className={classNames(
+                                                            navItem.current ? 'text-[#4880FF]' : 'text-gray-400 group-hover:text-[#4880FF]',
+                                                            'h-6 w-6 mr-2' // Added margin for spacing  
+                                                        )}
+                                                    />
+                                                    {navItem.name}
+                                                </span>
+                                                <span>{navItem.count}</span>
+                                            </Link>
+                                        </li>
+                                    )
+                                })}
+                            </ul>
+                            <h3 className="text-[1rem] text-[#202224] mt-5 mb-3 font-semibold">Label</h3>
+                            {
+                                labels.map((label, index) => (
+                                    <div className="relative flex items-start ml-3 mb-3" key={index}>
+                                        <div className="flex h-6 items-center">
+                                            <input
+                                                id={label.name}
+                                                name="comments"
+                                                type="checkbox"
+                                                aria-describedby="comments-description"
+                                                className="h-4 w-4 rounded border"
+                                                style={{
+                                                    borderColor: label.border,
+                                                    accentColor: label.checked ? label.border : 'transparent', // For checked color  
+                                                }}
+                                            />
+                                        </div>
+                                        <div className="ml-3 text-sm leading-6">
+                                            <label htmlFor={label.name} className="font-normal text-[#202224]">
+                                                {label.name}
+                                            </label>
+                                        </div>
                                     </div>
-                                    <div className="ml-3 text-sm leading-6">
-                                        <label htmlFor={label.name} className="font-normal text-[#202224]">
-                                            {label.name}
-                                        </label>
-                                    </div>
-                                </div>
-                            ))
-                        }
-                    </Card> */}
+                                ))
+                            }
+                            <button
+                                className="text-[#202224] text-opacity-50 mt-5"
+                            >
+                                + Create New Label
+                            </button>
+                        </Card>
+                    </div>
                 </div>
-                {/* //fixme - change back to 2 */}
-                <div className="col-span-3">
+                <div className="col-span-1 md:col-span-3">
                     <Card style={{ backgroundColor: '#fff' }}>
                         <div className="flex items-center justify-between mb-10">
                             {/* //fixme - make component */}
-                            <div className="relative bg-[#F5F6FA] rounded-full">
+                            <div className="relative bg-[#F5F6FA] rounded-full w-1/2">
                                 <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                                     <MagnifyingGlassIcon aria-hidden="true" className="h-5 w-5 text-gray-400" />
                                 </div>
@@ -167,7 +173,7 @@ const Inbox = () => {
                                 </span>
                             </div>
                         </div> */}
-                        <EmailList/>
+                        <EmailList />
                     </Card>
                     <TablePagination />
                 </div>
