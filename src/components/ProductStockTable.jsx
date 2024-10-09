@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import Badge from "../ui/Badge";
 import { FaCircle } from "react-icons/fa";
 import ProductStockActionButton from "./ProductStockActionButtons";
 
@@ -47,7 +46,7 @@ export default function ProductStockTable({ header, data }) {
                                     {header.map((thead, colIndex) => (
                                         <td key={colIndex} className="whitespace-nowrap px-3 py-4 text-sm text-[#202224] sm:pl-0">
                                             {thead === 'image'
-                                                ? <img src={tableRow[thead]} alt={tableRow['image']} className="w-28" />
+                                                ? <img src={tableRow[thead]} alt={tableRow['image']} className="w-28 rounded-md" />
                                                 : thead === 'product name'
                                                     ? capitalizeWords(tableRow[headerMapping[thead]])
                                                     : thead === 'category'
