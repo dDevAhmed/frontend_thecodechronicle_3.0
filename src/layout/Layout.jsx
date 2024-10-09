@@ -52,7 +52,7 @@ const navigation = [
     { name: 'Products', href: '/products', icon: PiGridFour, current: false },
     { name: 'Favorites', href: '/favorites', icon: LiaHeart, current: false },
     { name: 'Inbox', href: '/inbox', icon: HiOutlineChatAlt2, current: false },
-    { name: 'Order Lists', href: '/order-list', icon: LiaListAlt, current: false },
+    { name: 'Order Lists', href: '/order-lists', icon: LiaListAlt, current: false },
     { name: 'Products Stock', href: 'product-stock', icon: PiSquareSplitVerticalLight, current: false },
 ]
 const pages = [

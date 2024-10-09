@@ -8,6 +8,7 @@ import Dashboard from '../pages/Dashboard'
 import Products from '../pages/Products'
 import Favorites from '../pages/Favorites'
 import Inbox from "../pages/Inbox"
+import OrderLists from "../pages/OrderLists"
 // import Student from '../features/students/Student';  
 // import Teacher from '../features/staffs/Teacher';  
 
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
                     {
                         path: 'inbox',
                         element: <Inbox />
+                    },
+                    {
+                        path: 'order-lists',
+                        element: <OrderLists />
                     },
                 ]
             },

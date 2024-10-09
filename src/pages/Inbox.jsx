@@ -54,8 +54,8 @@ const Inbox = () => {
                                                 to={navItem.href}
                                                 className={classNames(
                                                     navItem.current
-                                                        ? 'bg-gray-50 text-[#4880FF]'
-                                                        : 'text-[#202224] hover:bg-gray-50 hover:text-[#4880FF]',
+                                                        ? 'bg-gray-100 text-[#4880FF]'
+                                                        : 'text-[#202224] hover:bg-gray-100 hover:text-[#4880FF]',
                                                     'group flex justify-between rounded-md p-2 text-sm font-normal leading-6',
                                                 )}
                                             >

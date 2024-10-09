@@ -7,7 +7,7 @@ import { ResponsiveContainer, AreaChart, XAxis, YAxis, CartesianGrid, Tooltip, L
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 import Card from "../ui/Card"
 import Dropdown from "../ui/Dropdown";
-import BasicTable from "../components/BasicTable";
+import DashboardTable from "../components/DashboardTable";
 import FeaturedProductImage from '../assets/images/sony-screen.jpg'
 
 const dashboardData = [
@@ -116,6 +116,18 @@ const dashboardData = [
       {
         sales: 60,
         percentage: 10,
+      },
+    ]
+  },
+  {
+    products: [
+      {
+        productName: 'lindsay walton',
+        location: '6096 marjolaine landing',
+        datetime: '12.09.2019 - 12.53 PM',
+        piece: 423,
+        amount: 34295,
+        status: 'delivered'
       },
     ]
   },
@@ -261,7 +273,8 @@ const Dashboard = () => {
           <h3 className="text-[#202224] text-[1.125rem] font-semibold">Deals Details</h3>
           <Dropdown />
         </span>
-        <BasicTable />
+        <DashboardTable header={['product name', 'location', 'date - time', 'piece', 'amount', 'status']} data={dashboardData[2]?.products || []} />
+
       </Card>
       <ResponsiveContainer width="100%">
         <Card style={{ backgroundColor: '#fff', marginTop: '20px' }}>
