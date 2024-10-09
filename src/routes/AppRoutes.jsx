@@ -9,6 +9,7 @@ import Products from '../pages/Products'
 import Favorites from '../pages/Favorites'
 import Inbox from "../pages/Inbox"
 import OrderLists from "../pages/OrderLists"
+import ProductStock from "../pages/ProductStock"
 // import Student from '../features/students/Student';  
 // import Teacher from '../features/staffs/Teacher';  
 
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
                     {
                         path: 'order-lists',
                         element: <OrderLists />
+                    },
+                    {
+                        path: 'product-stock',
+                        element: <ProductStock />
                     },
                 ]
             },

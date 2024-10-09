@@ -122,7 +122,8 @@ const dashboardData = [
   {
     products: [
       {
-        productName: 'lindsay walton',
+        image: '/src/assets/images/products/product-9.jpg',
+        productName: 'apple watch',
         location: '6096 marjolaine landing',
         datetime: '12.09.2019 - 12.53 PM',
         piece: 423,
@@ -273,8 +274,7 @@ const Dashboard = () => {
           <h3 className="text-[#202224] text-[1.125rem] font-semibold">Deals Details</h3>
           <Dropdown />
         </span>
-        <DashboardTable header={['product name', 'location', 'date - time', 'piece', 'amount', 'status']} data={dashboardData[2]?.products || []} />
-
+        <DashboardTable header={['image', 'product name', 'location', 'date - time', 'piece', 'amount', 'status']} data={dashboardData[2]?.products || []} />
       </Card>
       <ResponsiveContainer width="100%">
         <Card style={{ backgroundColor: '#fff', marginTop: '20px' }}>

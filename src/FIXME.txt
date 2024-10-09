@@ -18,3 +18,7 @@
 1. set the cursor pointer for the label checkboxes
 
 ---GEN
+
+
+---STORE
+1. create a map for the pages name to dynamically render on page title

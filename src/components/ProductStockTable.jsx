@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import Badge from "../ui/Badge";
 
-export default function OrdersTable({ header, data }) {
+export default function ProductStockTable({ header, data }) {
     if (!Array.isArray(data)) {
         return <div>No data available</div>; // Handle the no data case gracefully  
     }

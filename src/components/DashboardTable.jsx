@@ -14,6 +14,7 @@ export default function DashboardTable({ header, data }) {
     };
 
     const headerMapping = {
+        'image': 'image',
         'product name': 'productName',
         'location': 'location',
         'date - time': 'datetime',
@@ -23,10 +24,10 @@ export default function DashboardTable({ header, data }) {
     };
 
     return (
-        <div className="px-4 sm:px-6 lg:px-8">
+        <div className="px-4 sm:px-6">
             <div className="mt-8 flow-root">
                 <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                    <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+                    <div className="inline-block min-w-full py-2 align-middle sm:px-6">
                         <table className="min-w-full divide-y divide-gray-300">
                             {/* //fixme - rounded padding */}
                             <thead className="bg-[#F1F4F9]">
@@ -43,15 +44,17 @@ export default function DashboardTable({ header, data }) {
                                     <tr key={rowIndex}>
                                         {header.map((thead, colIndex) => (
                                             <td key={colIndex} className="whitespace-nowrap px-3 py-4 text-sm text-[#202224] sm:pl-0">
-                                                {thead === 'product name'
-                                                    ? capitalizeWords(tableRow[headerMapping[thead]])
-                                                    : thead === 'location'
+                                                {thead === 'image'
+                                                    ? <img src={tableRow[thead] } alt={tableRow['product name'] } className="w-20" />
+                                                    : thead === 'product name'
                                                         ? capitalizeWords(tableRow[headerMapping[thead]])
-                                                        : thead === 'amount'
-                                                            ? tableRow[headerMapping[thead]]?.toLocaleString()
-                                                            : thead === 'status'
-                                                                ? <Pill title={tableRow[headerMapping[thead]]} />
-                                                                : tableRow[headerMapping[thead]]
+                                                        : thead === 'location'
+                                                            ? capitalizeWords(tableRow[headerMapping[thead]])
+                                                            : thead === 'amount'
+                                                                ? tableRow[headerMapping[thead]]?.toLocaleString()
+                                                                : thead === 'status'
+                                                                    ? <Pill title={tableRow[headerMapping[thead]]} />
+                                                                    : tableRow[headerMapping[thead]]
                                                 }
                                             </td>
                                         ))}

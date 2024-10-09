@@ -1,5 +1,7 @@
-/* eslint-disable react/prop-types */
-import OrdersTable from "./OrdersTable";
+import Card from "../ui/Card"
+import Filter from "../components/Filter";
+import TablePagination from "../components/TablePagination";
+import ProductStockTable from "../components/ProductStockTable";
 
 const orderListsData = [
   {
@@ -148,20 +150,22 @@ const orderListsData = [
   },
 ];
 
-const EmailList = () => {
-
+const ProductStock = () => {
   return (
     <>
-      <div className="email-list-container flex-grow overflow-hidden">
-        <div className="">
-            <OrdersTable
-              header={['id', 'name', 'address', 'date', 'type', 'status']}
-              data={orderListsData}
-            />
-        </div>
-      </div>
-    </>
-  );
-};
+      {/* //fixme - make dynamic */}
+      <h3 className="text-[1.5rem] font-semibold text-[#202224]">Product Stock</h3>
+      <div className="mt-5"><Filter /></div>
 
-export default EmailList;
+      <Card style={{ backgroundColor: '#fff', display: 'relative', marginTop: '20px' }}>
+        <ProductStockTable
+          header={['image', 'product name', 'category', 'price', 'available color', 'action']}
+          data={orderListsData}
+        />
+      </Card>
+      <TablePagination />
+    </>
+  )
+}
+
+export default ProductStock
