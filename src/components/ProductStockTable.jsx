@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 import Badge from "../ui/Badge";
+import { LuTrash2 } from "react-icons/lu";
+import { FaRegPenToSquare } from "react-icons/fa6";
 
 export default function ProductStockTable({ header, data }) {
     if (!Array.isArray(data)) {

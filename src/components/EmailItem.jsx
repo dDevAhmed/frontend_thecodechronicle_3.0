@@ -3,7 +3,6 @@ import { Star } from "lucide-react";
 
 const EmailItem = ({
     email,
-
 }) => (
     <div
         // onClick={() => onClick(email)}

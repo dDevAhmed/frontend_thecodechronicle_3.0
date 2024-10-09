@@ -45,7 +45,7 @@ export default function DashboardTable({ header, data }) {
                                         {header.map((thead, colIndex) => (
                                             <td key={colIndex} className="whitespace-nowrap px-3 py-4 text-sm text-[#202224] sm:pl-0">
                                                 {thead === 'image'
-                                                    ? <img src={tableRow[thead] } alt={tableRow['product name'] } className="w-20" />
+                                                    ? <img src={tableRow[thead]} alt={tableRow['product name']} className="w-20" />
                                                     : thead === 'product name'
                                                         ? capitalizeWords(tableRow[headerMapping[thead]])
                                                         : thead === 'location'
