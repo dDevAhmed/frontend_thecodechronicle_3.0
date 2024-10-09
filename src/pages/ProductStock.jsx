@@ -1,12 +1,12 @@
+import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import Card from "../ui/Card"
 import TablePagination from "../components/TablePagination";
 import ProductStockTable from "../components/ProductStockTable";
-import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import PagesTitle from "../components/PagesTitle";
 
 const productStockData = [
   {
-    image: '../assets/images/products/product-9.jpg',
+    image: '/src/assets/images/products/product-9.jpg',
     productName: "Apple Watch Series 4",
     category: "digital product",
     price: 690.00,
@@ -67,8 +67,8 @@ const ProductStock = () => {
   return (
     <>
       <div className="flex items-center justify-between">
-        {/* <h3 className="text-[1.5rem] font-semibold text-[#202224]">Product Stock</h3> */}
         <PagesTitle />
+
         {/* //fixme - make component */}
         <div className="relative bg-white rounded-full w-fit">
           <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">

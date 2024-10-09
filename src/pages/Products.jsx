@@ -4,27 +4,25 @@ import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 import Card from "../ui/Card"
 import Pattern1 from '../assets/images/pattern_1.png'
 import Button from "../ui/Button"
-import AppleSmartKeyboard from '../assets/images/products/product-6.jpg'
-import CanonCamera from '../assets/images/products/product-5.jpg'
-import MacBookPro from '../assets/images/products/product-11.jpg'
+import PagesTitle from "../components/PagesTitle";
 
 const products = [
   {
-    image: AppleSmartKeyboard,
+    image: '/src/assets/images/products/product-6.jpg',
     name: 'Apple Smart Keyboard',
     price: '179.99',
     rating: 4,
     reviewCount: 10
   },
   {
-    image: CanonCamera,
+    image: '/src/assets/images/products/product-5.jpg',
     name: 'Canon - EOS 5D Mark IV DSLR Camera',
     price: '3599.99',
     rating: 4,
     reviewCount: 15
   },
   {
-    image: MacBookPro,
+    image: '/src/assets/images/products/product-11.jpg',
     name: 'MacBook Pro 13" Display, i5',
     price: '1199.99',
     rating: 3,
@@ -35,11 +33,12 @@ const products = [
 const Products = () => {
   return (
     <>
-      {/* //fixme - h3-enjoy resize */}
-      <h3 className="text-[1.5rem] font-semibold text-[#202224]">Products</h3>
+      <PagesTitle />
+
       <Card style={{ backgroundImage: `url(${Pattern1})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundColor: '#4880FF', color: 'white', marginTop: '20px', position: 'relative' }}>
         <div className="px-20">
           <p className="text-[.75rem]">September 12-22</p>
+          {/* //fixme - h3-enjoy resize */}
           <h3 className="text-[1.5rem] font-semibold mt-1 ">Enjoy free home delivery this summer</h3>
           <p className="text-[.75rem] mt-1">Designer Dresses - Pick from trendy Designer Dress.</p>
           <Button style={{ backgroundColor: '#FF8743', color: 'white', marginTop: '20px' }}>Get Started</Button>

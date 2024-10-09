@@ -13,7 +13,7 @@ const PagesTitle = () => {
         'order-lists': 'order lists', 
         'product-stock': 'product stock' 
     };  
-
+ 
     const pageTitle = pageTitlesMap[currentPage] || 'Page Not Found';  
 
     const capitalizeWords = (str) => {  

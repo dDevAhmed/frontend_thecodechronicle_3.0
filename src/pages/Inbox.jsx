@@ -11,6 +11,7 @@ import Button from "../ui/Button"
 import Card from "../ui/Card"
 import EmailList from "../components/EmailList";
 import TablePagination from "../components/TablePagination";
+import PagesTitle from "../components/PagesTitle";
 
 const inboxNavigation = [
     { id: 1, name: 'Inbox', href: '#', icon: MdMailOutline, count: 1253, current: true },
@@ -36,7 +37,8 @@ function classNames(...classes) {
 const Inbox = () => {
     return (
         <>
-            <h3 className="text-[1.5rem] font-semibold text-[#202224]">Inbox</h3>
+            <PagesTitle />
+
             <div className="mt-5 grid grid-cols-1 md:grid-cols-4 gap-5">
                 <div className="col-span-1 md:col-span-1">
                     {/* <EmailSidebar /> */}

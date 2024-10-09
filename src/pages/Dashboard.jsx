@@ -9,6 +9,7 @@ import Card from "../ui/Card"
 import Dropdown from "../ui/Dropdown";
 import DashboardTable from "../components/DashboardTable";
 import FeaturedProductImage from '../assets/images/sony-screen.jpg'
+import PagesTitle from "../components/PagesTitle";
 
 const dashboardData = [
   {
@@ -213,7 +214,8 @@ const dashboardData = [
 const Dashboard = () => {
   return (
     <>
-      <h3 className="text-[1.5rem] font-semibold text-[#202224]">Dashboard</h3>
+      <PagesTitle />
+
       <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mt-5">
         {dashboardData[0].stats.map((stat, index) => (
           <Card key={index} style={{ backgroundColor: '#fff' }}>
