@@ -14,7 +14,7 @@ const PagesTitle = () => {
         'product-stock': 'product stock',
         'pricing': 'pricing', 
         'calendar': 'calendar', 
-        'todo': 'todo', 
+        'todo': 'to-do lists', 
         'contact': 'contact', 
         'invoice': 'invoice', 
         'ui-elements': 'ui elements', 

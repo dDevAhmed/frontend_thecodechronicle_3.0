@@ -42,6 +42,7 @@ const Inbox = () => {
             <div className="mt-5 grid grid-cols-1 md:grid-cols-4 gap-5">
                 <div className="col-span-1 md:col-span-1">
                     {/* <EmailSidebar /> */}
+                    {/* //fixme - make component */}
                     <div className="sticky top-28">
                         <Card style={{ backgroundColor: '#fff' }}>
                             <Button style={{ backgroundColor: '#4880FF', color: 'white', display: 'block', width: '100%', padding: '10px' }}>+ Compose</Button>

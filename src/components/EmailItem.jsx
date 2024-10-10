@@ -27,7 +27,7 @@ const EmailItem = ({
             />
         )}
         <div className="flex-1 grid grid-cols-5">
-            <span className="col-span-4 flex-col items-start md:grid md:grid-cols-5">
+            <span className="col-span-4 flex-col items-center md:grid md:grid-cols-5">
                 <span className="font-semibold text-[#202224] md:col-span-1 mr-5">{email.sender}</span>
                 <span className="md:col-span-4 flex items-center justify-star">
                     {email.label && (

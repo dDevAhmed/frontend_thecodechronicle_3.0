@@ -53,7 +53,7 @@ const navigation = [
     { name: 'Favorites', href: '/favorites', icon: LiaHeart, current: false },
     { name: 'Inbox', href: '/inbox', icon: HiOutlineChatAlt2, current: false },
     { name: 'Order Lists', href: '/order-lists', icon: LiaListAlt, current: false },
-    { name: 'Products Stock', href: 'product-stock', icon: PiSquareSplitVerticalLight, current: false },
+    { name: 'Products Stock', href: '/product-stock', icon: PiSquareSplitVerticalLight, current: false },
 ]
 const pages = [
     { id: 1, name: 'Pricing', href: '/pricing', icon: LiaGiftSolid, current: false },

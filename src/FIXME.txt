@@ -20,7 +20,7 @@
 ---GEN
 capitalize function
 fix button, card custom props
-
+change the favorite star
 
 ---STORE
 1. create a map for the pages name to dynamically render on page title
