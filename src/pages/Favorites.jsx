@@ -74,12 +74,12 @@ const products = [
 const Favorites = () => {
   return (
     <>
-        <PagesTitle />
+      <PagesTitle />
 
-        <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5">
         {
           products.map((product, index) => (
-            <Card key={index} style={{ backgroundColor: '#fff', display: 'relative' }}>
+            <Card key={index} classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff', display: 'relative' }}>
               <span className="relative">
                 <IoMdHeartEmpty className="absolute right-0 cursor-pointer" />
                 <img src={product.image} alt="Product Image" className="m-auto h-40" />
@@ -89,7 +89,7 @@ const Favorites = () => {
                 </span>
               </span>
               {/* //fixme - flex out as in col, make component */}
-              <span className="flex flex-col justify-between">
+              <span className="flex flex-col justify-between h-[9.375rem]">
                 <p className="text-[#202224] text-[1.125rem] font-medium">{product.name}</p>
                 <span>
                   <p className="text-[#4880FF] text-[.75rem] mt-2">${product.price}</p>

@@ -44,7 +44,7 @@ const Inbox = () => {
                     {/* <EmailSidebar /> */}
                     {/* //fixme - make component */}
                     <div className="sticky top-28">
-                        <Card style={{ backgroundColor: '#fff' }}>
+                        <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff' }}>
                             <Button style={{ backgroundColor: '#4880FF', color: 'white', display: 'block', width: '100%', padding: '10px' }}>+ Compose</Button>
                             <h3 className="text-[1rem] text-[#202224] mt-5 font-semibold">My Email</h3>
                             <ul role="list" className="mt-2 space-y-1">
@@ -112,7 +112,7 @@ const Inbox = () => {
                     </div>
                 </div>
                 <div className="col-span-1 md:col-span-3">
-                    <Card style={{ backgroundColor: '#fff' }}>
+                    <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff' }}>
                         <div className="flex items-center justify-between mb-10">
                             {/* //fixme - make component */}
                             <div className="relative bg-[#F5F6FA] rounded-full w-1/2">

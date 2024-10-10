@@ -218,7 +218,7 @@ const Dashboard = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mt-5">
         {dashboardData[0].stats.map((stat, index) => (
-          <Card key={index} style={{ backgroundColor: '#fff' }}>
+          <Card key={index} classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff' }}>
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-[#202224] font-normal">{stat.title}</p>
@@ -247,7 +247,7 @@ const Dashboard = () => {
         ))}
       </div>
       <ResponsiveContainer>
-        <Card style={{ backgroundColor: '#fff', marginTop: '20px' }}>
+        <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff', marginTop: '20px' }}>
           <span className="flex items-center justify-between  mb-5">
             <h3 className="text-[#202224] text-[1.125rem] font-semibold">Sales Details</h3>
             <Dropdown />
@@ -271,7 +271,7 @@ const Dashboard = () => {
           </AreaChart>
         </Card>
       </ResponsiveContainer>
-      <Card style={{ backgroundColor: '#fff', marginTop: '20px' }}>
+      <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff', marginTop: '20px' }}>
         <span className="flex items-center justify-between  mb-5">
           <h3 className="text-[#202224] text-[1.125rem] font-semibold">Deals Details</h3>
           <Dropdown />
@@ -279,7 +279,7 @@ const Dashboard = () => {
         <DashboardTable header={['image', 'product name', 'location', 'date - time', 'piece', 'amount', 'status']} data={dashboardData[2]?.products || []} />
       </Card>
       <ResponsiveContainer width="100%">
-        <Card style={{ backgroundColor: '#fff', marginTop: '20px' }}>
+        <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff', marginTop: '20px' }}>
           <span className="flex items-center justify-between  mb-5">
             <h3 className="text-[#202224] text-[1.125rem] font-semibold">Revenue</h3>
             <Dropdown />
@@ -309,14 +309,14 @@ const Dashboard = () => {
         </Card>
       </ResponsiveContainer>
       <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5">
-        <Card style={{ backgroundColor: '#fff' }}>
+        <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff' }}>
           <h3 className="text-[#202224] text-[1.125rem] font-semibold">Customers</h3>
           <PieChart width={900} height={250}>
             <Pie data={dashboardData[1]} dataKey="sales" nameKey="name" cx="50%" cy="50%" outerRadius={50} fill="#8884d8" />
             <Pie data={dashboardData[1]} dataKey="sales" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label />
           </PieChart>
         </Card>
-        <Card style={{ backgroundColor: '#fff' }}>
+        <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff' }}>
           <h3 className="text-[#202224] text-[1.125rem] font-semibold">Featured Product</h3>
           <span className="relative">
             <img src={FeaturedProductImage} alt="Feature Product" className="m-auto h-40" />
@@ -330,7 +330,7 @@ const Dashboard = () => {
             <p className="text-[#4880FF] text-[.75rem]">$1750</p>
           </span>
         </Card>
-        <Card style={{ backgroundColor: '#fff' }}>
+        <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff' }}>
           <h3 className="text-[#202224] text-[1.125rem] font-semibold">Sales Analytics</h3>
           <PieChart width={900} height={250}>
             <Pie data={dashboardData[1]} dataKey="sales" nameKey="name" cx="50%" cy="50%" outerRadius={50} fill="#8884d8" />

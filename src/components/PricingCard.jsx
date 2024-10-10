@@ -13,7 +13,7 @@ const PricingCard = ({ pricing }) => {
     };
 
     return (
-        <Card style={{ backgroundColor: '#fff', borderRadius: '30px' }}>
+        <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff', borderRadius: '30px' }}>
             <div className='flex flex-col gap-5'>
                 {/* top section */}
                 {/* //fixme - use items-center text-center in the parent folder */}

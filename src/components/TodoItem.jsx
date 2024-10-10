@@ -11,7 +11,7 @@ const TodoItem = ({ todo }) => {
                     //   onChange={() => toggleEmailSelection(email.id)}
                     className="mr-5 bg-inherit text-[#D5D5D5] h-5 w-5"
                 />
-                <p>{todo.content}</p>
+                <p className="text-[#2E2E2E]">{todo.content}</p>
             </div>
             <div className="flex items-center">
                 {todo.isStarred ? (

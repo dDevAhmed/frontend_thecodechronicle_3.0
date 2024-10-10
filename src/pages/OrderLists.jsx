@@ -158,7 +158,7 @@ const OrderLists = () => {
 
       <div className="mt-5"><Filter /></div>
 
-      <Card style={{ backgroundColor: '#fff', display: 'relative', marginTop: '20px' }}>
+      <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff', display: 'relative', marginTop: '20px' }}>
         <OrdersTable
           header={['id', 'name', 'address', 'date', 'type', 'status']}
           data={orderListsData}

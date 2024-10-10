@@ -37,7 +37,7 @@ const Todo = () => {
 
       <div className="mt-5">
         {todoData.map((todo, index) => (
-          <Card key={index} style={{ backgroundColor: '#ffffff', marginBottom: '20px' }}>
+          <Card classNames={'px-4 py-5 sm:p-6'} key={index} style={{ backgroundColor: '#ffffff', marginBottom: '20px' }}>
             <TodoItem todo={todo}/>
           </Card>
         ))}

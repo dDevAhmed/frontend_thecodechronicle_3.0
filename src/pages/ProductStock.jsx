@@ -84,7 +84,7 @@ const ProductStock = () => {
         </div>
       </div>
 
-      <Card style={{ backgroundColor: '#fff', display: 'relative', marginTop: '20px' }}>
+      <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff', display: 'relative', marginTop: '20px' }}>
         <ProductStockTable
           header={['image', 'product name', 'category', 'price', 'available color', 'action']}
           data={productStockData}
