@@ -10,8 +10,8 @@ const pricingData = [
     },
     center: {
       freeSetup: true,
-      bandwidth: true,
-      connection: true,
+      bandwidth: 10,
+      connection: 20,
       analytics: false,
       publicApi: false,
       plugins: false, 
@@ -30,8 +30,8 @@ const pricingData = [
     },
     center: {
       freeSetup: true,
-      bandwidth: true,
-      connection: true,
+      bandwidth: 10,
+      connection: 20,
       analytics: true,
       publicApi: true,
       plugins: false, 
@@ -50,8 +50,8 @@ const pricingData = [
     },
     center: {
       freeSetup: true,
-      bandwidth: true,
-      connection: true,
+      bandwidth: 10,
+      connection: 20,
       analytics: true,
       publicApi: true,
       plugins: true, 
@@ -69,7 +69,7 @@ const Dashboard = () => {
     <>
       <PagesTitle />
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mt-5">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-5">
         {pricingData.map((pricing, index) => (
           <PricingCard key={index}  pricing={pricing}/>
         ))}

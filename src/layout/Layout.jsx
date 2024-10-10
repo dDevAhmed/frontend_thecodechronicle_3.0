@@ -56,14 +56,14 @@ const navigation = [
     { name: 'Products Stock', href: 'product-stock', icon: PiSquareSplitVerticalLight, current: false },
 ]
 const pages = [
-    { id: 1, name: 'Pricing', href: '#', icon: LiaGiftSolid, current: false },
-    { id: 2, name: 'Calendar', href: '#', icon: LiaCalendar, current: false },
-    { id: 3, name: 'To-Do', href: '#', icon: LiaClipboard, current: false },
-    { id: 4, name: 'Contact', href: '#', icon: LiaUserFriendsSolid, current: false },
-    { id: 5, name: 'Invoice', href: '#', icon: FaRegMoneyBillAlt, current: false },
-    { id: 6, name: 'UI Elements', href: '#', icon: SlChart, current: false },
-    { id: 7, name: 'Team', href: '#', icon: LiaUserSolid, current: false },
-    { id: 8, name: 'Table', href: '#', icon: LiaTableSolid, current: false },
+    { id: 1, name: 'Pricing', href: '/pricing', icon: LiaGiftSolid, current: false },
+    { id: 2, name: 'Calendar', href: '/calendar', icon: LiaCalendar, current: false },
+    { id: 3, name: 'To-Do', href: '/todo', icon: LiaClipboard, current: false },
+    { id: 4, name: 'Contact', href: '/contact', icon: LiaUserFriendsSolid, current: false },
+    { id: 5, name: 'Invoice', href: '/invoice', icon: FaRegMoneyBillAlt, current: false },
+    { id: 6, name: 'UI Elements', href: '/ui-elements', icon: SlChart, current: false },
+    { id: 7, name: 'Team', href: '/team', icon: LiaUserSolid, current: false },
+    { id: 8, name: 'Table', href: '/table', icon: LiaTableSolid, current: false },
 ]
 const bottomNavigation = [
     { name: 'Settings', href: '#', icon: LiaCogSolid, current: false },
@@ -246,20 +246,19 @@ export default function Layout() {
                                     <ul role="list" className="-mx-2 mt-2 space-y-1">
                                         {pages.map((item) => (
                                             <li key={item.name}>
-                                                {/* //fixme - check refresh state */}
                                                 <Link
                                                     to={item.href}
                                                     className={classNames(
-                                                        item.current
+                                                        location.pathname === item.href
                                                             ? 'bg-[#4880FF] text-[#fff]'
-                                                            : 'text-[#202224] hover:bg-gray-50 hover:text-[#4880FF]',
+                                                            : 'text-[#202224] hover:bg-gray-100 hover:text-[#4880FF]',
                                                         'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6',
                                                     )}
                                                 >
                                                     <item.icon
                                                         aria-hidden="true"
                                                         className={classNames(
-                                                            item.current ? 'text-[#fff]' : 'text-[#202224] group-hover:text-[#4880FF]',
+                                                            location.pathname === item.href ? 'text-[#fff]' : 'text-[#202224] group-hover:text-[#4880FF]',
                                                             'h-6 w-6 shrink-0',
                                                         )}
                                                     />
@@ -276,16 +275,16 @@ export default function Layout() {
                                                 <Link
                                                     to={item.href}
                                                     className={classNames(
-                                                        item.current
+                                                        location.pathname === item.href
                                                             ? 'bg-[#4880FF] text-[#fff]'
-                                                            : 'text-[#202224] hover:bg-gray-50 hover:text-[#4880FF]',
+                                                            : 'text-[#202224] hover:bg-gray-100 hover:text-[#4880FF]',
                                                         'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6',
                                                     )}
                                                 >
                                                     <item.icon
                                                         aria-hidden="true"
                                                         className={classNames(
-                                                            item.current ? 'text-[#fff]' : 'text-[#202224] group-hover:text-[#4880FF]',
+                                                            location.pathname === item.href ? 'text-[#fff]' : 'text-[#202224] group-hover:text-[#4880FF]',
                                                             'h-6 w-6 shrink-0',
                                                         )}
                                                     />

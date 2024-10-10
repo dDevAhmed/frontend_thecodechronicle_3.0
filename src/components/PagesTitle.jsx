@@ -11,7 +11,15 @@ const PagesTitle = () => {
         'favorites': 'favorites',  
         'inbox': 'inbox',  
         'order-lists': 'order lists', 
-        'product-stock': 'product stock' 
+        'product-stock': 'product stock',
+        'pricing': 'pricing', 
+        'calendar': 'calendar', 
+        'todo': 'todo', 
+        'contact': 'contact', 
+        'invoice': 'invoice', 
+        'ui-elements': 'ui elements', 
+        'team': 'team', 
+        'table': 'table', 
     };  
  
     const pageTitle = pageTitlesMap[currentPage] || 'Page Not Found';  

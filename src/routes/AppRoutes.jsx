@@ -58,6 +58,34 @@ const router = createBrowserRouter([
                         path: 'pricing',
                         element: <Pricing />
                     },
+                    {
+                        path: 'calendar',
+                        element: <Pricing />
+                    },
+                    {
+                        path: 'todo',
+                        element: <Pricing />
+                    },
+                    {
+                        path: 'contact',
+                        element: <Pricing />
+                    },
+                    {
+                        path: 'invoice',
+                        element: <Pricing />
+                    },
+                    {
+                        path: 'ui-elements',
+                        element: <Pricing />
+                    },
+                    {
+                        path: 'team',
+                        element: <Pricing />
+                    },
+                    {
+                        path: 'table',
+                        element: <Pricing />
+                    },
                 ]
             },
         ]

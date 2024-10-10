@@ -18,6 +18,8 @@
 1. set the cursor pointer for the label checkboxes
 
 ---GEN
+capitalize function
+fix button, card custom props
 
 
 ---STORE
