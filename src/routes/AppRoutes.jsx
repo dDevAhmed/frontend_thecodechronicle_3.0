@@ -15,6 +15,7 @@ import Todo from "../pages/Todo"
 import Contact from "../pages/Contact"
 import Invoice from "../pages/Invoice"
 import Team from "../pages/Team"
+import Table from "../pages/Table"
 // import Student from '../features/students/Student';  
 // import Teacher from '../features/staffs/Teacher';  
 
@@ -88,7 +89,7 @@ const router = createBrowserRouter([
                     },
                     {
                         path: 'table',
-                        element: <Pricing />
+                        element: <Table />
                     },
                 ]
             },
