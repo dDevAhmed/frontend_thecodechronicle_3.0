@@ -36,7 +36,7 @@ const contact = [
   },
 ]
 
-const Favorites = () => {
+const Contact = () => {
   return (
     <>
       <PagesTitle />
@@ -45,7 +45,7 @@ const Favorites = () => {
         {
           contact.map((contact, index) => (
             <Card key={index} style={{ backgroundColor: '#fff', display: 'relative', padding: 'none' }}>
-              <img src={contact.image} alt='contact image' className="mb-5"/>
+              <img src={contact.image} alt='contact image' className="mb-5 w-full"/>
               <span className="text-center">
                 <p className="text-[#202224] font-medium">{contact.name}</p>
                 <p className="text-[#202224] text-opacity-50 text-[.875rem]">{contact.email}</p>
@@ -59,4 +59,4 @@ const Favorites = () => {
   )
 }
 
-export default Favorites
+export default Contact

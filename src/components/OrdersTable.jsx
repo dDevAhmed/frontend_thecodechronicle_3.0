@@ -20,9 +20,9 @@ export default function OrdersTable({ header, data }) {
                     <table className="min-w-full divide-y divide-gray-300">
                         {/* //fixme - rounded padding */}
                         <thead className="">
-                            <tr>
+                            <tr className="bg-[#FCFDFD]">
                                 {header.map((thead, index) => (
-                                    <th key={index} scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                                    <th key={index} scope="col" className="py-3.5 text-left text-sm font-semibold text-gray-900">
                                         {capitalizeWords(thead)}
                                     </th>
                                 ))}
@@ -32,7 +32,7 @@ export default function OrdersTable({ header, data }) {
                             {data.map((tableRow, rowIndex) => (
                                 <tr key={rowIndex}>
                                     {header.map((thead, colIndex) => (
-                                        <td key={colIndex} className="whitespace-nowrap px-3 py-4 text-sm text-[#202224] sm:pl-0">
+                                        <td key={colIndex} className="whitespace-nowrap px-3 py-4 text-sm text-[#202224] sm:pl-0 text-left">
                                             {thead === 'name'
                                                 ? capitalizeWords(tableRow[thead])
                                                 : thead === 'address'

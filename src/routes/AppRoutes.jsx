@@ -13,6 +13,7 @@ import ProductStock from "../pages/ProductStock"
 import Pricing from "../pages/Pricing"
 import Todo from "../pages/Todo"
 import Contact from "../pages/Contact"
+import Invoice from "../pages/Invoice"
 // import Student from '../features/students/Student';  
 // import Teacher from '../features/staffs/Teacher';  
 
@@ -74,7 +75,7 @@ const router = createBrowserRouter([
                     },
                     {
                         path: 'invoice',
-                        element: <Pricing />
+                        element: <Invoice />
                     },
                     {
                         path: 'ui-elements',

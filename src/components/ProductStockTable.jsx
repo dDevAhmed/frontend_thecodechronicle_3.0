@@ -34,7 +34,7 @@ export default function ProductStockTable({ header, data }) {
                         <thead className="">
                             <tr>
                                 {header.map((thead, index) => (
-                                    <th key={index} scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                                    <th key={index} scope="col" className="py-3.5 text-left text-sm font-semibold text-gray-900">
                                         {capitalizeWords(thead)} {/* Capitalize header titles */}
                                     </th>
                                 ))}
@@ -44,7 +44,7 @@ export default function ProductStockTable({ header, data }) {
                             {data.map((tableRow, rowIndex) => (
                                 <tr key={rowIndex}>
                                     {header.map((thead, colIndex) => (
-                                        <td key={colIndex} className="whitespace-nowrap px-3 py-4 text-sm text-[#202224] sm:pl-0">
+                                        <td key={colIndex} className="whitespace-nowrap px-3 py-4 text-sm text-[#202224] sm:pl-0 text-left">
                                             {thead === 'image'
                                                 ? <img src={tableRow[thead]} alt={tableRow['image']} className="w-28 rounded-md" />
                                                 : thead === 'product name'

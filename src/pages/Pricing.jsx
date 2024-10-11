@@ -64,7 +64,7 @@ const pricingData = [
   },
 ]
 
-const Dashboard = () => {
+const Pricing = () => {
   return (
     <>
       <PagesTitle />
@@ -78,4 +78,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default Pricing

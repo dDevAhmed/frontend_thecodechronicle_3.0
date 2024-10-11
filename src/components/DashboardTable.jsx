@@ -33,8 +33,8 @@ export default function DashboardTable({ header, data }) {
                             <thead className="bg-[#F1F4F9]">
                                 <tr>
                                     {header.map((thead, index) => (
-                                        <th key={index} scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                                            {capitalizeWords(thead)} {/* Capitalize header titles */}
+                                        <th key={index} scope="col" className="py-3.5 text-left text-sm font-semibold text-gray-900">
+                                            {capitalizeWords(thead)}
                                         </th>
                                     ))}
                                 </tr>
@@ -43,7 +43,7 @@ export default function DashboardTable({ header, data }) {
                                 {data.map((tableRow, rowIndex) => (
                                     <tr key={rowIndex}>
                                         {header.map((thead, colIndex) => (
-                                            <td key={colIndex} className="whitespace-nowrap px-3 py-4 text-sm text-[#202224] sm:pl-0">
+                                            <td key={colIndex} className="whitespace-nowrap px-3 py-4 text-sm text-[#202224] sm:pl-0 text-left">
                                                 {thead === 'image'
                                                     ? <img src={tableRow[thead]} alt={tableRow['product name']} className="w-20" />
                                                     : thead === 'product name'
