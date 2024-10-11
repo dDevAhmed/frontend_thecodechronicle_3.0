@@ -8,7 +8,7 @@ import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 import Card from "../ui/Card"
 import Dropdown from "../ui/Dropdown";
 import DashboardTable from "../components/DashboardTable";
-import FeaturedProductImage from '../assets/images/sony-screen.jpg'
+import FeaturedProductImage from '../assets/images/products/product-10.jpg'
 import PagesTitle from "../components/PagesTitle";
 
 const dashboardData = [
@@ -247,7 +247,7 @@ const Dashboard = () => {
         ))}
       </div>
       <ResponsiveContainer>
-        <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff', marginTop: '20px' }}>
+        <Card classNames={'px-4 py-5 sm:p-6 mt'} style={{ backgroundColor: '#fff', marginTop: '20px' }}>
           <span className="flex items-center justify-between  mb-5">
             <h3 className="text-[#202224] text-[1.125rem] font-semibold">Sales Details</h3>
             <Dropdown />
@@ -317,7 +317,7 @@ const Dashboard = () => {
           </PieChart>
         </Card>
         <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff' }}>
-          <h3 className="text-[#202224] text-[1.125rem] font-semibold">Featured Product</h3>
+          <h3 className="text-[#202224] text-[22px] font-semibold">Featured Product</h3>
           <span className="relative">
             <img src={FeaturedProductImage} alt="Feature Product" className="m-auto h-40" />
             <span className="absolute top-1/2 left-0 right-0 flex items-center justify-between transform -translate-y-1/2">
@@ -326,8 +326,8 @@ const Dashboard = () => {
             </span>
           </span>
           <span className="text-center mt-5">
-            <p className="text-[#282D32]">Sony 4k Screen</p>
-            <p className="text-[#4880FF] text-[.75rem]">$1750</p>
+            <p className="text-[#282D32] font-medium text-[1.125rem]">Sony 4k Screen</p>
+            <p className="text-[#4880FF]">$1750</p>
           </span>
         </Card>
         <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff' }}>

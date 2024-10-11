@@ -14,6 +14,7 @@ import Pricing from "../pages/Pricing"
 import Todo from "../pages/Todo"
 import Contact from "../pages/Contact"
 import Invoice from "../pages/Invoice"
+import Team from "../pages/Team"
 // import Student from '../features/students/Student';  
 // import Teacher from '../features/staffs/Teacher';  
 
@@ -83,7 +84,7 @@ const router = createBrowserRouter([
                     },
                     {
                         path: 'team',
-                        element: <Pricing />
+                        element: <Team />
                     },
                     {
                         path: 'table',

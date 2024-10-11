@@ -58,7 +58,6 @@ const invoiceData = [
       },
     ]
   }
-
 ]
 
 const Invoice = () => {
