@@ -1,5 +1,4 @@
 import Card from "../ui/Card"
-import TablePagination from "../components/TablePagination";
 import OrdersTable from "../components/OrdersTable";
 import PagesTitle from "../components/PagesTitle";
 import ProductStockTable from "../components/ProductStockTable";
