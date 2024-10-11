@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import { Link } from 'react-router-dom'
 import Pattern3 from '../assets/images/pattern_3.png'
 import CustomPasswordInput from '../ui/CustomPasswordInput'
 
@@ -119,9 +120,9 @@ export default function SignUp() {
 
               <p className="mt-10 text-center text-sm text-gray-500">
                 Already have an account?
-                <a href="/login" className="font-semibold leading-6 text-[#5A8CFF] hover:text-indigo-500 ml-1">
+                <Link href="/login" className="font-semibold leading-6 text-[#5A8CFF] hover:text-indigo-500 ml-1">
                   Login
-                </a>
+                </Link>
               </p>
             </form>
           </div>
