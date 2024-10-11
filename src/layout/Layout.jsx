@@ -131,15 +131,15 @@ export default function Layout() {
                                                             href={item.href}
                                                             className={classNames(
                                                                 item.current
-                                                                    ? 'bg-gray-50 text-[#4880FF]'
-                                                                    : 'text-[#202224] hover:bg-gray-50 hover:text-[#4880FF]',
+                                                                    ? 'bg-gray-50 text-brand-primary-blue'
+                                                                    : 'text-brand-primary-black hover:bg-gray-50 hover:text-brand-primary-blue',
                                                                 'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6',
                                                             )}
                                                         >
                                                             <item.icon
                                                                 aria-hidden="true"
                                                                 className={classNames(
-                                                                    item.current ? 'text-[#4880FF]' : 'text-[#202224] group-hover:text-[#4880FF]',
+                                                                    item.current ? 'text-brand-primary-blue' : 'text-brand-primary-black group-hover:text-brand-primary-blue',
                                                                     'h-6 w-6 shrink-0',
                                                                 )}
                                                             />
@@ -158,16 +158,16 @@ export default function Layout() {
                                                             href={page.href}
                                                             className={classNames(
                                                                 page.current
-                                                                    ? 'bg-gray-50 text-[#4880FF]'
-                                                                    : 'text-[#202224] hover:bg-gray-50 hover:text-[#4880FF]',
+                                                                    ? 'bg-gray-50 text-brand-primary-blue'
+                                                                    : 'text-brand-primary-black hover:bg-gray-50 hover:text-brand-primary-blue',
                                                                 'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6',
                                                             )}
                                                         >
                                                             <span
                                                                 className={classNames(
                                                                     page.current
-                                                                        ? 'border-indigo-600 text-[#4880FF]'
-                                                                        : 'border-gray-200 text-gray-400 group-hover:border-indigo-600 group-hover:text-[#4880FF]',
+                                                                        ? 'border-indigo-600 text-brand-primary-blue'
+                                                                        : 'border-gray-200 text-gray-400 group-hover:border-indigo-600 group-hover:text-brand-primary-blue',
                                                                     'flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border bg-white text-[0.625rem] font-medium',
                                                                 )}
                                                             >
@@ -182,11 +182,11 @@ export default function Layout() {
                                         <li className="mt-auto">
                                             <a
                                                 href="#"
-                                                className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-[#202224] hover:bg-gray-50 hover:text-[#4880FF]"
+                                                className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-brand-primary-black hover:bg-gray-50 hover:text-brand-primary-blue"
                                             >
                                                 <Cog6ToothIcon
                                                     aria-hidden="true"
-                                                    className="h-6 w-6 shrink-0 text-gray-400 group-hover:text-[#4880FF]"
+                                                    className="h-6 w-6 shrink-0 text-gray-400 group-hover:text-brand-primary-blue"
                                                 />
                                                 Settings
                                             </a>
@@ -208,7 +208,7 @@ export default function Layout() {
                                 src="/src/assets/images/dash_stack_logo.png"
                                 className="h-8 w-auto"
                             />
-                            <h3 className='text-[#202224] font-semibold'><span className='text-[#2CABE0]'>Dash</span>Stack</h3>
+                            <h3 className='text-brand-primary-black font-semibold'><span className='text-[#2CABE0]'>Dash</span>Stack</h3>
                         </div>
                         <nav className="flex flex-1 flex-col">
                             <ul role="list" className="flex flex-1 flex-col gap-y-7">
@@ -220,8 +220,8 @@ export default function Layout() {
                                                     to={item.href}
                                                     className={classNames(
                                                         location.pathname === item.href
-                                                            ? 'bg-[#4880FF] text-[#fff]'
-                                                            : 'text-[#202224] hover:bg-gray-100 hover:text-[#4880FF]',
+                                                            ? 'bg-brand-primary-blue text-[#fff]'
+                                                            : 'text-brand-primary-black hover:bg-gray-100 hover:text-brand-primary-blue',
                                                         'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6',
                                                     )}
                                                 >
@@ -231,7 +231,7 @@ export default function Layout() {
                                                     <item.icon
                                                         aria-hidden="true"
                                                         className={classNames(
-                                                            location.pathname === item.href ? 'text-[#fff]' : 'text-[#202224] group-hover:text-[#4880FF]',
+                                                            location.pathname === item.href ? 'text-[#fff]' : 'text-brand-primary-black group-hover:text-brand-primary-blue',
                                                             'h-6 w-6 shrink-0',
                                                         )}
                                                     />
@@ -250,15 +250,15 @@ export default function Layout() {
                                                     to={item.href}
                                                     className={classNames(
                                                         location.pathname === item.href
-                                                            ? 'bg-[#4880FF] text-[#fff]'
-                                                            : 'text-[#202224] hover:bg-gray-100 hover:text-[#4880FF]',
+                                                            ? 'bg-brand-primary-blue text-[#fff]'
+                                                            : 'text-brand-primary-black hover:bg-gray-100 hover:text-brand-primary-blue',
                                                         'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6',
                                                     )}
                                                 >
                                                     <item.icon
                                                         aria-hidden="true"
                                                         className={classNames(
-                                                            location.pathname === item.href ? 'text-[#fff]' : 'text-[#202224] group-hover:text-[#4880FF]',
+                                                            location.pathname === item.href ? 'text-[#fff]' : 'text-brand-primary-black group-hover:text-brand-primary-blue',
                                                             'h-6 w-6 shrink-0',
                                                         )}
                                                     />
@@ -276,15 +276,15 @@ export default function Layout() {
                                                     to={item.href}
                                                     className={classNames(
                                                         location.pathname === item.href
-                                                            ? 'bg-[#4880FF] text-[#fff]'
-                                                            : 'text-[#202224] hover:bg-gray-100 hover:text-[#4880FF]',
+                                                            ? 'bg-brand-primary-blue text-[#fff]'
+                                                            : 'text-brand-primary-black hover:bg-gray-100 hover:text-brand-primary-blue',
                                                         'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6',
                                                     )}
                                                 >
                                                     <item.icon
                                                         aria-hidden="true"
                                                         className={classNames(
-                                                            location.pathname === item.href ? 'text-[#fff]' : 'text-[#202224] group-hover:text-[#4880FF]',
+                                                            location.pathname === item.href ? 'text-[#fff]' : 'text-brand-primary-black group-hover:text-brand-primary-blue',
                                                             'h-6 w-6 shrink-0',
                                                         )}
                                                     />
@@ -301,7 +301,7 @@ export default function Layout() {
 
                 <div className="lg:pl-72">
                     <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
-                        <button type="button" onClick={() => setSidebarOpen(true)} className="-m-2.5 p-2.5 text-[#202224] lg:hidden">
+                        <button type="button" onClick={() => setSidebarOpen(true)} className="-m-2.5 p-2.5 text-brand-primary-black lg:hidden">
                             <span className="sr-only">Open sidebar</span>
                             <Bars3Icon aria-hidden="true" className="h-6 w-6" />
                         </button>

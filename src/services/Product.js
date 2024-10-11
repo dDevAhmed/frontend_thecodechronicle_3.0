@@ -2,11 +2,11 @@ import { useQuery } from '@tanstack/react-query';
 import { collection, getDocs } from 'firebase/firestore';  
 import { db } from '../firebase.config';  
 
-const fetchData = async () => {  
+const fetchProducts = async () => {  
+  // fixme - set timeout to slow data fetching
   try {  
     const querySnapshot = await getDocs(collection(db, "products"));  
     const data = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));  
-    console.log("Fetched Data:", data);  
     return data;  
   } catch (error) {  
     console.error("Error fetching data:", error);  
@@ -14,9 +14,9 @@ const fetchData = async () => {
   }  
 };  
 
-export const useData = () => {  
+export const useProducts = () => {  
   return useQuery({ // Use the object form  
-    queryKey: ['data'],  
-    queryFn: fetchData,  
+    queryKey: ['products'], 
+    queryFn: fetchProducts,  
   });  
-};
+}

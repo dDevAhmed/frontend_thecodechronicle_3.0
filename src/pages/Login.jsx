@@ -58,7 +58,7 @@ export default function Login() {
                     Password
                   </label>
                   <div className="text-sm leading-6">
-                    <a href="#" className="font-semibold text-[#202224] text-opacity-60 hover:text-indigo-500">
+                    <a href="#" className="font-semibold text-brand-primary-black text-opacity-60 hover:text-indigo-500">
                       Forgot password?
                     </a>
                   </div>

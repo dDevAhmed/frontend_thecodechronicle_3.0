@@ -45,11 +45,11 @@ const Contact = () => {
         {
           contact.map((contact, index) => (
             <Card key={index} style={{ backgroundColor: '#fff', display: 'relative', padding: 'none' }}>
-              <img src={contact.image} alt='contact image' className="mb-5 w-full"/>
+              <img src={contact.image} alt='contact image' className="mb-5 w-full" />
               <span className="text-center">
-                <p className="text-[#202224] font-medium">{contact.name}</p>
-                <p className="text-[#202224] text-opacity-50 text-[.875rem]">{contact.email}</p>
-                <Button classNames={'my-5 mx-auto px-4 py-2 flex items-center gap-2 border border-[#979797] text-[#979797] hover:bg-[#4880FF] hover:text-white hover:border-[#4880FF]'}><MdMailOutline /> Message</Button>
+                <p className="text-brand-primary-black font-medium">{contact.name}</p>
+                <p className="text-brand-primary-black text-opacity-50 text-[.875rem]">{contact.email}</p>
+                <Button classNames={'my-5 mx-auto px-4 py-2 flex items-center gap-2 border border-[#979797] text-[#979797] hover:bg-brand-primary-blue hover:text-white hover:border-brand-primary-blue'}><MdMailOutline /> Message</Button>
               </span>
             </Card>
           ))

@@ -44,7 +44,7 @@ export default function TablePagination() {
 
                         <a
                             href="#"
-                            className="relative inline-flex items-center rounded-r-md px-2 py-2 text-[#202224] ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+                            className="relative inline-flex items-center rounded-r-md px-2 py-2 text-brand-primary-black ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
                         >
                             <span className="sr-only">Next</span>
                             <ChevronRightIcon aria-hidden="true" className="h-5 w-5" />

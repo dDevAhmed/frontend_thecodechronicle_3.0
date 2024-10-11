@@ -1,9 +1,5 @@
-import { MdOutlineStarPurple500 } from "react-icons/md";
-import { IoMdHeartEmpty } from "react-icons/io";
-import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
-import Card from "../ui/Card"
-import Button from "../ui/Button"
 import PagesTitle from "../components/PagesTitle";
+import ProductCard from "../components/ProductCard";
 
 const products = [
   {
@@ -79,36 +75,7 @@ const Favorites = () => {
       <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5">
         {
           products.map((product, index) => (
-            <Card key={index} classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff', display: 'relative' }}>
-              <span className="relative">
-                <IoMdHeartEmpty className="absolute right-0 cursor-pointer" />
-                <img src={product.image} alt="Product Image" className="m-auto h-40" />
-                <span className="absolute top-1/2 left-0 right-0 flex items-center justify-between transform -translate-y-1/2">
-                  <IoChevronBackOutline className="bg-[rgba(226,234,248,0.8)] text-[#626262] rounded-full p-2 h-8 w-8 flex items-center justify-center cursor-pointer" />
-                  <IoChevronForwardOutline className="bg-[rgba(226,234,248,0.8)] text-[#626262] rounded-full p-2 h-8 w-8 flex items-center justify-center cursor-pointer" />
-                </span>
-              </span>
-              {/* //fixme - flex out as in col, make component */}
-              <span className="flex flex-col justify-between h-[9.375rem]">
-                <p className="text-[#202224] text-[1.125rem] font-medium">{product.name}</p>
-                <span>
-                  <p className="text-[#4880FF] text-[.75rem] mt-2">${product.price}</p>
-                  <span className="flex items-center gap-2 mt-2">
-                    <div className="flex items-center">
-                      {[0, 1, 2, 3, 4].map((rating) => (
-                        <MdOutlineStarPurple500
-                          key={rating}
-                          aria-hidden="true"
-                          className={`${product.rating > rating ? 'text-[#FF9500]' : 'text-gray-200'} h-5 w-5 flex-shrink-0`}
-                        />
-                      ))}
-                    </div>
-                    ({product.reviewCount})
-                  </span>
-                  <Button style={{ backgroundColor: '#E2EAF8', marginTop: '20px', color: '#202224' }}>Edit Product</Button>
-                </span>
-              </span>
-            </Card>
+            <ProductCard key={index} product={product}/>
           ))
         }
       </div>

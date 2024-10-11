@@ -12,22 +12,22 @@ const items = [
 export default function Filter() {
   return (
     <div className="inline-flex rounded-md shadow-sm">
-        <button
+      <button
         type="button"
-        className="relative inline-flex items-center gap-x-1.5 rounded-l-md bg-white px-3 py-2 text-sm font-semibold text-[#202224] ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
+        className="relative inline-flex items-center gap-x-1.5 rounded-l-md bg-white px-3 py-2 text-sm font-semibold text-brand-primary-black ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
       >
-        <FiFilter aria-hidden="true" className="-ml-0.5 h-5 w-5 text-[#202224]" />
+        <FiFilter aria-hidden="true" className="-ml-0.5 h-5 w-5 text-brand-primary-black" />
       </button>
       <button
         type="button"
-        className="relative inline-flex items-center bg-white px-3 py-2 text-sm font-normal text-[#202224] ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
+        className="relative inline-flex items-center bg-white px-3 py-2 text-sm font-normal text-brand-primary-black ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
       >
         Filter By
       </button>
       <Menu as="div" className="relative -ml-px block">
         <MenuButton className="relative inline-flex items-center gap-5 bg-white px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">
-          <span className="font-normal text-[#202224]">Date</span>
-          <ChevronDownIcon aria-hidden="true" className="h-5 w-5 font-normal text-[#202224]" />
+          <span className="font-normal text-brand-primary-black">Date</span>
+          <ChevronDownIcon aria-hidden="true" className="h-5 w-5 font-normal text-brand-primary-black" />
         </MenuButton>
         <MenuItems
           transition
@@ -49,8 +49,8 @@ export default function Filter() {
       </Menu>
       <Menu as="div" className="relative -ml-px block">
         <MenuButton className="relative inline-flex items-center gap-5 bg-white px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">
-          <span className="font-normal text-[#202224]">Order Type</span>
-          <ChevronDownIcon aria-hidden="true" className="h-5 w-5 font-normal text-[#202224]" />
+          <span className="font-normal text-brand-primary-black">Order Type</span>
+          <ChevronDownIcon aria-hidden="true" className="h-5 w-5 font-normal text-brand-primary-black" />
         </MenuButton>
         <MenuItems
           transition
@@ -72,8 +72,8 @@ export default function Filter() {
       </Menu>
       <Menu as="div" className="relative -ml-px block">
         <MenuButton className="relative inline-flex items-center gap-5 bg-white px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">
-          <span className="font-normal text-[#202224]">Order Status</span>
-          <ChevronDownIcon aria-hidden="true" className="h-5 w-5 font-normal text-[#202224]" />
+          <span className="font-normal text-brand-primary-black">Order Status</span>
+          <ChevronDownIcon aria-hidden="true" className="h-5 w-5 font-normal text-brand-primary-black" />
         </MenuButton>
         <MenuItems
           transition

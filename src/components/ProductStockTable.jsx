@@ -1,26 +1,22 @@
 /* eslint-disable react/prop-types */
 import { FaCircle } from "react-icons/fa";
+import { capitalizeWords } from "../utils/capitalize";
 import ProductStockActionButton from "./ProductStockActionButtons";
 
 export default function ProductStockTable({ header, data }) {
+    console.log(data);
+    
     if (!Array.isArray(data)) {
         return <div>No data available</div>; // Handle the no data case gracefully  
     }
 
-    const capitalizeWords = (str) => {
-        if (!str) return '';
-        return str.split(' ')
-            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(' ');
-    };
-
     const headerMapping = {
         'image': 'image',
-        'product name': 'productName',
+        'product name': 'name',
         'category': 'category',
         'price': 'price',
-        'piece': 'piece',
-        'available color': 'availableColor',
+        'piece': 'quantity',
+        'available color': 'color',
         'action': 'action'
     };
 
@@ -33,7 +29,7 @@ export default function ProductStockTable({ header, data }) {
                         {/* //fixme - rounded padding */}
                         <thead className="">
                             <tr>
-                                {header.map((thead, index) => (
+                                {header?.map((thead, index) => (
                                     <th key={index} scope="col" className="py-3.5 text-left text-sm font-semibold text-gray-900">
                                         {capitalizeWords(thead)} {/* Capitalize header titles */}
                                     </th>
@@ -41,10 +37,10 @@ export default function ProductStockTable({ header, data }) {
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-gray-200">
-                            {data.map((tableRow, rowIndex) => (
+                            {data?.map((tableRow, rowIndex) => (
                                 <tr key={rowIndex}>
                                     {header.map((thead, colIndex) => (
-                                        <td key={colIndex} className="whitespace-nowrap px-3 py-4 text-sm text-[#202224] sm:pl-0 text-left">
+                                        <td key={colIndex} className="whitespace-nowrap px-3 py-4 text-sm text-brand-primary-black sm:pl-0 text-left">
                                             {thead === 'image'
                                                 ? <img src={tableRow[thead]} alt={tableRow['image']} className="w-28 rounded-md" />
                                                 : thead === 'product name'
@@ -52,9 +48,9 @@ export default function ProductStockTable({ header, data }) {
                                                     : thead === 'category'
                                                         ? capitalizeWords(tableRow[headerMapping[thead]])
                                                         : thead === 'price'
-                                                            ? '$' + tableRow[thead].toLocaleString()
-                                                            : thead === 'piece'
-                                                                ? tableRow[thead]?.toLocaleString()
+                                                         ? '$' + tableRow[headerMapping[thead]]?.toLocaleString()
+                                                            : thead ===  'piece'
+                                                                ? tableRow[headerMapping[thead]]?.toLocaleString()
                                                                 : thead === 'available color'
                                                                     ? (
                                                                         <div className="flex space-x-2">

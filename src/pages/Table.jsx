@@ -1,3 +1,4 @@
+import { useProducts } from "../services/Product";
 import Card from "../ui/Card"
 import OrdersTable from "../components/OrdersTable";
 import PagesTitle from "../components/PagesTitle";
@@ -150,66 +151,19 @@ const orderListsData = [
   },
 ];
 
-const productStockData = [
-  {
-    image: '/src/assets/images/products/product-9.jpg',
-    productName: "Apple Watch Series 4",
-    category: "digital product",
-    price: 690.00,
-    piece: 63,
-    availableColor: ['#000000', '#9F9F9F', '#E98F8F'],
-  }, 
-  {
-    image: '/src/assets/images/products/product-6.jpg',
-    productName: "Apple Smart Keyboard",
-    category: "digital product",
-    price: 179.00,
-    piece: 16,
-    availableColor: ['#000000', '#E98F8F', '#4D88EF', '#E9C157'],
-  }, 
-  {
-    image: '/src/assets/images/products/product-5.jpg',
-    productName: "Canon - EOS 5D Mark IV DSLR Camera",
-    category: "digital product",
-    price: 3599.00,
-    piece: 6,
-    availableColor: ['#882853', '#7CB7F5', '#12163C', '#4343EE'],
-  }, 
-  {
-    image: '/src/assets/images/products/product-17.jpg',
-    productName: "Trainer",
-    category: "fashion",
-    price: 99.00,
-    piece: 80,
-    availableColor: ['#283988', '#000000', '#A32147'],
-  }, 
-  {
-    image: '/src/assets/images/products/product-20.jpg',
-    productName: "Form Seat",
-    category: "furniture",
-    price: 300.00,
-    piece: 5,
-    availableColor: ['#283988', '#000000', '#A32147'],
-  }, 
-  {
-    image: '/src/assets/images/products/product-16.jpg',
-    productName: "Mophler",
-    category: "fashion",
-    price: 350.00,
-    piece: 5,
-    availableColor: ['#000000', '#F57C7C', '#4D88EF', '#E9C157'],
-  }, 
-  {
-    image: '/src/assets/images/products/product-11.jpg',
-    productName: "MacBook Pro 13\" Display, i5",
-    category: "digital product",
-    price: 1199.99,
-    piece: 13,
-    availableColor: ['#882853', '#7CB7F5', '#12163C', '#4343EE'],
-  }, 
-];
-
 const Table = () => {
+
+  const { data, error, isLoading } = useProducts()
+  console.log('prdt stock', data);
+
+  if (isLoading) {
+    // fixme - add spinner
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error fetching data: {error.message}</div>;
+  }
   return (
     <>
       <PagesTitle />
@@ -223,8 +177,8 @@ const Table = () => {
 
       <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff', display: 'relative', marginTop: '20px' }}>
         <ProductStockTable
-          header={['image', 'product name', 'category', 'price', 'available color', 'action']}
-          data={productStockData}
+          header={['image', 'product name', 'category', 'price', 'piece', 'available color', 'action']}
+          data={data}
         />
       </Card>
     </>

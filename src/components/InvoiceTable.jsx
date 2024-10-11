@@ -43,7 +43,7 @@ export default function InvoiceTable({ header, data }) {
                                 {data.map((tableRow, rowIndex) => (
                                     <tr key={rowIndex}>
                                         {header.map((thead, colIndex) => (
-                                            <td key={colIndex} className="whitespace-nowrap px-3 py-4 text-sm text-[#202224] sm:pl-0 text-center">
+                                            <td key={colIndex} className="whitespace-nowrap px-3 py-4 text-sm text-brand-primary-black sm:pl-0 text-center">
                                                 {thead === 'serial no'
                                                     ? rowIndex + 1
                                                     : thead === 'description'
@@ -60,7 +60,7 @@ export default function InvoiceTable({ header, data }) {
                                     </tr>
                                 ))}
                                 <tr>
-                                    <td className="text-[#202224] font-bold px-3 py-4 text-sm sm:pl-0 text-right pr-16" colSpan="5">
+                                    <td className="text-brand-primary-black font-bold px-3 py-4 text-sm sm:pl-0 text-right pr-16" colSpan="5">
                                         Total = ${totalItemsCost.toLocaleString()}
                                     </td>
                                 </tr>

@@ -22,7 +22,7 @@ capitalize function
 fix button, card custom props
 change the favorite star
 adjust font sizes
-
+function to calculate rating ??? frontend
 
 ---STORE
 1. create a map for the pages name to dynamically render on page title

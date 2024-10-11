@@ -221,8 +221,8 @@ const Dashboard = () => {
           <Card key={index} classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff' }}>
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-[#202224] font-normal">{stat.title}</p>
-                <h3 className="text-[#202224] font-semibold text-[1.875rem] mt-3">{stat.title == 'Total Sales' && '$'}{stat.value.toLocaleString()}</h3>
+                <p className="text-brand-primary-black font-normal">{stat.title}</p>
+                <h3 className="text-brand-primary-black font-semibold text-[1.875rem] mt-3">{stat.title == 'Total Sales' && '$'}{stat.value.toLocaleString()}</h3>
               </div>
               <span
                 className={`text-[2rem] rounded-2xl p-2`}
@@ -249,7 +249,7 @@ const Dashboard = () => {
       <ResponsiveContainer>
         <Card classNames={'px-4 py-5 sm:p-6 mt'} style={{ backgroundColor: '#fff', marginTop: '20px' }}>
           <span className="flex items-center justify-between  mb-5">
-            <h3 className="text-[#202224] text-[1.125rem] font-semibold">Sales Details</h3>
+            <h3 className="text-brand-primary-black text-[1.125rem] font-semibold">Sales Details</h3>
             <Dropdown />
           </span>
 
@@ -273,7 +273,7 @@ const Dashboard = () => {
       </ResponsiveContainer>
       <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff', marginTop: '20px' }}>
         <span className="flex items-center justify-between  mb-5">
-          <h3 className="text-[#202224] text-[1.125rem] font-semibold">Deals Details</h3>
+          <h3 className="text-brand-primary-black text-[1.125rem] font-semibold">Deals Details</h3>
           <Dropdown />
         </span>
         <DashboardTable header={['image', 'product name', 'location', 'date - time', 'piece', 'amount', 'status']} data={dashboardData[2]?.products || []} />
@@ -281,7 +281,7 @@ const Dashboard = () => {
       <ResponsiveContainer width="100%">
         <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff', marginTop: '20px' }}>
           <span className="flex items-center justify-between  mb-5">
-            <h3 className="text-[#202224] text-[1.125rem] font-semibold">Revenue</h3>
+            <h3 className="text-brand-primary-black text-[1.125rem] font-semibold">Revenue</h3>
             <Dropdown />
           </span>
 
@@ -310,14 +310,14 @@ const Dashboard = () => {
       </ResponsiveContainer>
       <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5">
         <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff' }}>
-          <h3 className="text-[#202224] text-[1.125rem] font-semibold">Customers</h3>
+          <h3 className="text-brand-primary-black text-[1.125rem] font-semibold">Customers</h3>
           <PieChart width={900} height={250}>
             <Pie data={dashboardData[1]} dataKey="sales" nameKey="name" cx="50%" cy="50%" outerRadius={50} fill="#8884d8" />
             <Pie data={dashboardData[1]} dataKey="sales" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label />
           </PieChart>
         </Card>
         <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff' }}>
-          <h3 className="text-[#202224] text-[22px] font-semibold">Featured Product</h3>
+          <h3 className="text-brand-primary-black text-[22px] font-semibold">Featured Product</h3>
           <span className="relative">
             <img src={FeaturedProductImage} alt="Feature Product" className="m-auto h-40" />
             <span className="absolute top-1/2 left-0 right-0 flex items-center justify-between transform -translate-y-1/2">
@@ -327,11 +327,11 @@ const Dashboard = () => {
           </span>
           <span className="text-center mt-5">
             <p className="text-[#282D32] font-medium text-[1.125rem]">Sony 4k Screen</p>
-            <p className="text-[#4880FF]">$1750</p>
+            <p className="text-brand-primary-blue">$1750</p>
           </span>
         </Card>
         <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff' }}>
-          <h3 className="text-[#202224] text-[1.125rem] font-semibold">Sales Analytics</h3>
+          <h3 className="text-brand-primary-black text-[1.125rem] font-semibold">Sales Analytics</h3>
           <PieChart width={900} height={250}>
             <Pie data={dashboardData[1]} dataKey="sales" nameKey="name" cx="50%" cy="50%" outerRadius={50} fill="#8884d8" />
             <Pie data={dashboardData[1]} dataKey="sales" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label />

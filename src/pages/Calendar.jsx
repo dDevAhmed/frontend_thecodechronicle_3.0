@@ -46,19 +46,19 @@ const Calendar = () => {
                     <div className="sticky top-28">
                         <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff' }}>
                             <Button style={{ backgroundColor: '#4880FF', color: 'white', display: 'block', width: '100%', padding: '10px' }}>+ Compose</Button>
-                            <h3 className="text-[1rem] text-[#202224] mt-5 font-semibold">My Email</h3>
+                            <h3 className="text-[1rem] text-brand-primary-black mt-5 font-semibold">My Email</h3>
                             <ul role="list" className="mt-2 space-y-1">
                                 {inboxNavigation.map((navItem) => {
                                     const IconComponent = navItem.icon; // Get the icon component  
-    
+
                                     return (
                                         <li key={navItem.id}>
                                             <Link
                                                 to={navItem.href}
                                                 className={classNames(
                                                     navItem.current
-                                                        ? 'bg-gray-100 text-[#4880FF]'
-                                                        : 'text-[#202224] hover:bg-gray-100 hover:text-[#4880FF]',
+                                                        ? 'bg-gray-100 text-brand-primary-blue'
+                                                        : 'text-brand-primary-black hover:bg-gray-100 hover:text-brand-primary-blue',
                                                     'group flex justify-between rounded-md p-2 text-sm font-normal leading-6',
                                                 )}
                                             >
@@ -66,7 +66,7 @@ const Calendar = () => {
                                                     <IconComponent
                                                         aria-hidden="true"
                                                         className={classNames(
-                                                            navItem.current ? 'text-[#4880FF]' : 'text-gray-400 group-hover:text-[#4880FF]',
+                                                            navItem.current ? 'text-brand-primary-blue' : 'text-gray-400 group-hover:text-brand-primary-blue',
                                                             'h-6 w-6 mr-2' // Added margin for spacing  
                                                         )}
                                                     />
@@ -78,7 +78,7 @@ const Calendar = () => {
                                     )
                                 })}
                             </ul>
-                            <h3 className="text-[1rem] text-[#202224] mt-5 mb-3 font-semibold">Label</h3>
+                            <h3 className="text-[1rem] text-brand-primary-black mt-5 mb-3 font-semibold">Label</h3>
                             {
                                 labels.map((label, index) => (
                                     <div className="relative flex items-start ml-3 mb-3" key={index}>
@@ -96,7 +96,7 @@ const Calendar = () => {
                                             />
                                         </div>
                                         <div className="ml-3 text-sm leading-6">
-                                            <label htmlFor={label.name} className="font-normal text-[#202224]">
+                                            <label htmlFor={label.name} className="font-normal text-brand-primary-black">
                                                 {label.name}
                                             </label>
                                         </div>
@@ -104,7 +104,7 @@ const Calendar = () => {
                                 ))
                             }
                             <button
-                                className="text-[#202224] text-opacity-50 mt-5"
+                                className="text-brand-primary-black text-opacity-50 mt-5"
                             >
                                 + Create New Label
                             </button>
@@ -130,21 +130,21 @@ const Calendar = () => {
                             <span className="isolate inline-flex rounded-md shadow-sm">
                                 <button
                                     type="button"
-                                    className="relative inline-flex items-center rounded-l-md bg-white px-2 py-2 text-[#202224] ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
+                                    className="relative inline-flex items-center rounded-l-md bg-white px-2 py-2 text-brand-primary-black ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
                                 >
                                     <span className="sr-only">download</span>
                                     <MdArchive aria-hidden="true" className="h-5 w-5" />
                                 </button>
                                 <button
                                     type="button"
-                                    className="relative -ml-px inline-flex items-center bg-white px-2 py-2 text-[#202224] ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
+                                    className="relative -ml-px inline-flex items-center bg-white px-2 py-2 text-brand-primary-black ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
                                 >
                                     <span className="sr-only">information</span>
                                     <MdInfo aria-hidden="true" className="h-5 w-5" />
                                 </button>
                                 <button
                                     type="button"
-                                    className="relative -ml-px inline-flex items-center rounded-r-md bg-white px-2 py-2 text-[#202224] ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
+                                    className="relative -ml-px inline-flex items-center rounded-r-md bg-white px-2 py-2 text-brand-primary-black ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
                                 >
                                     <span className="sr-only">delete</span>
                                     <IoMdTrash aria-hidden="true" className="h-5 w-5" />

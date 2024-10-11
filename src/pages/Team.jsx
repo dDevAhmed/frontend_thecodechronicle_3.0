@@ -91,8 +91,8 @@ const Team = () => {
     <>
       <div className="flex items-center justify-between">
         <PagesTitle />
-        <Button classNames={'bg-[#4880FF] text-white px-3 py-3'}>Add New Member</Button>
-        </div>
+        <Button classNames={'bg-brand-primary-blue text-white px-3 py-3'}>Add New Member</Button>
+      </div>
 
       <div className="mt-5 grid grid-cols-1 md:grid-cols-4 gap-5">
         {
@@ -100,9 +100,9 @@ const Team = () => {
             <Card key={index} classNames={'px-4 py-5 sm:p-6'} style={{ backgroundImage: `url(${Pattern2})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundColor: '#FFF' }}>
               <img src={member.image} alt='member image' className="mb-5 mx-auto sm:h-22 sm:w-20 md:h-20 md:w-20 rounded-full" />
               <span className="text-center">
-                <p className="text-[#202224] font-medium">{member.name}</p>
-                <p className="text-[#202224] text-opacity-50 text-[.875rem]">{member.position?.length > 3 ? capitalizeWords(member.position) : member.position?.toUpperCase()}</p>
-                <p className="text-[#202224] text-opacity-50 text-[.875rem]">{member.email}</p>
+                <p className="text-brand-primary-black font-medium">{member.name}</p>
+                <p className="text-brand-primary-black text-opacity-50 text-[.875rem]">{member.position?.length > 3 ? capitalizeWords(member.position) : member.position?.toUpperCase()}</p>
+                <p className="text-brand-primary-black text-opacity-50 text-[.875rem]">{member.email}</p>
               </span>
             </Card>
           ))

@@ -28,7 +28,7 @@ const EmailItem = ({
         )}
         <div className="flex-1 grid grid-cols-5">
             <span className="col-span-4 flex-col items-center md:grid md:grid-cols-5">
-                <span className="font-semibold text-[#202224] md:col-span-1 mr-5">{email.sender}</span>
+                <span className="font-semibold text-brand-primary-black md:col-span-1 mr-5">{email.sender}</span>
                 <span className="md:col-span-4 flex items-center justify-star">
                     {email.label && (
                         <span
@@ -47,12 +47,12 @@ const EmailItem = ({
                             {email.label}
                         </span>
                     )}
-                    <span className="text-[#202224] opacity-80"> {email.subject.length > 50
+                    <span className="text-brand-primary-black opacity-80"> {email.subject.length > 50
                         ? email.subject.slice(0, 50) + '...'
                         : email.subject}</span>
                 </span>
             </span>
-            <span className="text-[#202224] opacity-90 col-span-1 flex justify-end">{email.time}</span>
+            <span className="text-brand-primary-black opacity-90 col-span-1 flex justify-end">{email.time}</span>
         </div>
     </div>
 );

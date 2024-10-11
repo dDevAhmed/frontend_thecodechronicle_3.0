@@ -43,7 +43,7 @@ export default function DashboardTable({ header, data }) {
                                 {data.map((tableRow, rowIndex) => (
                                     <tr key={rowIndex}>
                                         {header.map((thead, colIndex) => (
-                                            <td key={colIndex} className="whitespace-nowrap px-3 py-4 text-sm text-[#202224] sm:pl-0 text-left">
+                                            <td key={colIndex} className="whitespace-nowrap px-3 py-4 text-sm text-brand-primary-black sm:pl-0 text-left">
                                                 {thead === 'image'
                                                     ? <img src={tableRow[thead]} alt={tableRow['product name']} className="w-20" />
                                                     : thead === 'product name'

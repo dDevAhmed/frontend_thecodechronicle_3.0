@@ -1,8 +1,10 @@
+/* eslint-disable no-unused-vars */
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import Card from "../ui/Card"
 import TablePagination from "../components/TablePagination";
 import ProductStockTable from "../components/ProductStockTable";
 import PagesTitle from "../components/PagesTitle";
+import { useProducts } from "../services/Product";
 
 const productStockData = [
   {
@@ -12,7 +14,7 @@ const productStockData = [
     price: 690.00,
     piece: 63,
     availableColor: ['#000000', '#9F9F9F', '#E98F8F'],
-  }, 
+  },
   {
     image: '/src/assets/images/products/product-6.jpg',
     productName: "Apple Smart Keyboard",
@@ -20,7 +22,7 @@ const productStockData = [
     price: 179.00,
     piece: 16,
     availableColor: ['#000000', '#E98F8F', '#4D88EF', '#E9C157'],
-  }, 
+  },
   {
     image: '/src/assets/images/products/product-5.jpg',
     productName: "Canon - EOS 5D Mark IV DSLR Camera",
@@ -28,7 +30,7 @@ const productStockData = [
     price: 3599.00,
     piece: 6,
     availableColor: ['#882853', '#7CB7F5', '#12163C', '#4343EE'],
-  }, 
+  },
   {
     image: '/src/assets/images/products/product-17.jpg',
     productName: "Trainer",
@@ -36,7 +38,7 @@ const productStockData = [
     price: 99.00,
     piece: 80,
     availableColor: ['#283988', '#000000', '#A32147'],
-  }, 
+  },
   {
     image: '/src/assets/images/products/product-20.jpg',
     productName: "Form Seat",
@@ -44,7 +46,7 @@ const productStockData = [
     price: 300.00,
     piece: 5,
     availableColor: ['#283988', '#000000', '#A32147'],
-  }, 
+  },
   {
     image: '/src/assets/images/products/product-16.jpg',
     productName: "Mophler",
@@ -52,7 +54,7 @@ const productStockData = [
     price: 350.00,
     piece: 5,
     availableColor: ['#000000', '#F57C7C', '#4D88EF', '#E9C157'],
-  }, 
+  },
   {
     image: '/src/assets/images/products/product-11.jpg',
     productName: "MacBook Pro 13\" Display, i5",
@@ -60,10 +62,22 @@ const productStockData = [
     price: 1199.99,
     piece: 13,
     availableColor: ['#882853', '#7CB7F5', '#12163C', '#4343EE'],
-  }, 
+  },
 ];
 
 const ProductStock = () => {
+  const { data, error, isLoading } = useProducts()
+  console.log('prdt stock', data);
+
+  if (isLoading) {
+    // fixme - add spinner
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error fetching data: {error.message}</div>;
+  }
+
   return (
     <>
       <div className="flex items-center justify-between">
@@ -86,8 +100,8 @@ const ProductStock = () => {
 
       <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff', display: 'relative', marginTop: '20px' }}>
         <ProductStockTable
-          header={['image', 'product name', 'category', 'price', 'available color', 'action']}
-          data={productStockData}
+          header={['image', 'product name', 'category', 'price', 'piece', 'available color', 'action']}
+          data={data}
         />
       </Card>
       <TablePagination />
@@ -95,4 +109,4 @@ const ProductStock = () => {
   )
 }
 
-export default ProductStock
+export default ProductStock;

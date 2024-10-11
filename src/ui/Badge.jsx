@@ -9,9 +9,9 @@ export default function Badge({ title }) {
                     ? "bg-[#EF3826] bg-opacity-20 text-[#EF3826]"
                     : title === "hold"
                         ? "bg-[#FFA756] bg-opacity-20 text-[#FFA756]"
-                    : title === "transit"
-                        ? "bg-[#BA29FF] bg-opacity-20 text-[#BA29FF]"
-                        : "bg-[#e5e7eb] bg-opacity-20 text-[#202224]"; // Default case  
+                        : title === "transit"
+                            ? "bg-[#BA29FF] bg-opacity-20 text-[#BA29FF]"
+                            : "bg-[#e5e7eb] bg-opacity-20 text-brand-primary-black"; // Default case  
 
     const capitalizeWords = (str) => {
         if (!str) return '';
