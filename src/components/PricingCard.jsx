@@ -36,7 +36,7 @@ const PricingCard = ({ pricing }) => {
                 <Divider />
                 {/* bottom section */}
                 <div className='items-center text-center'>
-                    <Button style={{padding: '10px 20px', borderRadius: '30px', border: '2px solid #4880FF', color: '#4880FF'}} hover={{background: '#4880FF', color: '#fff'}}>{capitalizeWords(pricing.bottom.button)}</Button>
+                    <Button classNames={'text-[#4880FF] hover:bg-[#4880FF] hover:text-[#fff]'} style={{padding: '10px 20px', borderRadius: '30px', border: '2px solid #4880FF'}} >{capitalizeWords(pricing.bottom.button)}</Button>
                     <p className='text-[#202224] text-[.875rem] font-normal mt-5'>Start Your {pricing.bottom.trialDays} Day Free Trial</p>
                 </div>
             </div>
