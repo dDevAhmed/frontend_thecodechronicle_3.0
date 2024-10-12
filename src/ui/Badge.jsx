@@ -1,3 +1,5 @@
+import { capitalizeWords } from '../utils/capitalize'
+
 /* eslint-disable react/prop-types */
 export default function Badge({ title }) {
     const badgeClass =
@@ -12,13 +14,6 @@ export default function Badge({ title }) {
                         : title === "transit"
                             ? "bg-[#BA29FF] bg-opacity-20 text-[#BA29FF]"
                             : "bg-[#e5e7eb] bg-opacity-20 text-brand-primary-black"; // Default case  
-
-    const capitalizeWords = (str) => {
-        if (!str) return '';
-        return str.split(' ')
-            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(' ');
-    };
 
     return (
         <span className={`inline-flex items-center rounded-md ${badgeClass} px-2 py-1 text-xs font-medium`}>

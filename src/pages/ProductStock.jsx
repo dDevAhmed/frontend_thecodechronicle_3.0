@@ -67,7 +67,6 @@ const productStockData = [
 
 const ProductStock = () => {
   const { data, error, isLoading } = useProducts()
-  console.log('prdt stock', data);
 
   if (isLoading) {
     // fixme - add spinner

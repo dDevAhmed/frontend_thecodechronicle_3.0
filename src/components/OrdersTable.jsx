@@ -1,3 +1,4 @@
+import { capitalizeWords } from "../utils/capitalize";
 /* eslint-disable react/prop-types */
 import Badge from "../ui/Badge";
 
@@ -5,13 +6,6 @@ export default function OrdersTable({ header, data }) {
     if (!Array.isArray(data)) {
         return <div>No data available</div>; // Handle the no data case gracefully  
     }
-
-    const capitalizeWords = (str) => {
-        if (!str) return '';
-        return str.split(' ')
-            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(' ');
-    };
 
     return (
         <div className="flow-root">
@@ -33,17 +27,15 @@ export default function OrdersTable({ header, data }) {
                                 <tr key={rowIndex}>
                                     {header.map((thead, colIndex) => (
                                         <td key={colIndex} className="whitespace-nowrap px-3 py-4 text-sm text-brand-primary-black sm:pl-0 text-left">
-                                            {thead === 'name'
-                                                ? capitalizeWords(tableRow[thead])
-                                                : thead === 'address'
+                                            {thead === 'id'
+                                                ? String(rowIndex + 1).padStart(5, '0') // Generate incremental IDs padded with zeros  
+                                                : thead === 'name' || thead === 'address' || thead === 'type'
                                                     ? capitalizeWords(tableRow[thead])
-                                                    : thead === 'type'
-                                                        ? capitalizeWords(tableRow[thead])
-                                                        : thead === 'amount'
-                                                            ? tableRow[thead]?.toLocaleString()
-                                                            : thead === 'status'
-                                                                ? <Badge title={tableRow[thead]} />
-                                                                : tableRow[thead]
+                                                    : thead === 'date'
+                                                        ? tableRow[thead]
+                                                        : thead === 'status'
+                                                            ? <Badge title={tableRow[thead]} />
+                                                            : tableRow[thead]
                                             }
                                         </td>
                                     ))}

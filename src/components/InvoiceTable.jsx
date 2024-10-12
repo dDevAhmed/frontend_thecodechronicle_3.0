@@ -1,16 +1,11 @@
+import { capitalizeWords } from "../utils/capitalize";
+
 /* eslint-disable react/prop-types */
 
 export default function InvoiceTable({ header, data }) {
     if (!Array.isArray(data)) {
         return <div>No data available</div>; // Handle the no data case gracefully  
     }
-
-    const capitalizeWords = (str) => {
-        if (!str) return '';
-        return str.split(' ')
-            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(' ');
-    };
 
     const headerMapping = {
         'description': 'description',
