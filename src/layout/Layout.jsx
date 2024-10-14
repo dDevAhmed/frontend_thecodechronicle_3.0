@@ -121,7 +121,7 @@ export default function Layout() {
                                 <div className="flex h-16 shrink-0 items-center">
                                     <img
                                         alt="Your Company"
-                                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                                        src="./src/assets/images/dash_stack_logo.png"
                                         className="h-8 w-auto"
                                     />
                                 </div>
@@ -209,7 +209,7 @@ export default function Layout() {
                         <div className="flex h-16 shrink-0 items-center gap-3">
                             <img
                                 alt="Your Company"
-                                src="/src/assets/images/dash_stack_logo.png"
+                                src="./src/assets/images/dash_stack_logo.png"
                                 className="h-8 w-auto"
                             />
                             <h3 className={`text-brand-primary-black font-semibold ${shrinkSidebar ? 'hidden' : 'flex'}`}><span className='text-[#2CABE0]'>Dash</span>Stack</h3>

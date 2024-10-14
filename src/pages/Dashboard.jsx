@@ -123,7 +123,7 @@ const dashboardData = [
   {
     products: [
       {
-        image: '/src/assets/images/products/product-9.jpg',
+        image: './src/assets/images/products/product-9.jpg',
         productName: 'apple watch',
         location: '6096 marjolaine landing',
         datetime: '12.09.2019 - 12.53 PM',
