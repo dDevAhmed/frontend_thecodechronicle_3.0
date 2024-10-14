@@ -8,7 +8,6 @@ import PagesTitle from "../components/PagesTitle";
 const OrderLists = () => {
 
   const { data, isLoading, error } = useOrders();
-  console.log('order table', data);
 
   if (isLoading) {
     // fixme - add spinner

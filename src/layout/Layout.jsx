@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /*
   This example requires some changes to your config:
   
@@ -46,6 +47,8 @@ import { PiGridFour } from "react-icons/pi";
 import { AiOutlineDashboard } from "react-icons/ai";
 import { FaRegMoneyBillAlt } from "react-icons/fa";
 import { PiSquareSplitVerticalLight } from "react-icons/pi";
+import SearchBar from '../components/SearchBar';
+import NavDrawer from '../ui/NavDrawer';
 
 const navigation = [
     { name: 'Dashboard', href: '/', icon: AiOutlineDashboard, current: false },
@@ -80,6 +83,7 @@ function classNames(...classes) {
 
 export default function Layout() {
     const [sidebarOpen, setSidebarOpen] = useState(false)
+    const [shrinkSidebar, setShrinkSidebar] = useState(false)
     const location = useLocation()
 
     return (
@@ -199,7 +203,7 @@ export default function Layout() {
                 </Dialog>
 
                 {/* Static sidebar for desktop */}
-                <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
+                <div className={`hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:flex-col ${shrinkSidebar ? 'lg:w-fit' : 'lg:w-72'}`}>
                     {/* Sidebar component, swap this element with another sidebar if you like */}
                     <div className="flex grow flex-col gap-y-5 overflow-y-scroll  border-r border-gray-200 bg-white px-6 pb-4">
                         <div className="flex h-16 shrink-0 items-center gap-3">
@@ -208,7 +212,7 @@ export default function Layout() {
                                 src="/src/assets/images/dash_stack_logo.png"
                                 className="h-8 w-auto"
                             />
-                            <h3 className='text-brand-primary-black font-semibold'><span className='text-[#2CABE0]'>Dash</span>Stack</h3>
+                            <h3 className={`text-brand-primary-black font-semibold ${shrinkSidebar ? 'hidden' : 'flex'}`}><span className='text-[#2CABE0]'>Dash</span>Stack</h3>
                         </div>
                         <nav className="flex flex-1 flex-col">
                             <ul role="list" className="flex flex-1 flex-col gap-y-7">
@@ -235,7 +239,7 @@ export default function Layout() {
                                                             'h-6 w-6 shrink-0',
                                                         )}
                                                     />
-                                                    {item.name}
+                                                    {shrinkSidebar ? '' : item.name}
                                                 </Link>
                                             </li>
                                         ))}
@@ -262,7 +266,7 @@ export default function Layout() {
                                                             'h-6 w-6 shrink-0',
                                                         )}
                                                     />
-                                                    {item.name}
+                                                    {shrinkSidebar ? '' : item.name}
                                                 </Link>
                                             </li>
                                         ))}
@@ -288,7 +292,7 @@ export default function Layout() {
                                                             'h-6 w-6 shrink-0',
                                                         )}
                                                     />
-                                                    {item.name}
+                                                    {shrinkSidebar ? '' : item.name}
                                                 </Link>
                                             </li>
                                         ))}
@@ -299,6 +303,7 @@ export default function Layout() {
                     </div>
                 </div>
 
+                {/* navbar */}
                 <div className="lg:pl-72">
                     <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
                         <button type="button" onClick={() => setSidebarOpen(true)} className="-m-2.5 p-2.5 text-brand-primary-black lg:hidden">
@@ -309,8 +314,15 @@ export default function Layout() {
                         {/* Separator */}
                         <div aria-hidden="true" className="h-6 w-px bg-gray-200 lg:hidden" />
 
-                        <div className="flex flex-1 gap-x-4 self-stretch lg:gap-x-6">
-                            <form action="#" method="GET" className="relative flex flex-1">
+                        <div className="flex flex-1 items-center justify-between gap-x-4 self-strentch lg:gap-x-6">
+
+                            <span className='flex items-center gap-5 w-1/2'>
+                            {/* //fixme - shrink side bar */}
+                                {/* <NavDrawer onClick={() => setShrinkSidebar(!shrinkSidebar)} /> */}
+                                <SearchBar classNames={'w-1/2 bg-[#fff]'} inputClassNames={'block w-full border-0 py-0 pl-10 pr-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm bg-[#F5F6FA]'} />
+                            </span>
+
+                            {/* <form action="#" method="GET" className="relative flex flex-1">
                                 <label htmlFor="search-field" className="sr-only">
                                     Search
                                 </label>
@@ -325,7 +337,7 @@ export default function Layout() {
                                     placeholder="Search..."
                                     className="block h-full w-full border-0 py-0 pl-8 pr-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
                                 />
-                            </form>
+                            </form> */}
                             <div className="flex items-center gap-x-4 lg:gap-x-6">
                                 <button type="button" className="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500">
                                     <span className="sr-only">View notifications</span>
