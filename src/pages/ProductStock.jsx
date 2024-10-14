@@ -5,6 +5,7 @@ import TablePagination from "../components/TablePagination";
 import ProductStockTable from "../components/ProductStockTable";
 import PagesTitle from "../components/PagesTitle";
 import { useProducts } from "../services/Product";
+import Spinner from "../ui/Spinner";
 
 const productStockData = [
   {
@@ -68,11 +69,6 @@ const productStockData = [
 const ProductStock = () => {
   const { data, error, isLoading } = useProducts()
 
-  if (isLoading) {
-    // fixme - add spinner
-    return <div>Loading...</div>;
-  }
-
   if (error) {
     return <div>Error fetching data: {error.message}</div>;
   }
@@ -97,13 +93,21 @@ const ProductStock = () => {
         </div>
       </div>
 
-      <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff', display: 'relative', marginTop: '20px' }}>
-        <ProductStockTable
-          header={['image', 'product name', 'category', 'price', 'piece', 'available color', 'action']}
-          data={data}
-        />
-      </Card>
-      <TablePagination />
+      {
+        isLoading
+          ?
+          <Spinner />
+          :
+          <>
+            <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff', display: 'relative', marginTop: '20px' }}>
+              <ProductStockTable
+                header={['image', 'product name', 'category', 'price', 'piece', 'available color', 'action']}
+                data={data}
+              />
+            </Card>
+            <TablePagination />
+          </>
+      }
     </>
   )
 }

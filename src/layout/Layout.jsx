@@ -49,6 +49,7 @@ import { FaRegMoneyBillAlt } from "react-icons/fa";
 import { PiSquareSplitVerticalLight } from "react-icons/pi";
 import SearchBar from '../components/SearchBar';
 import NavDrawer from '../ui/NavDrawer';
+import AppLogo from '../assets/images/dash_stack_logo.png'
 
 const navigation = [
     { name: 'Dashboard', href: '/', icon: AiOutlineDashboard, current: false },
@@ -120,8 +121,8 @@ export default function Layout() {
                             <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-4">
                                 <div className="flex h-16 shrink-0 items-center">
                                     <img
-                                        alt="Your Company"
-                                        src="../assets/images/dash_stack_logo.png"
+                                        alt="DashStack logo"
+                                        src={AppLogo}
                                         className="h-8 w-auto"
                                     />
                                 </div>
@@ -208,8 +209,8 @@ export default function Layout() {
                     <div className="flex grow flex-col gap-y-5 overflow-y-scroll  border-r border-gray-200 bg-white px-6 pb-4">
                         <div className="flex h-16 shrink-0 items-center gap-3">
                             <img
-                                alt="Your Company"
-                                src="./src/assets/images/dash_stack_logo.png"
+                                alt="DashStack Logo"
+                                src={AppLogo}
                                 className="h-8 w-auto"
                             />
                             <h3 className={`text-brand-primary-black font-semibold ${shrinkSidebar ? 'hidden' : 'flex'}`}><span className='text-[#2CABE0]'>Dash</span>Stack</h3>
