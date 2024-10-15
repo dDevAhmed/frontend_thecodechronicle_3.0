@@ -1,6 +1,7 @@
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 import { useProducts } from "../services/Product";
 import Card from "../ui/Card"
+import Spinner from '../ui/Spinner'
 import Pattern1 from '../assets/images/pattern_1.png'
 import Button from "../ui/Button"
 import PagesTitle from "../components/PagesTitle";
@@ -8,15 +9,6 @@ import ProductCard from "../components/ProductCard";
 
 const Products = () => {
   const { data, error, isLoading } = useProducts();
-
-  if (isLoading) {
-    // fixme - add spinner
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error fetching data: {error.message}</div>;
-  }
 
   return (
     <>
@@ -35,13 +27,21 @@ const Products = () => {
           <IoChevronForwardOutline className="bg-[rgba(226,234,248,0.8)] text-[#626262] rounded-full p-2 h-8 w-8 flex items-center justify-center cursor-pointer" />
         </span>
       </Card>
-      <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5">
-        {
-          data.map((product, index) => (
-            <ProductCard key={index} product={product} />
-          ))
-        }
-      </div>
+
+      {
+        error
+          ? <h1>Error fetching data: {error.message}</h1>
+          : isLoading
+            ? <div className="mt-20"><Spinner /></div>
+            :
+            <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5">
+              {
+                data.map((product, index) => (
+                  <ProductCard key={index} product={product} />
+                ))
+              }
+            </div>
+      }
     </>
   )
 }

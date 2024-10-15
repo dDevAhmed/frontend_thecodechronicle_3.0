@@ -1,18 +1,19 @@
-import { ColorRing } from 'react-loader-spinner'
+import ClipLoader from "react-spinners/ClipLoader";  
 
-const Spinner = () => {
-  return (
-    <div className='flex flex-col items-center'>
-      <ColorRing
-            visible={true}
-            height="80"
-            width="80"
-            ariaLabel=""
-            wrapperStyle={{}}
-            wrapperClass=""
-          />
-    </div>
-  )
-}
+const Spinner = () => {  
+  return (  
+    <div className="flex items-center justify-center">
+      <ClipLoader color={'#202224'} />  
+      {/* <ClipLoader
+        color={color}
+        loading={loading}
+        cssOverride={override}
+        size={150}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      /> */}
+    </div>  
+  );  
+};  
 
-export default Spinner
+export default Spinner;

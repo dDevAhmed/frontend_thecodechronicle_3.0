@@ -7,10 +7,12 @@ import { ResponsiveContainer, AreaChart, XAxis, YAxis, CartesianGrid, Tooltip, L
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 import Card from "../ui/Card"
 import Dropdown from "../ui/Dropdown";
+import DashboardStat from "../components/cards/DashboardStat";
 import DashboardTable from "../components/DashboardTable";
 import FeaturedProductImage from '../assets/images/products/product-10.jpg'
 import AppleWatchImage from '../assets/images/products/product-9.jpg'
 import PagesTitle from "../components/PagesTitle";
+import RevenueChart from "../components/charts/RevenueChart";
 
 const dashboardData = [
   {
@@ -219,43 +221,16 @@ const Dashboard = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mt-5">
         {dashboardData[0].stats.map((stat, index) => (
-          <Card key={index} classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff' }}>
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-brand-primary-black font-normal">{stat.title}</p>
-                <h3 className="text-brand-primary-black font-semibold text-[1.875rem] mt-3">{stat.title == 'Total Sales' && '$'}{stat.value.toLocaleString()}</h3>
-              </div>
-              <span
-                className={`text-[2rem] rounded-2xl p-2`}
-                style={{
-                  backgroundColor: `${stat.icon.bg}30`,
-                  color: stat.icon.bg,
-                }}
-              >
-                {stat.icon.img}
-              </span>
-            </div>
-            <div className="mt-5">
-              <p className="flex items-center gap-2 text-[.8125rem]">
-                <span className={`flex items-center gap-2 ${stat.growth.name === 'progress' ? 'text-[#00B69B]' : 'text-[#F93C65]'}`}>
-                  {stat.growth.name === 'progress' ? <IoIosTrendingUp /> : <IoIosTrendingDown />}
-                  {stat.growth.rate}%
-                </span>
-                <span className="text-[#606060]">{stat.growth.name === 'progress' ? <span>Up</span> : <span>Down</span>} from {stat.growth.time}</span>
-              </p>
-            </div>
-          </Card>
+          <DashboardStat key={index} stat={stat}/>
         ))}
       </div>
-      <ResponsiveContainer width={'100%'}>
-        <Card classNames={'px-4 py-5 sm:p-6 mt'} style={{ backgroundColor: '#fff', marginTop: '20px' }}>
-          <span className="flex items-center justify-between  mb-5">
-            <h3 className="text-brand-primary-black text-[1.125rem] font-semibold">Sales Details</h3>
-            <Dropdown />
-          </span>
-
-          {/* //fixme - mobile responsiveness */}
-          <AreaChart width={900} height={250} data={dashboardData[1].sales}
+      <Card classNames={'px-4 py-5 sm:p-6 mt'} style={{ backgroundColor: '#fff', marginTop: '20px' }}>
+        <span className="flex items-center justify-between  mb-5">
+          <h3 className="text-brand-primary-black text-[1.125rem] font-semibold">Sales Details</h3>
+          <Dropdown />
+        </span>
+        <ResponsiveContainer width='100%' height={300}>
+          <AreaChart data={dashboardData[1].sales}
             margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
             <defs>
               <linearGradient id="colorPercentage" x1="0" y1="0" x2="0" y2="1">
@@ -270,8 +245,8 @@ const Dashboard = () => {
             <Legend />
             <Area type="monotone" dataKey="sales" stroke="#4379EE" fillOpacity={1} fill="url(#colorPercentage)" />
           </AreaChart>
-        </Card>
-      </ResponsiveContainer>
+        </ResponsiveContainer>
+      </Card>
       <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff', marginTop: '20px' }}>
         <span className="flex items-center justify-between  mb-5">
           <h3 className="text-brand-primary-black text-[1.125rem] font-semibold">Deals Details</h3>
@@ -307,6 +282,7 @@ const Dashboard = () => {
             <Area type="monotone" dataKey="sales" stroke="#F9978A" fillOpacity={1} fill="url(#sales)" />
             <Area type="monotone" dataKey="profit" stroke="#E3B9FF" fillOpacity={1} fill="url(#profit)" />
           </AreaChart>
+          <RevenueChart />
         </Card>
       </ResponsiveContainer>
       <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5">

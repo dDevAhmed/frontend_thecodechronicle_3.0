@@ -4,19 +4,11 @@ import Filter from "../components/Filter";
 import TablePagination from "../components/TablePagination";
 import OrdersTable from "../components/OrdersTable";
 import PagesTitle from "../components/PagesTitle";
+import Spinner from '../ui/Spinner'
 
 const OrderLists = () => {
 
   const { data, isLoading, error } = useOrders();
-
-  if (isLoading) {
-    // fixme - add spinner
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error fetching data: {error.message}</div>;
-  }
 
   return (
     <>
@@ -24,13 +16,23 @@ const OrderLists = () => {
 
       <div className="mt-5"><Filter /></div>
 
-      <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff', display: 'relative', marginTop: '20px' }}>
-        <OrdersTable
-          header={['id', 'name', 'address', 'date', 'type', 'status']}
-          data={data}
-        />
-      </Card>
-      <TablePagination />
+      {
+        error
+          ? <h1>Error fetching data: {error.message}</h1>
+          : isLoading
+            ? <div className="mt-20"><Spinner /></div>
+            :
+            <>
+              <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff', display: 'relative', marginTop: '20px' }}>
+                <OrdersTable
+                  header={['id', 'name', 'address', 'date', 'type', 'status']}
+                  data={data}
+                />
+              </Card>
+              <TablePagination />
+            </>
+      }
+
     </>
   )
 }
