@@ -1,3 +1,63 @@
+import { BiLineChart } from "react-icons/bi";
+import { HiMiniCube, HiMiniUsers } from "react-icons/hi2";
+import { PiClockCounterClockwiseFill } from "react-icons/pi";
+import AppleWatchImage from '../assets/images/products/product-9.jpg'
+
+export const statsData = [
+  {
+    title: 'Total User',
+    value: 40689,
+    icon: {
+      img: <HiMiniUsers />,
+      bg: '#8280FF'
+    },
+    growth: {
+      name: 'progress',
+      rate: 8.5,
+      time: 'yesterday'
+    }
+  },
+  {
+    title: 'Total Order',
+    value: 10293,
+    icon: {
+      img: <HiMiniCube />,
+      bg: '#FEC53D'
+    },
+    growth: {
+      name: 'progress',
+      rate: 1.3,
+      time: 'pass week'
+    }
+  },
+  {
+    title: 'Total Sales',
+    value: 89000,
+    icon: {
+      img: <BiLineChart />,
+      bg: '#4AD991'
+    },
+    growth: {
+      name: 'regress',
+      rate: 4.3,
+      time: 'yesterday'
+    }
+  },
+  {
+    title: 'Total Pending',
+    value: 2040,
+    icon: {
+      img: <PiClockCounterClockwiseFill />,
+      bg: '#FF9066'
+    },
+    growth: {
+      name: 'progress',
+      rate: 1.8,
+      time: 'yesterday'
+    }
+  },
+]
+
 export const salesData = [
   { sales: '5k', percentage: 20 },
   { sales: '10k', percentage: 40 },
@@ -11,6 +71,33 @@ export const salesData = [
   { sales: '50k', percentage: 45 },
   { sales: '55k', percentage: 50 },
   { sales: '60k', percentage: 60 },
+];
+
+export const dashboardProductData = [
+  {
+    image: AppleWatchImage,
+    productName: 'apple watch',
+    location: '6096 marjolaine landing',
+    datetime: '12.09.2019 - 12.53 PM',
+    piece: 423,
+    amount: 34295,
+    status: 'delivered'
+  },
+]
+
+export const revenueData = [
+  { week: '5k', sales: 30, profit: 20 },
+  { week: '10k', sales: 60, profit: 50 },
+  { week: '15k', sales: 40, profit: 30 },
+  { week: '20k', sales: 70, profit: 40 },
+  { week: '25k', sales: 50, profit: 20 },
+  { week: '30k', sales: 80, profit: 40 },
+  { week: '35k', sales: 60, profit: 60 },
+  { week: '40k', sales: 100, profit: 70 },
+  { week: '45k', sales: 70, profit: 50 },
+  { week: '50k', sales: 90, profit: 60 },
+  { week: '55k', sales: 60, profit: 80 },
+  { week: '60k', sales: 100, profit: 90 },
 ];
 
 export const initialEmailData = [

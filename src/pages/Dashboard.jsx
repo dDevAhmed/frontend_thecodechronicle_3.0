@@ -1,8 +1,6 @@
-import { IoIosTrendingUp, IoIosTrendingDown } from "react-icons/io";
 import { HiMiniUsers, HiMiniCube } from "react-icons/hi2";
 import { BiLineChart } from "react-icons/bi";
 import { PiClockCounterClockwiseFill } from "react-icons/pi";
-// eslint-disable-next-line no-unused-vars
 import { ResponsiveContainer, AreaChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Area, PieChart, Pie } from "recharts"
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 import Card from "../ui/Card"
@@ -12,8 +10,6 @@ import DashboardTable from "../components/DashboardTable";
 import FeaturedProductImage from '../assets/images/products/product-10.jpg'
 import AppleWatchImage from '../assets/images/products/product-9.jpg'
 import PagesTitle from "../components/PagesTitle";
-import RevenueChart from "../components/charts/RevenueChart";
-import SalesChart from "../components/charts/SalesChart";
 
 const dashboardData = [
   {
@@ -226,9 +222,29 @@ const Dashboard = () => {
         ))}
       </div>
 
-      <div className="mt-5">
-        <SalesChart salesData={dashboardData[1].sales}/>
-      </div>
+      <Card classNames={'px-4 py-5 sm:p-6 '} style={{ backgroundColor: '#fff', marginTop: '20px' }}>
+        <span className="flex items-center justify-between  mb-5">
+          <h3 className="text-brand-primary-black text-[1.125rem] font-semibold">Sales Details</h3>
+          <Dropdown />
+        </span>
+        <ResponsiveContainer width='100%' height={300}>
+          <AreaChart data={dashboardData[1].sales}
+            margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+            <defs>
+              <linearGradient id="colorPercentage" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#42B6F6" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#BFE8FF" stopOpacity={0} />
+              </linearGradient>
+            </defs>
+            <XAxis dataKey="sales" />
+            <YAxis domain={[0, 100]} ticks={[20, 40, 60, 80, 100]} />
+            <CartesianGrid strokeDasharray="3 3" />
+            <Tooltip />
+            <Legend />
+            <Area type="monotone" dataKey="sales" stroke="#4379EE" fillOpacity={1} fill="url(#colorPercentage)" />
+          </AreaChart>
+        </ResponsiveContainer>
+      </Card>
 
       <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff', marginTop: '20px' }}>
         <span className="flex items-center justify-between  mb-5">
@@ -237,37 +253,7 @@ const Dashboard = () => {
         </span>
         <DashboardTable header={['image', 'product name', 'location', 'date - time', 'piece', 'amount', 'status']} data={dashboardData[2]?.products || []} />
       </Card>
-      <ResponsiveContainer width="100%">
-        <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff', marginTop: '20px' }}>
-          <span className="flex items-center justify-between  mb-5">
-            <h3 className="text-brand-primary-black text-[1.125rem] font-semibold">Revenue</h3>
-            <Dropdown />
-          </span>
 
-          {/* //fixme - mobile responsiveness and charts */}
-          <AreaChart width={900} height={250} data={dashboardData[2].revenue}
-            margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
-            <defs>
-              <linearGradient id="sales" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#FF946D" stopOpacity={0.8} />
-                <stop offset="95%" stopColor="#BFE8FF" stopOpacity={0} />
-              </linearGradient>
-              <linearGradient id="profit" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#42B6F6" stopOpacity={0.8} />
-                <stop offset="95%" stopColor="#BFE8FF" stopOpacity={0} />
-              </linearGradient>
-            </defs>
-            <XAxis dataKey="profit" />
-            <YAxis domain={[0, 100]} ticks={[20, 40, 60, 80, 100]} />
-            <CartesianGrid strokeDasharray="3 3" />
-            <Tooltip />
-            <Legend />
-            <Area type="monotone" dataKey="sales" stroke="#F9978A" fillOpacity={1} fill="url(#sales)" />
-            <Area type="monotone" dataKey="profit" stroke="#E3B9FF" fillOpacity={1} fill="url(#profit)" />
-          </AreaChart>
-          <RevenueChart />
-        </Card>
-      </ResponsiveContainer>
       <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5">
         <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff' }}>
           <h3 className="text-brand-primary-black text-[1.125rem] font-semibold">Customers</h3>

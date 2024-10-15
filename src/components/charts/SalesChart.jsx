@@ -1,5 +1,4 @@
-import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
-import { Legend } from '@headlessui/react'
+import { Area, AreaChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { salesData } from '../../data/data'
 import Card from '../../ui/Card'
 import Dropdown from '../../ui/Dropdown'
