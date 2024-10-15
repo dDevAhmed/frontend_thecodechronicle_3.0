@@ -110,7 +110,7 @@ export default function CalendarCmp() {
                     </button>
                     <button
                         type="button"
-                        className="hidden px-3.5 text-sm font-semibold text-gray-900 hover:bg-gray-50 focus:relative md:block"
+                        className="hidden px-3.5 text-sm font-semibold text-gray-900 hover:bg-gray-50 focus:relative md:block text-[1.5rem]"
                     >
                         October 2022
                     </button>
@@ -139,7 +139,7 @@ export default function CalendarCmp() {
                         </button>
                         <button
                             type="button"
-                            className="relative -ml-px inline-flex items-center rounded-r-md bg-white px-2 py-2 text-brand-primary-black ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
+                            className="relative -ml-px inline-flex items-center rounded-r-md bg-brand-primary-blue px-2 py-2 text-white ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
                         >
                             Month
                             {/* //fixme - set active state */}
@@ -178,7 +178,7 @@ export default function CalendarCmp() {
                                 key={day.date}
                                 className={classNames(
                                     day.isCurrentMonth ? 'bg-white' : 'bg-gray-50 text-gray-500',
-                                    'relative px-3 py-2',
+                                    'relative py-2',
                                 )}
                             >
                                 <time
@@ -194,17 +194,11 @@ export default function CalendarCmp() {
                                 {day.events.length > 0 && (
                                     <ol className="mt-2">
                                         {day.events.slice(0, 2).map((event) => (
-                                            <li key={event.id}>
-                                                <a href={event.href} className="group flex">
-                                                    <p className="flex-auto truncate font-medium text-gray-900 group-hover:text-indigo-600">
+                                            <li key={event.id} className='mb-2'>
+                                                <a href={event.href} className="group flex bg-[#7551E9] bg-opacity-20 border-l-4 border-l-[#7551E9] text-[#7551E9] text-[.625rem] text-center px-2">
+                                                    <p className="flex-auto truncate font-medium group-hover:text-indigo-600">
                                                         {event.name}
                                                     </p>
-                                                    <time
-                                                        dateTime={event.datetime}
-                                                        className="ml-3 hidden flex-none text-gray-500 group-hover:text-indigo-600 xl:block"
-                                                    >
-                                                        {event.time}
-                                                    </time>
                                                 </a>
                                             </li>
                                         ))}

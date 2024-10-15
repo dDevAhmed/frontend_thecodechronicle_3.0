@@ -9,6 +9,7 @@ import Card from "../ui/Card"
 import Dropdown from "../ui/Dropdown";
 import DashboardTable from "../components/DashboardTable";
 import FeaturedProductImage from '../assets/images/products/product-10.jpg'
+import AppleWatchImage from '../assets/images/products/product-9.jpg'
 import PagesTitle from "../components/PagesTitle";
 
 const dashboardData = [
@@ -123,7 +124,7 @@ const dashboardData = [
   {
     products: [
       {
-        image: './src/assets/images/products/product-9.jpg',
+        image: AppleWatchImage,
         productName: 'apple watch',
         location: '6096 marjolaine landing',
         datetime: '12.09.2019 - 12.53 PM',
