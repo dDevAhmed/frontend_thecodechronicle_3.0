@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+import { useFavoriteProducts } from "../services/Product"
+import Spinner from '../ui/Spinner'
 import PagesTitle from "../components/PagesTitle";
 import ProductCard from "../components/cards/ProductCard";
 import image1 from '../assets/images/products/product-6.jpg'
@@ -77,15 +80,22 @@ const products = [
 ]
 
 const Favorites = () => {
+  const { data, error, isLoading } = useFavoriteProducts()
+
   return (
     <>
       <PagesTitle />
 
       <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5">
         {
-          products.map((product, index) => (
-            <ProductCard key={index} product={product}/>
-          ))
+          error
+            ? <h1>Error fetching data: {error.message}</h1>
+            : isLoading
+              ? <div className="mt-20 w-full"><Spinner /></div>
+              :
+              data?.map((product, index) => (
+                <ProductCard key={index} product={product} />
+              ))
         }
       </div>
     </>

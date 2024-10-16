@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io"
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5"
 import { capitalizeWords } from "../../utils/capitalize"
@@ -16,6 +16,12 @@ const ProductCard = ({ product }) => {
         setFavorite(!favorite);
         favoriteMutation.mutate({ id: product.id, isFavorite: !favorite });
     };
+
+    useEffect(() => {
+        // console.log('In the useEffect', auth.currentUser);
+        // setUser(auth.currentUser);
+
+    }, [])
 
     return (
         <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff', display: 'relative' }}>

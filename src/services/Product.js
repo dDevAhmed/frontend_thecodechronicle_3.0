@@ -1,4 +1,4 @@
-import { doc, updateDoc } from 'firebase/firestore';
+import { doc, updateDoc, query, where, } from 'firebase/firestore';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../firebase.config';
@@ -9,6 +9,24 @@ const fetchProducts = async () => {
     const querySnapshot = await getDocs(collection(db, "products"));
     const data = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
     return data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    throw new Error("Failed to fetch data");
+  }
+};
+
+const fetchFavoritesProducts = async () => {
+  const productRef = collection(db, 'products')
+
+  try {
+    const q = query(
+      productRef,
+      where('isFavorite', '==', true),
+    );
+    const querySnapshot = await getDocs(q);
+    const data = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    return data;
+
   } catch (error) {
     console.error("Error fetching data:", error);
     throw new Error("Failed to fetch data");
@@ -33,6 +51,13 @@ export const useProducts = () => {
   return useQuery({
     queryKey: ['products'],
     queryFn: fetchProducts,
+  });
+};
+
+export const useFavoriteProducts = () => {
+  return useQuery({
+    queryKey: ['favoritesproducts'],
+    queryFn: fetchFavoritesProducts,
   });
 };
 
