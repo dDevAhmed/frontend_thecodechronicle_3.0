@@ -1,14 +1,14 @@
 import PagesTitle from "../components/PagesTitle";
 import ProductCard from "../components/cards/ProductCard";
-import image1 from './src/assets/images/products/product-6.jpg'
-import image2 from './src/assets/images/products/product-5.jpg'
-import image3 from './src/assets/images/products/product-11.jpg'
-import image4 from './src/assets/images/products/product-1.jpg'
-import image5 from './src/assets/images/products/product-9.jpg'
-import image6 from './src/assets/images/products/product-3.jpg'
-import image7 from './src/assets/images/products/product-7.jpg'
-import image8 from './src/assets/images/products/product-8.jpg'
-import image9 from './src/assets/images/products/product-14.jpg'
+import image1 from '../assets/images/products/product-6.jpg'
+import image2 from '../assets/images/products/product-5.jpg'
+import image3 from '../assets/images/products/product-11.jpg'
+import image4 from '../assets/images/products/product-1.jpg'
+import image5 from '../assets/images/products/product-9.jpg'
+import image6 from '../assets/images/products/product-3.jpg'
+import image7 from '../assets/images/products/product-7.jpg'
+import image8 from '../assets/images/products/product-8.jpg'
+import image9 from '../assets/images/products/product-14.jpg'
 
 const products = [
   {
