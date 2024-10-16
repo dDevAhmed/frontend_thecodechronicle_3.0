@@ -71,58 +71,6 @@ const dashboardData = [
     ]
   },
   {
-    sales: [
-      {
-        sales: 5,
-        percentage: 10,
-      },
-      {
-        sales: 10,
-        percentage: 50,
-      },
-      {
-        sales: 15,
-        percentage: 10,
-      },
-      {
-        sales: 20,
-        percentage: 99,
-      },
-      {
-        sales: 25,
-        percentage: 0,
-      },
-      {
-        sales: 30,
-        percentage: 35,
-      },
-      {
-        sales: 35,
-        percentage: 70,
-      },
-      {
-        sales: 40,
-        percentage: 15,
-      },
-      {
-        sales: 45,
-        percentage: 35,
-      },
-      {
-        sales: 50,
-        percentage: 8,
-      },
-      {
-        sales: 55,
-        percentage: 25,
-      },
-      {
-        sales: 60,
-        percentage: 10,
-      },
-    ]
-  },
-  {
     products: [
       {
         image: AppleWatchImage,
@@ -132,70 +80,6 @@ const dashboardData = [
         piece: 423,
         amount: 34295,
         status: 'delivered'
-      },
-    ]
-  },
-  {
-    revenue: [
-      {
-        sales: 5,
-        profit: 55,
-        percentage: 10,
-      },
-      {
-        sales: 10,
-        profit: 50,
-        percentage: 50,
-      },
-      {
-        sales: 15,
-        profit: 45,
-        percentage: 10,
-      },
-      {
-        sales: 20,
-        profit: 40,
-        percentage: 99,
-      },
-      {
-        sales: 25,
-        profit: 35,
-        percentage: 0,
-      },
-      {
-        sales: 30,
-        profit: 30,
-        percentage: 35,
-      },
-      {
-        sales: 35,
-        profit: 25,
-        percentage: 70,
-      },
-      {
-        sales: 40,
-        profit: 20,
-        percentage: 15,
-      },
-      {
-        sales: 45,
-        profit: 15,
-        percentage: 35,
-      },
-      {
-        sales: 50,
-        profit: 10,
-        percentage: 8,
-      },
-      {
-        sales: 55,
-        profit: 5,
-        percentage: 25,
-      },
-      {
-        sales: 60,
-        profit: 0,
-        percentage: 10,
       },
     ]
   },
@@ -233,9 +117,9 @@ const Dashboard = () => {
           <h3 className="text-brand-primary-black text-[1.125rem] font-semibold">Deals Details</h3>
           <Dropdown />
         </span>
-        <DashboardTable header={['image', 'product name', 'location', 'date - time', 'piece', 'amount', 'status']} data={dashboardData[2]?.products || []} />
+        <DashboardTable header={['image', 'product name', 'location', 'date - time', 'piece', 'amount', 'status']} data={dashboardData[1]?.products || []} />
       </Card>
-      
+
       <div className="mt-5">
         <RevenueChart />
       </div>
