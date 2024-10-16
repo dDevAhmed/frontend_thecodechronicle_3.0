@@ -1,7 +1,6 @@
 import { HiMiniUsers, HiMiniCube } from "react-icons/hi2";
 import { BiLineChart } from "react-icons/bi";
 import { PiClockCounterClockwiseFill } from "react-icons/pi";
-import { ResponsiveContainer, AreaChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Area, PieChart, Pie } from "recharts"
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 import Card from "../ui/Card"
 import Dropdown from "../ui/Dropdown";
@@ -12,6 +11,8 @@ import AppleWatchImage from '../assets/images/products/product-9.jpg'
 import PagesTitle from "../components/PagesTitle";
 import SalesChart from "../components/charts/SalesChart";
 import RevenueChart from "../components/charts/RevenueChart";
+import SalesAnalyticsChart from "../components/charts/SalesAnalyticsChart";
+import CustomersChart from "../components/charts/CustomersChart";
 
 const dashboardData = [
   {
@@ -83,18 +84,6 @@ const dashboardData = [
       },
     ]
   },
-  {
-    analytics: [
-      {
-        date: 2015,
-        percentage: 0,
-      },
-      {
-        date: 2015,
-        percentage: 0,
-      }
-    ]
-  }
 ]
 
 const Dashboard = () => {
@@ -125,13 +114,8 @@ const Dashboard = () => {
       </div>
 
       <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5">
-        <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff' }}>
-          <h3 className="text-brand-primary-black text-[1.125rem] font-semibold">Customers</h3>
-          <PieChart width={900} height={250}>
-            <Pie data={dashboardData[1]} dataKey="sales" nameKey="name" cx="50%" cy="50%" outerRadius={50} fill="#8884d8" />
-            <Pie data={dashboardData[1]} dataKey="sales" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label />
-          </PieChart>
-        </Card>
+        <CustomersChart />
+
         <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff' }}>
           <h3 className="text-brand-primary-black text-[22px] font-semibold">Featured Product</h3>
           <span className="relative">
@@ -146,13 +130,8 @@ const Dashboard = () => {
             <p className="text-brand-primary-blue">$1750</p>
           </span>
         </Card>
-        <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff' }}>
-          <h3 className="text-brand-primary-black text-[1.125rem] font-semibold">Sales Analytics</h3>
-          <PieChart width={900} height={250}>
-            <Pie data={dashboardData[1]} dataKey="sales" nameKey="name" cx="50%" cy="50%" outerRadius={50} fill="#8884d8" />
-            <Pie data={dashboardData[1]} dataKey="sales" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label />
-          </PieChart>
-        </Card>
+
+        <SalesAnalyticsChart />
       </div>
     </>
   )
