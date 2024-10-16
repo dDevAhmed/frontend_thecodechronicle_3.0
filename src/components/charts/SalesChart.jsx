@@ -1,7 +1,22 @@
 import { Area, AreaChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
-import { salesData } from '../../data/data'
+// import { salesData } from '../../data/data'
 import Card from '../../ui/Card'
 import Dropdown from '../../ui/Dropdown'
+
+const salesData = [
+    { sales: '5k', percentage: 20 },
+    { sales: '10k', percentage: 40 },
+    { sales: '15k', percentage: 45 },
+    { sales: '20k', percentage: 64 },
+    { sales: '25k', percentage: 50 },
+    { sales: '30k', percentage: 40 },
+    { sales: '35k', percentage: 30 },
+    { sales: '40k', percentage: 50 },
+    { sales: '45k', percentage: 55 },
+    { sales: '50k', percentage: 45 },
+    { sales: '55k', percentage: 50 },
+    { sales: '60k', percentage: 60 },
+  ];
 
 const SalesChart = () => {
     return (

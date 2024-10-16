@@ -10,6 +10,8 @@ import DashboardTable from "../components/DashboardTable";
 import FeaturedProductImage from '../assets/images/products/product-10.jpg'
 import AppleWatchImage from '../assets/images/products/product-9.jpg'
 import PagesTitle from "../components/PagesTitle";
+import SalesChart from "../components/charts/SalesChart";
+import RevenueChart from "../components/charts/RevenueChart";
 
 const dashboardData = [
   {
@@ -222,31 +224,9 @@ const Dashboard = () => {
         ))}
       </div>
 
-      <Card classNames={'px-4 py-5 sm:p-6 '} style={{ backgroundColor: '#fff', marginTop: '20px' }}>
-        <span className="flex items-center justify-between  mb-5">
-          <h3 className="text-brand-primary-black text-[1.125rem] font-semibold">Sales Details</h3>
-          <Dropdown />
-        </span>
-        <ResponsiveContainer width='100%' height={300}>
-          <AreaChart data={dashboardData[1].sales}
-            margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
-            <defs>
-              <linearGradient id="colorPercentage" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#42B6F6" stopOpacity={0.8} />
-                <stop offset="95%" stopColor="#BFE8FF" stopOpacity={0} />
-              </linearGradient>
-            </defs>
-            <XAxis dataKey="sales" />
-            <YAxis domain={[0, 100]} ticks={[20, 40, 60, 80, 100]} />
-            <CartesianGrid strokeDasharray="3 3" />
-            <Tooltip />
-            <Legend />
-            <Area type="monotone" dataKey="sales" stroke="#4379EE" fillOpacity={1} fill="url(#colorPercentage)" />
-          </AreaChart>
-        </ResponsiveContainer>
-      </Card>
-
-      {/* <SalesChart /> */}
+      <div className="mt-5">
+        <SalesChart />
+      </div>
 
       <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff', marginTop: '20px' }}>
         <span className="flex items-center justify-between  mb-5">
@@ -255,6 +235,10 @@ const Dashboard = () => {
         </span>
         <DashboardTable header={['image', 'product name', 'location', 'date - time', 'piece', 'amount', 'status']} data={dashboardData[2]?.products || []} />
       </Card>
+      
+      <div className="mt-5">
+        <RevenueChart />
+      </div>
 
       <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5">
         <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff' }}>

@@ -1,7 +1,22 @@
 import { Area, AreaChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
-import { revenueData } from '../../data/data';
+// import { revenueData } from '../../data/data';
 import Card from '../../ui/Card';
 import Dropdown from '../../ui/Dropdown';
+
+export const revenueData = [
+    { week: '5k', sales: 30, profit: 20 },
+    { week: '10k', sales: 60, profit: 50 },
+    { week: '15k', sales: 40, profit: 30 },
+    { week: '20k', sales: 70, profit: 40 },
+    { week: '25k', sales: 50, profit: 20 },
+    { week: '30k', sales: 80, profit: 40 },
+    { week: '35k', sales: 60, profit: 60 },
+    { week: '40k', sales: 100, profit: 70 },
+    { week: '45k', sales: 70, profit: 50 },
+    { week: '50k', sales: 90, profit: 60 },
+    { week: '55k', sales: 60, profit: 80 },
+    { week: '60k', sales: 100, profit: 90 },
+  ];
 
 const RevenueChart = () => {
     return (
