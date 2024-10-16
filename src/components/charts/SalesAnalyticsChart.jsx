@@ -8,13 +8,13 @@ import {
 } from "recharts";
 import Card from "../../ui/Card";
 
-const data = [
-    { year: 2015, sales: 30, profit: 60 },
-    { year: 2016, sales: 100, profit: 90 },
-    { year: 2017, sales: 50, profit: 40 },
-    { year: 2018, sales: 75, profit: 80 },
-    { year: 2019, sales: 90, profit: 100 },
-];
+const salesData = [
+    { year: 2015, productA: 20, productB: 30 },
+    { year: 2016, productA: 50, productB: 40 },
+    { year: 2017, productA: 45, productB: 35 },
+    { year: 2018, productA: 75, productB: 70 },
+    { year: 2019, productA: 100, productB: 90 }
+  ];
 
 const SalesAnalyticsChart = () => {
     return (
@@ -22,7 +22,7 @@ const SalesAnalyticsChart = () => {
             <h3 className="text-brand-primary-black text-[1.125rem] font-semibold">Sales Analytics</h3>
             <ResponsiveContainer width="100%" height={250}>
                 <LineChart
-                    data={data}
+                    data={salesData}
                     margin={{ top: 20, right: 30, left: 0, bottom: 10 }}
                 >
                     <XAxis
@@ -36,13 +36,13 @@ const SalesAnalyticsChart = () => {
                     <Tooltip />
                     <Line
                         type="monotone"
-                        dataKey="sales"
+                        dataKey="productA"
                         stroke="#4880FF"
                         strokeWidth={3}
                     />
                     <Line
                         type="monotone"
-                        dataKey="profit"
+                        dataKey="productB"
                         stroke="#00B69B"
                         strokeWidth={3}
                     />
