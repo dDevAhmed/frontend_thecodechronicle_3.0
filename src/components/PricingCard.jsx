@@ -1,16 +1,10 @@
 /* eslint-disable react/prop-types */
+import { capitalizeWords } from '../utils/capitalize'
 import Button from '../ui/Button'
 import Card from '../ui/Card'
 import Divider from '../ui/Divider'
 
 const PricingCard = ({ pricing }) => {
-
-    const capitalizeWords = (str) => {
-        if (!str) return '';
-        return str.split(' ')
-            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(' ');
-    };
 
     return (
         <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff', borderRadius: '30px' }}>
@@ -36,7 +30,7 @@ const PricingCard = ({ pricing }) => {
                 <Divider />
                 {/* bottom section */}
                 <div className='items-center text-center'>
-                    <Button classNames={'text-brand-primary-blue hover:bg-brand-primary-blue hover:text-[#fff]'} style={{ padding: '10px 20px', borderRadius: '30px', border: '2px solid #4880FF' }} >{capitalizeWords(pricing.bottom.button)}</Button>
+                    <Button classNames={`${pricing.top.package === 'premium' ? 'bg-brand-primary-blue text-white hover:bg-white hover:text-brand-primary-blue' : 'text-brand-primary-blue'} hover:bg-brand-primary-blue hover:text-[#fff]`} style={{ padding: '10px 20px', borderRadius: '30px', border: '2px solid #4880FF' }} >{capitalizeWords(pricing.bottom.button)}</Button>
                     <p className='text-brand-primary-black text-[.875rem] font-normal mt-5'>Start Your {pricing.bottom.trialDays} Day Free Trial</p>
                 </div>
             </div>

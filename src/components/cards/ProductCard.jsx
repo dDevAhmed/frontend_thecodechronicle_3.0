@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import { IoMdHeartEmpty } from "react-icons/io"
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5"
-import { capitalizeWords } from "../utils/capitalize"
-import Card from "../ui/Card"
-import RatingStar from "../ui/RatingStar"
-import Button from "../ui/Button"
+import { capitalizeWords } from "../../utils/capitalize"
+import Card from "../../ui/Card"
+import RatingStar from "../../ui/RatingStar"
+import Button from "../../ui/Button"
 
 const ProductCard = ({ product }) => {
     return (

@@ -1,5 +1,5 @@
 import PagesTitle from "../components/PagesTitle";
-import ProductCard from "../components/ProductCard";
+import ProductCard from "../components/cards/ProductCard";
 
 const products = [
   {

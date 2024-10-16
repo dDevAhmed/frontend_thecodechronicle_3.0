@@ -2,6 +2,7 @@ import { BiLineChart } from "react-icons/bi";
 import { HiMiniCube, HiMiniUsers } from "react-icons/hi2";
 import { PiClockCounterClockwiseFill } from "react-icons/pi";
 import AppleWatchImage from '../assets/images/products/product-9.jpg'
+import FeaturedProductImage from '../assets/images/products/product-10.jpg'
 
 export const statsData = [
   {
@@ -99,6 +100,12 @@ export const revenueData = [
   { week: '55k', sales: 60, profit: 80 },
   { week: '60k', sales: 100, profit: 90 },
 ];
+
+export const featuredProductData = {
+  image: FeaturedProductImage,
+  name: 'sony 4k screen',
+  price: 1750
+}
 
 export const initialEmailData = [
   {
@@ -212,3 +219,66 @@ export const initialEmailData = [
 ];
 
 export const initialLabels = ["Primary", "Social", "Work", "Friends"];
+
+export const pricingData = [
+  {
+    top: {
+      package: 'basic',
+      charge: 'monthly',
+      price: 14.99,
+    },
+    center: {
+      freeSetup: true,
+      bandwidth: 10,
+      connection: 20,
+      analytics: false,
+      publicApi: false,
+      plugins: false,
+      customContent: false,
+    },
+    bottom: {
+      button: 'get started',
+      trialDays: 30
+    }
+  },
+  {
+    top: {
+      package: 'standard',
+      charge: 'monthly',
+      price: 49.99,
+    },
+    center: {
+      freeSetup: true,
+      bandwidth: 10,
+      connection: 20,
+      analytics: true,
+      publicApi: true,
+      plugins: false,
+      customContent: false,
+    },
+    bottom: {
+      button: 'get started',
+      trialDays: 30
+    }
+  },
+  {
+    top: {
+      package: 'premium',
+      charge: 'monthly',
+      price: 89.99,
+    },
+    center: {
+      freeSetup: true,
+      bandwidth: 10,
+      connection: 20,
+      analytics: true,
+      publicApi: true,
+      plugins: true,
+      customContent: true,
+    },
+    bottom: {
+      button: 'get started',
+      trialDays: 30
+    }
+  },
+]

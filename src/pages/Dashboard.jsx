@@ -246,6 +246,8 @@ const Dashboard = () => {
         </ResponsiveContainer>
       </Card>
 
+      {/* <SalesChart /> */}
+
       <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff', marginTop: '20px' }}>
         <span className="flex items-center justify-between  mb-5">
           <h3 className="text-brand-primary-black text-[1.125rem] font-semibold">Deals Details</h3>

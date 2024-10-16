@@ -5,7 +5,7 @@ import Spinner from '../ui/Spinner'
 import Pattern1 from '../assets/images/pattern_1.png'
 import Button from "../ui/Button"
 import PagesTitle from "../components/PagesTitle";
-import ProductCard from "../components/ProductCard";
+import ProductCard from "../components/cards/ProductCard";
 
 const Products = () => {
   const { data, error, isLoading } = useProducts();

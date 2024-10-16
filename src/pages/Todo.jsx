@@ -1,5 +1,5 @@
 import PagesTitle from "../components/PagesTitle";
-import TodoItem from "../components/TodoItem";
+import TodoItem from "../components/items/TodoItem";
 import Card from "../ui/Card";
 
 const todoData = [

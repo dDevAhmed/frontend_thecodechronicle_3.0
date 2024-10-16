@@ -46,7 +46,7 @@ import { HiOutlineChatAlt2 } from "react-icons/hi";
 import { PiGridFour } from "react-icons/pi";
 import { AiOutlineDashboard } from "react-icons/ai";
 import { FaRegMoneyBillAlt } from "react-icons/fa";
-import { PiSquareSplitVerticalLight } from "react-icons/pi";
+import { PiSquareSplitVerticalBold } from "react-icons/pi";
 import SearchBar from '../components/SearchBar';
 import NavDrawer from '../ui/NavDrawer';
 import AppLogo from '../assets/images/dash_stack_logo.png'
@@ -57,7 +57,7 @@ const navigation = [
     { name: 'Favorites', href: '/favorites', icon: LiaHeart, current: false },
     { name: 'Inbox', href: '/inbox', icon: HiOutlineChatAlt2, current: false },
     { name: 'Order Lists', href: '/order-lists', icon: LiaListAlt, current: false },
-    { name: 'Products Stock', href: '/product-stock', icon: PiSquareSplitVerticalLight, current: false },
+    { name: 'Products Stock', href: '/product-stock', icon: PiSquareSplitVerticalBold, current: false },
 ]
 const pages = [
     { id: 1, name: 'Pricing', href: '/pricing', icon: LiaGiftSolid, current: false },

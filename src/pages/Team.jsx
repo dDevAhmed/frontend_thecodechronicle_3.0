@@ -1,7 +1,6 @@
-import Card from "../ui/Card"
 import PagesTitle from "../components/PagesTitle";
-import Pattern2 from '../assets/images/pattern_2.png'
 import Button from "../ui/Button";
+import TeamMember from "../components/cards/TeamMember";
 
 const teamData = [
   {
@@ -80,13 +79,6 @@ const teamData = [
 
 const Team = () => {
 
-  const capitalizeWords = (str) => {
-    if (!str) return '';
-    return str.split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
-  };
-
   return (
     <>
       <div className="flex items-center justify-between">
@@ -97,14 +89,7 @@ const Team = () => {
       <div className="mt-5 grid grid-cols-1 md:grid-cols-4 gap-5">
         {
           teamData.map((member, index) => (
-            <Card key={index} classNames={'px-4 py-5 sm:p-6'} style={{ backgroundImage: `url(${Pattern2})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundColor: '#FFF' }}>
-              <img src={member.image} alt='member image' className="mb-5 mx-auto sm:h-22 sm:w-20 md:h-20 md:w-20 rounded-full" />
-              <span className="text-center">
-                <p className="text-brand-primary-black font-medium">{member.name}</p>
-                <p className="text-brand-primary-black text-opacity-50 text-[.875rem]">{member.position?.length > 3 ? capitalizeWords(member.position) : member.position?.toUpperCase()}</p>
-                <p className="text-brand-primary-black text-opacity-50 text-[.875rem]">{member.email}</p>
-              </span>
-            </Card>
+            <TeamMember key={index} member={member} />
           ))
         }
       </div>
