@@ -12,7 +12,10 @@ const Products = () => {
 
   return (
     <>
-      <PagesTitle />
+      <div className="flex items-center justify-between">
+        <PagesTitle />
+        <Button classNames={'bg-brand-primary-blue text-white px-3 py-3'}>Add New Product</Button>
+      </div>
 
       <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundImage: `url(${Pattern1})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundColor: '#4880FF', color: 'white', marginTop: '20px', position: 'relative' }}>
         <div className="px-20">

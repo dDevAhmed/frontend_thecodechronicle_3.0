@@ -1,6 +1,5 @@
-import { doc, updateDoc, query, where, } from 'firebase/firestore';
+import { collection, getDocs, doc, updateDoc, query, where, deleteDoc } from 'firebase/firestore';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../firebase.config';
 
 // Fetch products from Firebase
@@ -22,9 +21,22 @@ const updateFavoriteStatus = async ({ id, isFavorite }) => {
     await updateDoc(productRef, {
       isFavorite: isFavorite
     });
+    console.log('product favored');
+    
   } catch (error) {
     console.error("Error updating favorite status:", error);
     throw new Error("Failed to update favorite status");
+  }
+};
+
+const deleteProduct = async ({ id }) => {
+  try {
+    const productRef = doc(db, "products", id);
+    await deleteDoc(productRef);
+    console.log('product deleted');
+  } catch (error) {
+    console.error("Error deleting product:", error);
+    throw new Error("Failed to delete product");
   }
 };
 
