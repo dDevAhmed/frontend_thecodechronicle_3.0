@@ -14,15 +14,13 @@ const fetchProducts = async () => {
   }
 };
 
-// Update favorite status in Firebase
 const updateFavoriteStatus = async ({ id, isFavorite }) => {
   try {
     const productRef = doc(db, "products", id);
     await updateDoc(productRef, {
       isFavorite: isFavorite
     });
-    console.log('product favored');
-    
+
   } catch (error) {
     console.error("Error updating favorite status:", error);
     throw new Error("Failed to update favorite status");
@@ -51,6 +49,20 @@ export const useFavoriteMutation = () => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: updateFavoriteStatus,
+    onSuccess: (data, { id }) => {
+      queryClient.invalidateQueries({ queryKey: ['products'] });
+    },
+    onError: (error) => {
+      // Display an error message or handle deletion failure gracefully
+      console.error("Error deleting product:", error.message);
+    },
+  });
+};
+
+export const useDeleteProductMutation = () => {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: deleteProduct,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['products'] });
     },

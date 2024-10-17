@@ -1,13 +1,28 @@
 /* eslint-disable react/prop-types */
 import { FaCircle } from "react-icons/fa";
 import { capitalizeWords } from "../utils/capitalize";
+import { useDeleteProductMutation } from "../services/Product";
 import ProductStockActionButton from "./ProductStockActionButtons";
 
 export default function ProductStockTable({ header, data }) {
-    
+
+    const deleteProductMutation = useDeleteProductMutation();
+
     if (!Array.isArray(data)) {
-        return <div>No data available</div>; // Handle the no data case gracefully  
+        return <div>No data available</div>;
     }
+
+    const handleDeleteProduct = async (productId) => {
+        try {
+            await deleteProductMutation.mutateAsync({ id: productId });
+            console.log('product', productId, 'deleted');
+            
+        } catch (error) {
+            console.error("Error deleting product:", error.message);
+            throw new Error("Failed to delete product");
+            // todo - some toastify
+        }
+    };
 
     const headerMapping = {
         'image': 'image',
@@ -47,8 +62,8 @@ export default function ProductStockTable({ header, data }) {
                                                     : thead === 'category'
                                                         ? capitalizeWords(tableRow[headerMapping[thead]])
                                                         : thead === 'price'
-                                                         ? '$' + tableRow[headerMapping[thead]]?.toLocaleString()
-                                                            : thead ===  'piece'
+                                                            ? '$' + tableRow[headerMapping[thead]]?.toLocaleString()
+                                                            : thead === 'piece'
                                                                 ? tableRow[headerMapping[thead]]?.toLocaleString()
                                                                 : thead === 'available color'
                                                                     ? (
@@ -59,13 +74,13 @@ export default function ProductStockTable({ header, data }) {
                                                                         </div>
                                                                     )
                                                                     : thead === 'action'
-                                                                    && <ProductStockActionButton />
+                                                                    && <ProductStockActionButton productId={tableRow.id} onDelete={handleDeleteProduct} />
                                             }
                                         </td>
                                     ))}
                                 </tr>
                             ))}
-                        </tbody> 
+                        </tbody>
                     </table>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-export default function Button({ children, classNames, style }) {
+export default function Button({ children, classNames, style, onClick }) {
 
     return (
         <button
@@ -11,6 +11,7 @@ export default function Button({ children, classNames, style }) {
                 ...style,
                 // Do not set hover color here, it should be handled by Tailwind CSS class  
             }}
+            onClick={onClick}
         >
             {children}
         </button>

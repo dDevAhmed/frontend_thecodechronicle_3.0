@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io"
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5"
 import { capitalizeWords } from "../../utils/capitalize"
@@ -14,7 +14,6 @@ const ProductCard = ({ product }) => {
 
     const handleFavorite = (e) => {
         e.preventDefault();
-        console.log('i am clicked');
 
         const newFavoriteStatus = !favorite;
         setFavorite(newFavoriteStatus);
@@ -38,9 +37,13 @@ const ProductCard = ({ product }) => {
             <span className="flex flex-col justify-between">
                 <span className="flex items-start justify-between gap-5">
                     <p className="text-brand-primary-black text-[1.125rem] font-medium">{capitalizeWords(product.name)}</p>
-                    <button className={'p-2 w-9 h-9 rounded-full shadow-none'} onClick={handleFavorite}>
-                        {favorite ? <IoMdHeart className="w-4 h-4 text-red-500" /> : <IoMdHeartEmpty className={`w-4 h-4 hover:text-brand-primary-blue`} />}
-                    </button>
+                    <Button className={'p-2 w-9 h-9 rounded-full shadow-none'} onClick={handleFavorite}>
+                        {
+                            favorite ?
+                                <IoMdHeart className="w-4 h-4 text-red-500" /> :
+                                <IoMdHeartEmpty className={`w-4 h-4 hover:text-brand-primary-blue`} />
+                        }
+                    </Button>
                 </span>
                 <span>
                     <p className="text-brand-primary-blue text-[.75rem] mt-2">${product.price}</p>
