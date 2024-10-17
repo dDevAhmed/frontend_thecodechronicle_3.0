@@ -13,15 +13,9 @@ const ProductCard = ({ product }) => {
     const favoriteMutation = useFavoriteMutation();
 
     const handleFavorite = () => {
-        setFavorite(!favorite);
-        favoriteMutation.mutate({ id: product.id, isFavorite: !favorite });
+        // setFavorite(!favorite);
+        // favoriteMutation.mutate({ id: product.id, isFavorite: !favorite });        
     };
-
-    useEffect(() => {
-        // console.log('In the useEffect', auth.currentUser);
-        // setUser(auth.currentUser);
-
-    }, [])
 
     return (
         <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff', display: 'relative' }}>

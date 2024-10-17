@@ -74,22 +74,7 @@ const ProductStock = () => {
     <>
       <div className="flex items-center justify-between">
         <PagesTitle />
-
-        {/* //fixme - make component */}
-        {/* <div className="relative bg-white rounded-full w-fit">
-          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-            <MagnifyingGlassIcon aria-hidden="true" className="h-5 w-5 text-gray-400" />
-          </div>
-          <input
-            id="search"
-            name="search"
-            type="search"
-            placeholder="Search product"
-            className="block w-full rounded-full border-0 bg-transparent py-1.5 pl-10 pr-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-          />
-        </div> */}
         <SearchBar environment={'product name'} classNames={'w-1/3 bg-[#F5F6FA]'} />
-
       </div>
 
       {

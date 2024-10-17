@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useFavoriteProducts } from "../services/Product"
+import { useProducts } from "../services/Product"
 import Spinner from '../ui/Spinner'
 import PagesTitle from "../components/PagesTitle";
 import ProductCard from "../components/cards/ProductCard";
@@ -80,7 +80,8 @@ const products = [
 ]
 
 const Favorites = () => {
-  const { data, error, isLoading } = useFavoriteProducts()
+  const { data, error, isLoading } = useProducts()
+  const favoriteProducts = data?.filter(product => product.isFavorite);
 
   return (
     <>
@@ -93,7 +94,7 @@ const Favorites = () => {
             : isLoading
               ? <div className="mt-20 w-full"><Spinner /></div>
               :
-              data?.map((product, index) => (
+              favoriteProducts?.map((product, index) => (
                 <ProductCard key={index} product={product} />
               ))
         }

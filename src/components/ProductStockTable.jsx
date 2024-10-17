@@ -4,7 +4,6 @@ import { capitalizeWords } from "../utils/capitalize";
 import ProductStockActionButton from "./ProductStockActionButtons";
 
 export default function ProductStockTable({ header, data }) {
-    console.log(data);
     
     if (!Array.isArray(data)) {
         return <div>No data available</div>; // Handle the no data case gracefully  
@@ -66,7 +65,7 @@ export default function ProductStockTable({ header, data }) {
                                     ))}
                                 </tr>
                             ))}
-                        </tbody>
+                        </tbody> 
                     </table>
                 </div>
             </div>

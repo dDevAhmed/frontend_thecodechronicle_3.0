@@ -15,24 +15,6 @@ const fetchProducts = async () => {
   }
 };
 
-const fetchFavoritesProducts = async () => {
-  const productRef = collection(db, 'products')
-
-  try {
-    const q = query(
-      productRef,
-      where('isFavorite', '==', true),
-    );
-    const querySnapshot = await getDocs(q);
-    const data = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-    return data;
-
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    throw new Error("Failed to fetch data");
-  }
-};
-
 // Update favorite status in Firebase
 const updateFavoriteStatus = async ({ id, isFavorite }) => {
   try {
@@ -46,7 +28,6 @@ const updateFavoriteStatus = async ({ id, isFavorite }) => {
   }
 };
 
-// Custom hook to fetch products
 export const useProducts = () => {
   return useQuery({
     queryKey: ['products'],
@@ -54,14 +35,6 @@ export const useProducts = () => {
   });
 };
 
-export const useFavoriteProducts = () => {
-  return useQuery({
-    queryKey: ['favoritesproducts'],
-    queryFn: fetchFavoritesProducts,
-  });
-};
-
-// Custom hook to update favorite status
 export const useFavoriteMutation = () => {
   const queryClient = useQueryClient();
   return useMutation({

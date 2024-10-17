@@ -77,7 +77,6 @@ const EmailList = ({
   };
 
   const handlePrintEmail = (email) => {
-    console.log("Printing email:", email);
     // Implement actual print functionality here
   };
 

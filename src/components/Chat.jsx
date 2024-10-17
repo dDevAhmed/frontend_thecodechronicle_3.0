@@ -15,7 +15,7 @@ const Chat = ({ email, onClose, onDelete, onPrint }) => {
 
   useEffect(() => {
     if (email) {
-      console.log("Initializing chat with email:", email); 
+      // console.log("Initializing chat with email:", email); 
       setMessages([
         {
           id: 1,
