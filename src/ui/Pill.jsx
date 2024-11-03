@@ -1,7 +1,7 @@
 // eslint-disable-next-line react/prop-types
 export default function Pill({ title }) {
     const pillBgMap = {
-        delivered: '#00B69B',
+        health: '#00B69B',
         processing: '#6226EF',
         returned: '#EF3826'
     };

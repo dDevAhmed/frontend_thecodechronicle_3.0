@@ -13,6 +13,7 @@ import SalesChart from "../components/charts/SalesChart";
 import RevenueChart from "../components/charts/RevenueChart";
 import SalesAnalyticsChart from "../components/charts/SalesAnalyticsChart";
 import CustomersChart from "../components/charts/CustomersChart";
+import PostItem from "../components/items/PostItem";
 
 const dashboardData = [
   {
@@ -91,14 +92,8 @@ const Dashboard = () => {
     <>
       <PagesTitle />
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mt-5">
-        {dashboardData[0].stats.map((stat, index) => (
-          <DashboardStat key={index} stat={stat} />
-        ))}
-      </div>
-
       <div className="mt-5">
-        <SalesChart />
+        <PostItem />
       </div>
 
       <Card classNames={'px-4 py-5 sm:p-6'} style={{ backgroundColor: '#fff', marginTop: '20px' }}>

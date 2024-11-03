@@ -1,10 +1,16 @@
 // routes/AppRoutes.jsx  
 import { createBrowserRouter, Outlet } from "react-router-dom"
 import Layout from "../layout/Layout"
+
+// admin
 import PrivateRoutes from '../components/PrivateRoutes'
 import Login from '../pages/Login'
 import SignUp from '../pages/SignUp'
 import Dashboard from '../pages/Dashboard'
+
+// guest
+import Home from '../pages/Home'
+
 import Products from '../pages/Products'
 import Favorites from '../pages/Favorites'
 import Inbox from "../pages/Inbox"
@@ -99,6 +105,11 @@ const router = createBrowserRouter([
                     },
                 ]
             },
+            {
+                // fixme - change to / 
+                path: '/home',
+                element: <Home />
+            }
         ]
     },
 ]);

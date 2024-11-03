@@ -65,7 +65,7 @@ const LeftSidebar = () => {
     const [shrinkSidebar, setShrinkSidebar] = useState(false)
 
     return (
-        <div className={`hidden overflow-y-scroll lg:inset-y-0 lg:z-50 lg:flex lg:flex-col grow`}>
+        <div className={`hidden lg:inset-y-0 lg:z-50 lg:flex lg:flex-col grow`}>
             <div className="flex grow flex-col gap-y-5 border-r border-gray-200 bg-white px-6 pb-4">
                 <div className="flex h-16 shrink-0 items-center gap-3">
                     <img
