@@ -16,7 +16,7 @@ const salesData = [
     { sales: '50k', percentage: 45 },
     { sales: '55k', percentage: 50 },
     { sales: '60k', percentage: 60 },
-  ];
+];
 
 const SalesChart = () => {
     return (

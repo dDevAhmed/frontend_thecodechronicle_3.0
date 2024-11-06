@@ -16,6 +16,7 @@ import { postsData, topHeadlineData } from "../data/data";
 import TopHeadline from "../components/items/TopHeadline";
 import ImageOnly from '../components/items/posts/ImageOnly'
 import HomeAudio from "../components/items/posts/HomeAudio";
+import CurrencyConverter from "../components/widgets/currency/CurrencyConverter";
 
 const Dashboard = () => {
 
@@ -38,7 +39,7 @@ const Dashboard = () => {
 
       <Section classNames={'grid grid-cols-1 lg:grid-cols-3 gap-5'}>
         {/* //todo - replace with stock market widget */}
-        <HomeHero />
+        <CurrencyConverter />
         <HomeHero classNames={'col-span-2'} />
       </Section>
 

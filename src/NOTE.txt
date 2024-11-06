@@ -7,6 +7,13 @@ version 3.0
 
 ---Features
 
+note - FeaturesUser Registration/Login: User profiles and authentication.
+Article CRUD Operations: Create, read, update, and delete articles.
+Commenting System: Users can comment on articles.
+Search Functionality: Search for articles by keywords.
+Categories/Tags: Classify articles into different categories or tag them.
+External API Integration: Pull in articles from other sources or provide APIs for others.
+
 note - post structure
  {
     id: 121357,

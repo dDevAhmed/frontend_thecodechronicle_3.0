@@ -1,63 +1,50 @@
 import { useQuery } from '@tanstack/react-query';
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../firebase.config';
 
 const fetchWeather = async () => {
-    const apiKey = import.meta.env.VITE_WEATHER_API_KEY
+    const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
     const url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=kaduna&aqi=no`;
 
-    // try {
-    //     const response = await fetch(url);
-    //     const data = await response.json();
-    //     setWeatherData(data);
-    // } catch (error) {
-    //     console.error('Error fetching weather data:', error);
-    // }
-
     try {
-        const querySnapshot = await getDocs(collection(db, "events"));
-        // const data = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));  
-
-        const data = querySnapshot.docs.map(doc => {
-            const eventData = doc.data();
-            return {
-                id: doc.id,
-                ...eventData,
-                // date: orderData.date ? orderData.date.toDate().toLocaleDateString() : '', // Convert Firestore Timestamp to date  
-                // date: eventData.date ? eventData.date.toDate().toLocaleDateString('en-GB', {
-                //   day: '2-digit',
-                //   month: 'long',
-                //   year: 'numeric'
-                // }) : '', // Format the date inline  
-            };
-        });
-
-        return data;
-
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        return data; // Return the weather data  
     } catch (error) {
-        console.error("Error fetching data:", error);
-        throw new Error("Failed to fetch data");
+        console.error('Error fetching weather data:', error);
+        throw new Error("Failed to fetch weather data");
     }
 };
 
 const fetchSunTimes = async () => {
-    // fixme - use user current location
-    const latitude = 10.52;
+    const latitude = 10.52; // Consider using user's current location  
     const longitude = 7.44;
     const url = `https://api.sunrise-sunset.org/json?lat=${latitude}&lng=${longitude}&formatted=0`;
 
-    // try {
-    //     const response = await fetch(url);
-    //     const data = await response.json();
-    //     setSunTimes(data.results);
-    // } catch (error) {
-    //     console.error('Error fetching sunrise and sunset data:', error);
-    // }
-}
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        return data.results; // Return the sunrise/sunset times  
+    } catch (error) {
+        console.error('Error fetching sunrise and sunset data:', error);
+        throw new Error("Failed to fetch sunrise and sunset data");
+    }
+};
 
-export const useEvents = () => {
-    return useQuery({ // Use the object form  
-        queryKey: ['weather'],
-        queryFn: fetchWeather,
-    });
-}
+export const useWeather = () => {  
+    return useQuery({  
+        queryKey: ['weather'], // Use a unique query key  
+        queryFn: fetchWeather,  
+    });  
+};  
+
+export const useSunTimes = () => {  
+    return useQuery({  
+        queryKey: ['suntimes'], 
+        queryFn: fetchSunTimes,  
+    });  
+}; 
