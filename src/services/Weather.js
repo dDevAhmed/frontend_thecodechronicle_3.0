@@ -18,7 +18,7 @@ const fetchWeather = async () => {
 };
 
 const fetchSunTimes = async () => {
-    const latitude = 10.52; // Consider using user's current location  
+    const latitude = 10.52; // todo - Consider using user's current location  
     const longitude = 7.44;
     const url = `https://api.sunrise-sunset.org/json?lat=${latitude}&lng=${longitude}&formatted=0`;
 
