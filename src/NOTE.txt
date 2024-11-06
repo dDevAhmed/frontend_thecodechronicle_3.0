@@ -1,3 +1,36 @@
+version 3.0
+  started - friday 1st
+
+//todo - write blog on this - children vs prop
+      <SectionTitle>Breaking News</SectionTitle>
+      <SectionTitle content={'News'} />
+
 ---Features
-products
-staffs
+
+note - post structure
+ {
+    id: 121357,
+    type: 'image',
+    image: {
+      hasMessage: true,
+    },
+    audio: {
+
+    },
+    video: {
+      length: 'short'
+    },
+    primaryMedia: PostUrl,   //referring to media url
+    secondaryMedia: [
+      mediaUrl1, mediaUrl2, ..., mediaUrln
+    ],
+    category: 'government',
+    title: 'mr president welcomes codelanders to second semester',
+    message: 'the president of codeland welcomes back the citizens to the second semester. Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolores delectus harum qui laborum molestiae temporibus laudantium fugit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolores delectus harum qui laborum molestiae temporibus laudantium fugit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolores delectus harum qui laborum molestiae temporibus laudantium fugit?',
+    datePosted: '8742934234',    //use timestamp
+    tags: [       //#tags are younger siblings of category
+      'second semester',
+      'government',
+      'backend'
+    ]
+  },

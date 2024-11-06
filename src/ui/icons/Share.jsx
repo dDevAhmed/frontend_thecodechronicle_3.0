@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { FaRegShareFromSquare } from "react-icons/fa6";
 import { VscShare } from "react-icons/vsc";
 import { PiShareFatLight } from "react-icons/pi";

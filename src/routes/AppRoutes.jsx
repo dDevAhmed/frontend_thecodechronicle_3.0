@@ -28,14 +28,17 @@ import Calendar from "../pages/Calendar"
 // import Teacher from '../features/staffs/Teacher';  
 
 const router = createBrowserRouter([
+    // /admin/...
+    // /, /post/12ab!@
+    // /author
     {
         path: '/login',
         element: <Login />
     },
-    {
-        path: '/sign-up',
-        element: <SignUp />
-    },
+    // {
+    //     path: '/sign-up',
+    //     element: <SignUp />
+    // },
     {
         path: '/*',
         element: <NotFound />
@@ -49,67 +52,33 @@ const router = createBrowserRouter([
                 children: [
                     {
                         index: true,
-                        element: <Dashboard />
+                        element: <Home />
                     },
                     {
-                        path: 'products',
-                        element: <Products />
+                        // breaking news, explore, 
                     },
                     {
-                        path: 'favorites',
-                        element: <Favorites />
+                        path: 'admin',
+                        element: <Pricing />,
+                        children: [
+                            // add post
+                            // posts
+                            // bloggers
+                        ]
                     },
                     {
-                        path: 'inbox',
-                        element: <Inbox />
-                    },
-                    {
-                        path: 'order-lists',
-                        element: <OrderLists />
-                    },
-                    {
-                        path: 'product-stock',
-                        element: <ProductStock />
-                    },
-                    {
-                        path: 'pricing',
-                        element: <Pricing />
-                    },
-                    {
-                        path: 'calendar',
-                        element: <Calendar />
-                    },
-                    {
-                        path: 'todo',
-                        element: <Todo />
-                    },
-                    {
-                        path: 'contact',
-                        element: <Contact />
-                    },
-                    {
-                        path: 'invoice',
-                        element: <Invoice />
-                    },
-                    {
-                        path: 'ui-elements',
-                        element: <Pricing />
-                    },
-                    {
-                        path: 'team',
-                        element: <Team />
-                    },
-                    {
-                        path: 'table',
-                        element: <Table />
-                    },
+                        path: 'user',
+                        element: <Pricing />,
+                        children: [
+                            // saved
+                            // subscriptions
+                            // settings ???
+                            // account
+                        ] 
+                    }
+
                 ]
             },
-            {
-                // fixme - change to / 
-                path: '/home',
-                element: <Home />
-            }
         ]
     },
 ]);

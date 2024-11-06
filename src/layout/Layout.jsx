@@ -51,6 +51,8 @@ import SearchBar from '../components/SearchBar';
 import NavDrawer from '../ui/NavDrawer';
 import AppLogo from '../assets/images/dash_stack_logo.png'
 import LeftSidebar from '../components/LeftSidebar';
+import RightSidebar from '../components/RightSidebar';
+import NavBar from '../components/NavBar';
 
 const navigation = [
     { name: 'Dashboard', href: '/', icon: AiOutlineDashboard, current: false },
@@ -101,23 +103,23 @@ export default function Layout() {
             <div className='grid grid-cols-1 md:grid-cols-6'>
                 <div className='col-span-1'>
                     <div className="relative md:fixed md:h-full md:w-[16.666%] overflow-y-auto">
-                        {/* //fixme - change to sidebar and pass children */}
                         <LeftSidebar />
                     </div>
                 </div>
 
-                <div className="col-span-1 md:col-span-4">
+                <div className="col-span-1 md:col-span-5">
+                    <NavBar />
+                    <main className="bg-[#F5F6FA] min-h-screen grid grid-cols-1 lg:grid-cols-5">
+                        <div className="pb-20 px-4 sm:px-6 lg:px-8 col-span-4"><Outlet /></div>
 
-                    <main className="py-5 lg:py-10 bg-[#F5F6FA] min-h-screen">
-                        <div className="px-4 sm:px-6 lg:px-8"><Outlet /></div>
+                        <div className='col-span-1'>
+                            <div className="relative md:fixed md:h-full md:w-[16.666%] overflow-y-auto">
+                                <RightSidebar />
+                            </div>
+                        </div>
                     </main>
                 </div>
 
-                <div className='col-span-1'>
-                    <div className="relative md:fixed md:h-full md:w-[16.666%] overflow-y-auto">
-                        <LeftSidebar />
-                    </div>
-                </div>
             </div>
         </>
     )

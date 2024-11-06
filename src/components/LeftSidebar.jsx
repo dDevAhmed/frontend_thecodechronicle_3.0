@@ -33,28 +33,31 @@ import NavDrawer from '../ui/NavDrawer';
 import AppLogo from '../assets/images/dash_stack_logo.png'
 import { Link } from 'react-router-dom'
 import { useState } from 'react';
+import { IoHomeOutline } from "react-icons/io5";
+import { SlFire } from "react-icons/sl";
+import { MdOutlineExplore } from "react-icons/md";
+import { LuBookmark } from "react-icons/lu";
+import { IoNewspaperOutline } from "react-icons/io5";
+import { HiOutlineCog8Tooth } from "react-icons/hi2";
+import { AiOutlineUser } from "react-icons/ai";
+import { HiOutlineLogout } from "react-icons/hi";
+import Divider from '../ui/Divider';
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
 const navigation = [
-    { name: 'Dashboard', href: '/', icon: AiOutlineDashboard, current: false },
-    { name: 'Products', href: '/products', icon: PiGridFour, current: false },
-    { name: 'Favorites', href: '/favorites', icon: LiaHeart, current: false },
-    { name: 'Inbox', href: '/inbox', icon: HiOutlineChatAlt2, current: false },
-    { name: 'Order Lists', href: '/order-lists', icon: LiaListAlt, current: false },
-    { name: 'Products Stock', href: '/product-stock', icon: PiSquareSplitVerticalBold, current: false },
+    { name: 'Home', href: '/', icon: IoHomeOutline, current: false },
+    { name: 'Breaking News', href: '/products', icon: SlFire, current: false },
+    { name: 'Explore', href: '/favorites', icon: MdOutlineExplore, current: false },
 ]
-const pages = [
-    { id: 1, name: 'Pricing', href: '/pricing', icon: LiaGiftSolid, current: false },
-    { id: 2, name: 'Calendar', href: '/calendar', icon: LiaCalendar, current: false },
-    { id: 3, name: 'To-Do', href: '/todo', icon: LiaClipboard, current: false },
-    { id: 4, name: 'Contact', href: '/contact', icon: LiaUserFriendsSolid, current: false },
-    { id: 5, name: 'Invoice', href: '/invoice', icon: FaRegMoneyBillAlt, current: false },
-    { id: 6, name: 'UI Elements', href: '/ui-elements', icon: SlChart, current: false },
-    { id: 7, name: 'Team', href: '/team', icon: LiaUserSolid, current: false },
-    { id: 8, name: 'Table', href: '/table', icon: LiaTableSolid, current: false },
+const usernavigation = [
+    { id: 1, name: 'Saved', href: '/pricing', icon: LuBookmark, current: false },
+    { id: 2, name: 'Subscriptions', href: '/todo', icon: IoNewspaperOutline, current: false },
+    { id: 3, name: 'Settings', href: '/contact', icon: HiOutlineCog8Tooth, current: false },
+    { id: 4, name: 'Account', href: '/invoice', icon: AiOutlineUser, current: false },
+    { id: 5, name: 'Log Out', href: '/ui-elements', icon: HiOutlineLogout, current: false },
 ]
 const bottomNavigation = [
     { name: 'Settings', href: '#', icon: LiaCogSolid, current: false },
@@ -73,7 +76,7 @@ const LeftSidebar = () => {
                         src={AppLogo}
                         className="h-8 w-auto"
                     />
-                    <h3 className={`text-brand-primary-black font-semibold ${shrinkSidebar ? 'hidden' : 'flex'}`}><span className='text-[#2CABE0]'>Dash</span>Stack</h3>
+                    <h3 className={`text-brand-primary-black font-hanalei ${shrinkSidebar ? 'hidden' : 'flex'}`}>The Code Chronicle</h3>
                 </div>
                 <nav className="flex flex-1 flex-col">
                     <ul role="list" className="flex flex-1 flex-col gap-y-7">
@@ -86,8 +89,8 @@ const LeftSidebar = () => {
                                             className={classNames(
                                                 location.pathname === item.href
                                                     ? 'bg-brand-primary-blue text-[#fff]'
-                                                    : 'text-brand-primary-black hover:bg-gray-100 hover:text-brand-primary-blue',
-                                                'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6',
+                                                    : 'text-gray-700 hover:bg-gray-100 hover:text-brand-primary-blue',
+                                                'group flex gap-x-3 rounded-md p-2 text-sm leading-6',
                                             )}
                                         >
                                             {/* {
@@ -96,7 +99,7 @@ const LeftSidebar = () => {
                                             <item.icon
                                                 aria-hidden="true"
                                                 className={classNames(
-                                                    location.pathname === item.href ? 'text-[#fff]' : 'text-brand-primary-black group-hover:text-brand-primary-blue',
+                                                    location.pathname === item.href ? 'text-[#fff]' : 'text-gray-700 group-hover:text-brand-primary-blue',
                                                     'h-6 w-6 shrink-0',
                                                 )}
                                             />
@@ -106,24 +109,24 @@ const LeftSidebar = () => {
                                 ))}
                             </ul>
                         </li>
+                        <Divider />
                         <li>
-                            <div className="text-xs font-semibold leading-6 text-gray-400">Your pages</div>
-                            <ul role="list" className="-mx-2 mt-2 space-y-1">
-                                {pages.map((item) => (
+                            <ul role="list" className="-mx-2 space-y-1">
+                                {usernavigation.map((item) => (
                                     <li key={item.name}>
                                         <Link
                                             to={item.href}
                                             className={classNames(
                                                 location.pathname === item.href
                                                     ? 'bg-brand-primary-blue text-[#fff]'
-                                                    : 'text-brand-primary-black hover:bg-gray-100 hover:text-brand-primary-blue',
-                                                'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6',
+                                                    : 'text-gray-700 hover:bg-gray-100 hover:text-brand-primary-blue',
+                                                'group flex gap-x-3 rounded-md p-2 text-sm  leading-6',
                                             )}
                                         >
                                             <item.icon
                                                 aria-hidden="true"
                                                 className={classNames(
-                                                    location.pathname === item.href ? 'text-[#fff]' : 'text-brand-primary-black group-hover:text-brand-primary-blue',
+                                                    location.pathname === item.href ? 'text-[#fff]' : 'text-gray-700 group-hover:text-brand-primary-blue',
                                                     'h-6 w-6 shrink-0',
                                                 )}
                                             />
@@ -133,6 +136,8 @@ const LeftSidebar = () => {
                                 ))}
                             </ul>
                         </li>
+                        <Divider />
+                        <h3 className='font-bold'>Following</h3>
                         <li>
                             <ul role="list" className="-mx-2 space-y-1">
                                 {bottomNavigation.map((item) => (
@@ -142,14 +147,14 @@ const LeftSidebar = () => {
                                             className={classNames(
                                                 location.pathname === item.href
                                                     ? 'bg-brand-primary-blue text-[#fff]'
-                                                    : 'text-brand-primary-black hover:bg-gray-100 hover:text-brand-primary-blue',
-                                                'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6',
+                                                    : 'text-gray-700 hover:bg-gray-100 hover:text-brand-primary-blue',
+                                                'group flex gap-x-3 rounded-md p-2 text-sm leading-6',
                                             )}
                                         >
                                             <item.icon
                                                 aria-hidden="true"
                                                 className={classNames(
-                                                    location.pathname === item.href ? 'text-[#fff]' : 'text-brand-primary-black group-hover:text-brand-primary-blue',
+                                                    location.pathname === item.href ? 'text-[#fff]' : 'text-gray-700 group-hover:text-brand-primary-blue',
                                                     'h-6 w-6 shrink-0',
                                                 )}
                                             />
@@ -161,6 +166,8 @@ const LeftSidebar = () => {
                         </li>
                     </ul>
                 </nav>
+                {/* //todo - go to about - landing page*/}
+                <Link to={''} className='text-sm'>Help and Information</Link>
             </div>
         </div>
     )
