@@ -2,7 +2,7 @@
 import { capitalizeWords } from '../../utils/capitalize';
 import Image from './posts/Image';
 import Video from './posts/Video';
-import Audio from './posts/Audio';
+import Audio from './posts/ARCHIVEDAudio';
 import ImageOnly from './posts/ImageOnly';
 
 const PostItem = ({ post }) => {
@@ -14,8 +14,8 @@ const PostItem = ({ post }) => {
                 ? <Video post={post} />
                 // : post.type === 'audio'
                 //     ? <Audio post={post} />
-                    : post.type === 'imageonly'
-                    && <ImageOnly post={post}/>
+                : post.type === 'imageonly'
+                && <ImageOnly post={post} />
 
     );
 }

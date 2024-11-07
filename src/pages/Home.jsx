@@ -15,8 +15,12 @@ import Video from "../components/items/Video";
 import { postsData, topHeadlineData } from "../data/data";
 import TopHeadline from "../components/items/TopHeadline";
 import ImageOnly from '../components/items/posts/ImageOnly'
-import HomeAudio from "../components/items/posts/HomeAudio";
+import Audio from "../components/items/posts/Audio";
 import CurrencyConverter from "../components/widgets/currency/CurrencyConverter";
+import PostsNav from "../components/PostsNav";
+import Divider from '../ui/Divider'
+import Featured from "../components/sections/Featured";
+import AudioStamp from "../ui/stamps/Audio";
 
 const Dashboard = () => {
 
@@ -25,44 +29,42 @@ const Dashboard = () => {
   const photoNews = postsData?.filter(photo => photo.type === 'imageonly');
 
   return (
-    <>
-      <Section>
-        {/* <SectionTitle>Quick Takes</SectionTitle> */}
-        <div className='overflow-x-auto scrollbar-hide'>
+    <div className="flex flex-col gap-5 pt-5">
+
+      <Section classNames={''}>
+        {/* //todo - replace with stock market widget */}
+        {/* <CurrencyConverter /> */}
+        <HomeHero classNames={'col-span-2'} />
+      </Section>
+
+      <Divider />
+
+      <Section classNames={'flex items-start'}>
+        <div className='pr-5'><AudioStamp /></div>
+        <div className='overflow-x-auto scrollbar-hide flex-1'>
           <div className="flex gap-5 min-w-[120%]">
             {audioNews.map((audio, index) => (
-              <HomeAudio key={index} audio={audio} />
+              <Audio key={index} audio={audio} />
             ))}
           </div>
         </div>
       </Section>
 
-      <Section classNames={'grid grid-cols-1 lg:grid-cols-3 gap-5'}>
-        {/* //todo - replace with stock market widget */}
-        <CurrencyConverter />
-        <HomeHero classNames={'col-span-2'} />
+      <Divider />
+
+      {/* // todo - featured post here */}
+      <Section>
+        <SectionTitle>Featured</SectionTitle>
+        <Featured />
       </Section>
 
       <Section>
-        {/* <SectionTitle>Quick Takes</SectionTitle> */}
-        <div className='overflow-x-auto scrollbar-hide'>
-          <div className="flex gap-5 min-w-[120%]">
-            <Video videoSrc={''} classNames={'rounded-xl'} />
-            <Video videoSrc={''} classNames={'rounded-xl'} />
-            <Video videoSrc={''} classNames={'rounded-xl'} />
-            <Video videoSrc={''} classNames={'rounded-xl'} />
-            <Video videoSrc={''} classNames={'rounded-xl'} />
-            <Video videoSrc={''} classNames={'rounded-xl'} />
-            <Video videoSrc={''} classNames={'rounded-xl'} />
-            <Video videoSrc={''} classNames={'rounded-xl'} />
-            <Video videoSrc={''} classNames={'rounded-xl'} />
-            <Video videoSrc={''} classNames={'rounded-xl'} />
-          </div>
-        </div>
+        <PostsNav />
+        {/* render views here */}
       </Section>
 
       <Section>
-        <SectionTitle>For You</SectionTitle>
+        {/* <SectionTitle>For You</SectionTitle> */}
 
         <div className="flex flex-col gap-5 mt-5">
           {
@@ -88,7 +90,7 @@ const Dashboard = () => {
           </div>
         </div>
       </Section>
-    </>
+    </div>
   )
 }
 

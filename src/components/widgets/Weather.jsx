@@ -66,7 +66,7 @@ const Weather = ({ classNames }) => {
         1282: CloudLightning, // Moderate or heavy snow with thunder
     };
 
-    // fixme - show skeleoton if loading, show error if error
+    // fixme - show skeleton if loading, show error if error
 
     // if (!weather || !sunTimes) {
     //     return (
@@ -80,8 +80,8 @@ const Weather = ({ classNames }) => {
 
     // calculating suntimes
     const now = new Date();
-    const sunriseTime = new Date(sunTimes.sunrise);
-    const sunsetTime = new Date(sunTimes.sunset);
+    const sunriseTime = new Date(sunTimes?.sunrise);
+    const sunsetTime = new Date(sunTimes?.sunset);
     const isDay = now >= sunriseTime && now <= sunsetTime;
     const displayTime = now < sunriseTime ? sunriseTime : sunsetTime;
 
@@ -97,24 +97,22 @@ const Weather = ({ classNames }) => {
     
     return (
         <div className='flex flex-col items-center rounded-lg px-2 py-5' style={{ backgroundImage: `linear-gradient(180deg, #78C2C9, #E5E3C3, #78C2C9)` }}>
-            <p className='text-md font-normal'>{weather.location.name},<span className='text-xs font-extralight'> {weather.location.country}</span></p>
-            <img src={weatherIconMap[weather.current.condition.code] || Cloud} alt="weather icon" className='h-14 w-auto mt-3' />
-            <p className='text-3xl relative mt-2'>{weather.current.temp_c}<span className='absolute text-sm -top-1'>o</span><span className='ml-2'>c</span></p>
-            <p className='font-light'>{weather.current.condition.text}</p>
+            <p className='text-md font-normal'>{weather?.location.name},<span className='text-xs font-extralight'> {weather?.location.country}</span></p>
+            <img src={weatherIconMap[weather?.current.condition.code] || Cloud} alt="weather icon" className='h-14 w-auto mt-3' />
+            <p className='text-3xl relative mt-2'>{weather?.current.temp_c}<span className='absolute text-sm -top-1'>o</span><span className='ml-2'>c</span></p>
+            <p className='font-light'>{weather?.current.condition.text}</p>
 
             <span className='flex items-center justify-between gap-3 mt-3'>
                 <p className='flex flex-col items-center text-center text-sm'>
                     <PiWind />
-                    <span className='text-xs'>{weather.current.wind_kph} km/hr</span>
+                    <span className='text-xs'>{weather?.current.wind_kph} km/hr</span>
                 </p>
                 <p className='flex flex-col items-center text-center text-sm'>
                     <TbDroplet />
-                    <span className='text-xs'>{weather.current.humidity} %</span>
+                    <span className='text-xs'>{weather?.current.humidity} %</span>
                 </p>
                 <p className='flex flex-col items-center text-center text-sm'>
-                    {/* {`${now < sunriseTime ? <TbSunrise /> : <TbSunset />}`} */}
-                    <TbSunrise />
-                    
+                    {now < sunriseTime ? <TbSunrise /> : <TbSunset />}                    
                     <span className='text-xs'>{formatTime(displayTime)}</span>
                 </p>
             </span>

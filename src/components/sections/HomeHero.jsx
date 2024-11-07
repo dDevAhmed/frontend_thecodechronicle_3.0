@@ -6,7 +6,7 @@ import SearchBar from '../SearchBar'
 const HomeHero = ({ classNames }) => {
   return (
     <Card classNames={classNames}>
-      <div className="h-56 w-full bg-cover bg-no-repeat bg-center rounded-[.3125rem] flex items-center"
+      <div className="h-[40vh] w-full bg-cover bg-no-repeat bg-center rounded-[.3125rem] flex items-center"
         style={{
           backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0) 70%), url(${SearchBarBackground})`,
         }}>

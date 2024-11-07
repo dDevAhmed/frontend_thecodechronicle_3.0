@@ -28,9 +28,11 @@ import Calendar from "../pages/Calendar"
 // import Teacher from '../features/staffs/Teacher';  
 
 const router = createBrowserRouter([
-    // /admin/...
-    // /, /post/12ab!@
-    // /author
+    // /admin/...           /dashboard, /bloggers, /settings
+    // /, /post/12ab!@      
+    // /author(blogger)     /dashboard, /write-blog, /
+    // user/account         /subscription, /saved
+    // /search/             /(search query)
     {
         path: '/login',
         element: <Login />
