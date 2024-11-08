@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { AiOutlineAudio } from "react-icons/ai";
-import Card from "../../../ui/Card";
-import { capitalizeWords } from "../../../utils/capitalize";
+import Card from "../ui/Card";
+import { capitalizeWords } from "../utils/capitalize";
 
 const Audio = ({ post }) => {
   return (

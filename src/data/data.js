@@ -460,6 +460,169 @@ export const postsData = [
   },
 ]
 
+export const postDataNew = [
+  {
+    id: 121357,
+    type: 'text',      //text, audio, video, imageGallery, videoGallery
+    image: {
+      hasMessage: true,
+    },
+    primaryMedia: PostImage,   //referring to media url
+    secondaryMedia: [
+      {
+        title: '',
+        media: PostImageOnly1
+      },
+    ],
+    category: 'government',   //backend, frontend, health. tools, performance, community, ai, web3, tools, 
+    title: 'mr president welcomes codelanders to second semester',
+    message: 'the president of codeland welcomes back the citizens to the second semester. Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolores delectus harum qui laborum molestiae temporibus laudantium fugit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolores delectus harum qui laborum molestiae temporibus laudantium fugit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolores delectus harum qui laborum molestiae temporibus laudantium fugit?',
+    datePosted: '8742934234',    //use timestamp
+    tags: [       //#tags are younger siblings of category
+      'second semester',
+      'government',
+      'backend'
+    ]
+  },
+  {
+    id: 121357,
+    type: 'audio',      //text, audio, video, imageGallery, videoGallery
+    image: {
+      hasMessage: false,
+    },
+    primaryMedia: AnxietyAzkar,   //referring to media url
+    secondaryMedia: [
+
+    ],
+    category: 'backend',
+    title: '',
+    datePosted: '8742934234',    //use timestamp
+    tags: [       //#tags are younger siblings of category
+      'second semester',
+      'government',
+      'backend'
+    ]
+  },
+  {
+    id: 121357,
+    type: 'video',      //text, audio, video, imageGallery, videoGallery
+    image: {
+      hasMessage: false,
+    },
+    primaryMedia: Web3,   //referring to media url
+    secondaryMedia: [
+
+    ],
+    category: 'government',   //backend, frontend, health. tools, performance, community, ai, web3, tools, 
+    title: 'mr president welcomes codelanders to second semester',
+    message: '',
+    datePosted: '8742934234',    //use timestamp
+    tags: [       //#tags are younger siblings of category
+      'second semester',
+      'government',
+      'backend'
+    ]
+  },
+  {
+    id: 121357,
+    type: 'image',      //text, audio, video, imageGallery, videoGallery
+    image: {
+      hasMessage: false,
+    },
+    primaryMedia: PostImage,   //referring to media url
+    secondaryMedia: [
+      {
+        title: '',
+        media: PostImageOnly1
+      },
+      {
+        title: '',
+        media: PostImageOnly2
+      },
+      {
+        title: '',
+        media: PostImageOnly3
+      },
+      {
+        title: '',
+        media: PostImageOnly4
+      },
+      {
+        title: '',
+        media: PostImageOnly1
+      },
+      {
+        title: '',
+        media: PostImageOnly2
+      },
+      {
+        title: '',
+        media: PostImageOnly3
+      },
+      {
+        title: '',
+        media: PostImageOnly4
+      },
+    ],
+    category: 'government',   //backend, frontend, health. tools, performance, community, ai, web3, tools, 
+    title: 'mr president welcomes codelanders to second semester',
+    message: '',
+    datePosted: '8742934234',    //use timestamp
+    tags: [       //#tags are younger siblings of category
+      'second semester',
+      'government',
+      'backend'
+    ]
+  },
+  {
+    id: 121357,
+    type: 'gallery',      //text, audio, video, imageGallery, videoGallery
+    image: {
+      hasMessage: true,
+    },
+    primaryMedia: PostImage,   //referring to media url
+    secondaryMedia: [
+      {
+        title: 'mr president welcomes 1',
+        media: Web3
+      },
+      {
+        title: 'mr president welcomes 2',
+        media: Web3
+      },
+      {
+        title: 'mr president welcomes 3',
+        media: Web3
+      },
+      {
+        title: 'mr president welcomes 4',
+        media: Web3
+      },
+      {
+        title: 'mr president welcomes 5',
+        media: Web3
+      },
+      {
+        title: 'mr president welcomes 6',
+        media: Web3
+      },
+      {
+        title: 'mr president welcomes 7',
+        media: Web3
+      },
+    ],
+    category: 'government',   //backend, frontend, health. tools, performance, community, ai, web3, tools, 
+    title: 'mr president welcomes codelanders to second semester',
+    message: 'the president of codeland welcomes back the citizens to the second semester. Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolores delectus harum qui laborum molestiae temporibus laudantium fugit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolores delectus harum qui laborum molestiae temporibus laudantium fugit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolores delectus harum qui laborum molestiae temporibus laudantium fugit?',
+    datePosted: '8742934234',    //use timestamp
+    tags: [       //#tags are younger siblings of category
+      'second semester',
+      'government',
+      'backend'
+    ]
+  },
+]
+
 // export const statsData = [
 //   {
 //     title: 'Total User',

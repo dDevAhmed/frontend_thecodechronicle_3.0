@@ -1,0 +1,12 @@
+
+      <Section>
+        {/* <SectionTitle>For You</SectionTitle> */}
+
+        <div className="flex flex-col gap-5 mt-5">
+          {
+            news?.map((post, index) => (
+              <PostItem key={index} post={post} />
+            ))
+          }
+        </div>
+      </Section>

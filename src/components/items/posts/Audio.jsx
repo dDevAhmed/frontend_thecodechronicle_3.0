@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import { CiPause1, CiPlay1, CiMicrophoneOn } from "react-icons/ci";
 import { useEffect, useRef, useState } from "react";
 import Card from "../../../ui/Card";
 import AudioCover from '../../../assets/images/audiocovers/nafiu.jpg'
 
-const HomeAudio = ({ audio }) => {
+const Audio = ({ audio }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [remainingTime, setRemainingTime] = useState(0); // State for remaining time  
@@ -104,4 +105,4 @@ const HomeAudio = ({ audio }) => {
   );
 }
 
-export default HomeAudio;
+export default Audio;

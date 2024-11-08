@@ -12,28 +12,38 @@ import HomeHero from "../components/sections/HomeHero";
 import SectionTitle from "../ui/SectionTitle";
 import Section from "../ui/Section";
 import Video from "../components/items/Video";
-import { postsData, topHeadlineData } from "../data/data";
+import { postDataNew, postsData, topHeadlineData } from "../data/data";
 import TopHeadline from "../components/items/TopHeadline";
-import ImageOnly from '../components/items/posts/ImageOnly'
+import ImageOnly from '../components/items/posts/Image'
 import Audio from "../components/items/posts/Audio";
 import CurrencyConverter from "../components/widgets/currency/CurrencyConverter";
 import PostsNav from "../components/PostsNav";
 import Divider from '../ui/Divider'
 import Featured from "../components/sections/Featured";
 import AudioStamp from "../ui/stamps/Audio";
+import { useState } from "react";
+import Videos from "../components/views/Videos";
+import Pictures from "../components/views/Pictures";
+import NewsFeed from "../components/views/NewsFeed";
 
-const Dashboard = () => {
+const Home = () => {
 
+  const allNews = postDataNew;
+  
   const regularNews = postsData?.filter(post => post.type !== 'imageonly');
   const audioNews = postsData?.filter(post => post.type === 'audio');
   const photoNews = postsData?.filter(photo => photo.type === 'imageonly');
+
+  const [currentTab, setCurrentTab] = useState('posts');
+
+  const handleTabChange = (tabId) => {
+    setCurrentTab(tabId);
+  };
 
   return (
     <div className="flex flex-col gap-5 pt-5">
 
       <Section classNames={''}>
-        {/* //todo - replace with stock market widget */}
-        {/* <CurrencyConverter /> */}
         <HomeHero classNames={'col-span-2'} />
       </Section>
 
@@ -52,46 +62,31 @@ const Dashboard = () => {
 
       <Divider />
 
-      {/* // todo - featured post here */}
       <Section>
         <SectionTitle>Featured</SectionTitle>
         <Featured />
       </Section>
 
-      <Section>
-        <PostsNav />
-        {/* render views here */}
-      </Section>
-
-      <Section>
-        {/* <SectionTitle>For You</SectionTitle> */}
-
-        <div className="flex flex-col gap-5 mt-5">
+      <Section classNames={'sticky top-20'}>
+        <PostsNav currentTab={currentTab} onTabChange={handleTabChange} />
+        <div className="overflow-y-auto py-5">
           {
-            regularNews?.map((post, index) => (
-              <PostItem key={index} post={post} />
-            ))
+            currentTab === 'posts'
+              ? <NewsFeed unorderedPosts={postDataNew} />
+              : currentTab === 'videos'
+                ? <Videos />
+                : currentTab === 'pictures'
+                && <Pictures photoNews={photoNews} />
           }
         </div>
       </Section>
 
-      <Section>
-        <SectionTitle>Photo News</SectionTitle>
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
-          {
-            <ImageOnly post={photoNews[0]} classNames={'h-60'} />
-          }
-          <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
-            {
-              photoNews.slice(1).map((post, index) => (
-                <ImageOnly key={index + 1} post={post} classNames={''} />
-              ))
-            }
-          </div>
-        </div>
-      </Section>
+      {/* subscribe newsletter here */}
+
+      {/* footer here */}
+
     </div>
   )
 }
 
-export default Dashboard
+export default Home

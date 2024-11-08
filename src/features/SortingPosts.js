@@ -1,10 +1,10 @@
-const categorizePosts = (posts) => {
+export const categorizePosts = (posts) => {
     const categorized = {
         // todo - include audio
         text: [],
         video: [],
-        images: [],
-        videos: [] // For the gallery of videos  
+        image: [],
+        gallery: [] // For the gallery of videos  
     };
 
     posts.forEach(post => {
@@ -15,11 +15,11 @@ const categorizePosts = (posts) => {
             case 'video':
                 categorized.video.push(post);
                 break;
-            case 'images':
-                categorized.images.push(post);
+            case 'image':
+                categorized.image.push(post);
                 break;
-            case 'videos':
-                categorized.videos.push(post);
+            case 'gallery':
+                categorized.gallery.push(post);
                 break;
             default:
                 break;
@@ -29,36 +29,39 @@ const categorizePosts = (posts) => {
     return categorized;
 };
 
-const buildOrderedPosts = (categorizedPosts) => {
+export const buildOrderedPosts = (categorizedPosts) => {
     const orderedPosts = [];
 
     // Define the display pattern  
     const pattern = [
         { type: 'video', count: 1 },
         { type: 'text', count: 2 },
-        { type: 'images', count: 1 }, // Example with 5 images in single gallery  
+        { type: 'image', count: 1 }, // Example with 5 images in single gallery  
         { type: 'text', count: 4 },
-        { type: 'videos', count: 4 },
+        { type: 'gallery', count: 4 },
     ];
 
     pattern.forEach(req => {
         const { type, count } = req;
 
-        if (type === 'video') {
-            for (let i = 0; i < count && categorizedPosts.video.length; i++) {
-                orderedPosts.push(categorizedPosts.video.shift());
-            }
-        } else if (type === 'text') {
+        if (type === 'text') {
             for (let i = 0; i < count && categorizedPosts.text.length; i++) {
                 orderedPosts.push(categorizedPosts.text.shift());
             }
-        } else if (type === 'images') {
-            if (categorizedPosts.images.length > 0) {
-                orderedPosts.push(categorizedPosts.images.shift());
+        } else if (type === 'video') {
+            for (let i = 0; i < count && categorizedPosts.video.length; i++) {
+                orderedPosts.push(categorizedPosts.video.shift());
             }
-        } else if (type === 'videos') {
-            for (let i = 0; i < count && categorizedPosts.videos.length; i++) {
-                orderedPosts.push(categorizedPosts.videos.shift());
+        } else if (type === 'image') {
+            for (let i = 0; i < count && categorizedPosts.image.length; i++) {
+                orderedPosts.push(categorizedPosts.image.shift());
+            }
+            // if (categorizedPosts.images.length > 0) {
+            //     orderedPosts.push(categorizedPosts.image.shift());
+            // }
+        } else if (type === 'gallery') {
+            for (let i = 0; i < count && categorizedPosts.gallery.length; i++) {
+                orderedPosts.push(categorizedPosts.gallery.shift());
             }
         }
     });

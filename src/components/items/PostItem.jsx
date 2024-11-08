@@ -1,22 +1,21 @@
 /* eslint-disable react/prop-types */
-import { capitalizeWords } from '../../utils/capitalize';
-import Image from './posts/Image';
 import Video from './posts/Video';
-import Audio from './posts/ARCHIVEDAudio';
-import ImageOnly from './posts/ImageOnly';
+import Text from './posts/Text';
+import Image from './posts/Image';
+// import Gallery from './posts/Gallery';
 
 const PostItem = ({ post }) => {
-
+    
     return (
-        post.type === 'image' && post.hasMessage === true
-            ? <Image post={post} />
+        post.type === 'text'
+            ? <Text post={post} />
             : post.type === 'video'
                 ? <Video post={post} />
-                // : post.type === 'audio'
-                //     ? <Audio post={post} />
-                : post.type === 'imageonly'
-                && <ImageOnly post={post} />
-
+                : post.type === 'image'
+                && <Image post={post} />
+        // todo - add gallery
+        // : post.type === 'gallery'
+        // && <Video post={post} />
     );
 }
 

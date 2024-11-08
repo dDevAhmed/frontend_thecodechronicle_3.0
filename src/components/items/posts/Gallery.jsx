@@ -6,21 +6,25 @@ import { CiPause1 } from "react-icons/ci";
 import { FaPause } from "react-icons/fa6";
 import Card from "../../../ui/Card";
 
-const Video = ({ post }) => {
+const Gallery = ({ post }) => {
   return (
-    <>
-      <Card classNames={'rounded-lg'} style={{ backgroundColor: '#fff' }}>
-        <video className="h-80 w-full" controls>
-          <source src={post.primaryMedia} type="video/mp4" />
-          {/* <source src={post.videoOgg} type="video/ogg" />   */}
-          Your browser does not support the video tag.
-        </video>
-      </Card>
-    </>
+    <div className="grid grid-cols-1 lg:grid-cols-4 gap-5">
+      {
+        post.secondaryMedia.map((video, index) => (
+          <Card key={index} classNames={'rounded-lg'} style={{ backgroundColor: '#fff' }}>
+            <video className="h-28 w-full" controls>
+              <source src={video.media} type="video/mp4" />
+              {/* <source src={post.videoOgg} type="video/ogg" />   */}
+              Your browser does not support the video tag.
+            </video>
+          </Card>
+        ))
+      }
+    </div>
   );
 }
 
-export default Video;
+export default Gallery;
 
 // import { useRef, useState } from "react";
 // import { FaPlay, FaPause } from "react-icons/fa6";
